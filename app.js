@@ -175,10 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
           : '<span class="hint-arrows">↔</span> Glissez pour faire défiler';
       }
 
-      const zoom = s.querySelector('.slide-zoom-badge span');
-      if (zoom) {
-        zoom.textContent = isEn ? 'Full screen HD' : 'Plein écran HD';
-      }
+
     });
     }
 
