@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mise à jour des liens WhatsApp
     updateWhatsAppLinks();
+
+    // Mise à jour de la langue du slider et lightbox
+    if (typeof updateSliderLanguage === 'function') {
+      updateSliderLanguage(lang);
+    }
   };
 
   // Écouteurs sur les boutons FR / EN
@@ -74,8 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Initialisation
-  setLanguage(currentLang);
+  // setLanguage will be initialized after slider and components are registered
 
   // 3. Gestion du Carousel Slider Glissant Continu (Smart Juris -> Filtec)
   const unifiedGalleryData = [
@@ -117,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let startPos = 0;
   let currentTranslate = 0;
   let prevTranslate = 0;
-  let animationID = 0;
   let dragThresholdPassed = false;
 
   // Création dynamique des points de pagination
@@ -133,13 +136,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Synchronisation dynamique de la langue pour le Slider et le Lightbox
+  function updateSliderLanguage(lang) {
+    const isEn = lang === 'en';
+
+    if (typeof updateActiveState === 'function') {
+      updateActiveState(currentSlideIndex);
+    }
+
+    if (slides && slides.length > 0) {
+      slides.forEach((s, idx) => {
+      const pill = s.querySelector('.slide-screen-pill');
+      if (pill) {
+        if (idx < 5) {
+          pill.textContent = isEn 
+            ? `Slide ${idx + 1} / 16 • Screen ${idx + 1}/5` 
+            : `Capture ${idx + 1} / 16 • Écran ${idx + 1}/5`;
+        } else {
+          pill.textContent = isEn 
+            ? `Slide ${idx + 1} / 16 • Screen ${idx - 4}/11` 
+            : `Capture ${idx + 1} / 16 • Écran ${idx - 4}/11`;
+        }
+      }
+
+      const tag = s.querySelector('.slide-project-tag');
+      if (tag) {
+        if (idx < 5) {
+          tag.textContent = isEn ? 'SMART JURIS • Legal AI' : 'SMART JURIS • IA Juridique';
+        } else {
+          tag.textContent = isEn ? 'FILTEC ONE • Industrial ERP & Mobile' : 'FILTEC ONE • ERP Industriel & Mobile';
+        }
+      }
+
+      const hint = s.querySelector('.slide-drag-hint');
+      if (hint) {
+        hint.innerHTML = isEn 
+          ? '<span class="hint-arrows">↔</span> Drag to scroll' 
+          : '<span class="hint-arrows">↔</span> Glissez pour faire défiler';
+      }
+
+      const zoom = s.querySelector('.slide-zoom-badge span');
+      if (zoom) {
+        zoom.textContent = isEn ? 'Full screen HD' : 'Plein écran HD';
+      }
+    });
+    }
+
+    if (typeof lightbox !== 'undefined' && lightbox && lightbox.classList.contains('active')) {
+      renderLbScreen();
+    }
+  }
+
   function updateActiveState(index) {
     currentSlideIndex = Math.max(0, Math.min(index, totalSlides - 1));
 
     // Slides
-    slides.forEach((s, idx) => {
-      s.classList.toggle('active', idx === currentSlideIndex);
-    });
+    if (slides && slides.length > 0) {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlideIndex);
+      });
+    }
 
     // Dots
     if (dotsBar) {
@@ -168,11 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Indicator
     if (indicator) {
+      const isEn = currentLang === 'en';
+      const screenWord = isEn ? 'Screen' : 'Écran';
+      const captureWord = isEn ? 'Slide' : 'Capture';
       if (currentSlideIndex < 5) {
-        indicator.textContent = `SMART JURIS • Écran ${currentSlideIndex + 1} / 5 (Capture ${currentSlideIndex + 1}/16)`;
+        indicator.textContent = `SMART JURIS • ${screenWord} ${currentSlideIndex + 1} / 5 (${captureWord} ${currentSlideIndex + 1}/16)`;
         indicator.className = 'slider-active-indicator sj';
       } else {
-        indicator.textContent = `FILTEC ONE • Écran ${currentSlideIndex - 4} / 11 (Capture ${currentSlideIndex + 1}/16)`;
+        indicator.textContent = `FILTEC ONE • ${screenWord} ${currentSlideIndex - 4} / 11 (${captureWord} ${currentSlideIndex + 1}/16)`;
         indicator.className = 'slider-active-indicator filtec';
       }
     }
@@ -188,8 +247,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function setSlideWidths() {
+    if (!viewport) return;
+    const w = viewport.offsetWidth;
+    // Set CSS variable so each slide is exactly viewport width
+    viewport.style.setProperty('--slide-w', w + 'px');
+    // Also set directly on slides for robustness
+    slides.forEach(s => {
+      s.style.width = w + 'px';
+      s.style.minWidth = w + 'px';
+    });
+  }
+
   function setPositionByIndex() {
     if (!viewport || !track) return;
+    setSlideWidths();
     const slideWidth = viewport.offsetWidth;
     currentTranslate = -currentSlideIndex * slideWidth;
     prevTranslate = currentTranslate;
@@ -233,61 +305,107 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Glissement Tactile & Souris Drag
   if (viewport && track) {
+    let startY = 0;
+    let lockAxis = null; // 'h' = horizontal locked, 'v' = vertical locked
+
     function getPosX(e) {
       return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
     }
+    function getPosY(e) {
+      return e.type.includes('mouse') ? e.pageY : e.touches[0].clientY;
+    }
 
     function onDragStart(e) {
-      if (e.type.includes('mouse') && e.button !== 0) return;
+      if (e.type.includes('mouse')) {
+        if (e.button !== 0) return;
+        e.preventDefault();
+      }
       isDragging = true;
       dragThresholdPassed = false;
+      lockAxis = null;
       startPos = getPosX(e);
+      startY = getPosY(e);
       viewport.classList.add('grabbing');
       track.style.transition = 'none';
-      animationID = requestAnimationFrame(animateDrag);
     }
 
     function onDragMove(e) {
       if (!isDragging) return;
       const currentPos = getPosX(e);
-      const diff = currentPos - startPos;
-      if (Math.abs(diff) > 8) {
-        dragThresholdPassed = true;
+      const currentY = getPosY(e);
+      const diffX = currentPos - startPos;
+      const diffY = currentY - startY;
+
+      // Determine axis lock on first significant movement
+      if (!lockAxis) {
+        if (Math.abs(diffX) > 5 || Math.abs(diffY) > 5) {
+          lockAxis = Math.abs(diffX) >= Math.abs(diffY) ? 'h' : 'v';
+        }
       }
-      currentTranslate = prevTranslate + diff;
+
+      // If locked vertical, don't interfere
+      if (lockAxis === 'v') return;
+
+      // Lock horizontal: prevent page scroll
+      if (lockAxis === 'h') {
+        if (e.cancelable) e.preventDefault();
+        if (Math.abs(diffX) > 8) dragThresholdPassed = true;
+        currentTranslate = prevTranslate + diffX;
+        track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+      }
     }
 
     function onDragEnd() {
       if (!isDragging) return;
       isDragging = false;
-      cancelAnimationFrame(animationID);
       viewport.classList.remove('grabbing');
 
-      const movedBy = currentTranslate - prevTranslate;
-      // Seuil de déclenchement : 45px
-      if (movedBy < -45 && currentSlideIndex < totalSlides - 1) {
-        currentSlideIndex += 1;
-      } else if (movedBy > 45 && currentSlideIndex > 0) {
-        currentSlideIndex -= 1;
+      if (lockAxis === 'h') {
+        const movedBy = currentTranslate - prevTranslate;
+        // Seuil de déclenchement : 50px
+        if (movedBy < -50 && currentSlideIndex < totalSlides - 1) {
+          currentSlideIndex += 1;
+        } else if (movedBy > 50 && currentSlideIndex > 0) {
+          currentSlideIndex -= 1;
+        }
       }
 
+      lockAxis = null;
       setPositionByIndex();
     }
 
-    function animateDrag() {
-      setSliderPosition();
-      if (isDragging) requestAnimationFrame(animateDrag);
-    }
-
-    // Événements Touch
+    // Événements Touch — NON passive pour permettre preventDefault horizontal
     viewport.addEventListener('touchstart', onDragStart, { passive: true });
-    viewport.addEventListener('touchmove', onDragMove, { passive: true });
+    viewport.addEventListener('touchmove', onDragMove, { passive: false });
     viewport.addEventListener('touchend', onDragEnd);
+    viewport.addEventListener('touchcancel', onDragEnd);
 
     // Événements Souris
     viewport.addEventListener('mousedown', onDragStart);
     window.addEventListener('mousemove', onDragMove);
     window.addEventListener('mouseup', onDragEnd);
+
+    // Support Défilement Trackpad horizontal (Mac 2 doigts) & Molette Shift
+    let wheelTimer = null;
+    let accumulatedDelta = 0;
+    viewport.addEventListener('wheel', (e) => {
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
+      if (Math.abs(delta) > 6) {
+        if (e.cancelable) e.preventDefault();
+        accumulatedDelta += delta;
+        if (!wheelTimer) {
+          wheelTimer = setTimeout(() => {
+            if (accumulatedDelta > 20 && currentSlideIndex < totalSlides - 1) {
+              goToSlide(currentSlideIndex + 1);
+            } else if (accumulatedDelta < -20 && currentSlideIndex > 0) {
+              goToSlide(currentSlideIndex - 1);
+            }
+            accumulatedDelta = 0;
+            wheelTimer = null;
+          }, 35);
+        }
+      }
+    }, { passive: false });
 
     // Clic sur l'image -> Lightbox (seulement si pas en glissement)
     slides.forEach((slide, idx) => {
@@ -323,8 +441,31 @@ document.addEventListener('DOMContentLoaded', () => {
       setPositionByIndex();
     });
 
-    // Position initiale
-    setPositionByIndex();
+    // Position initiale — attendre que le viewport soit visible (offsetWidth > 0)
+    function initSliderWhenReady() {
+      if (viewport.offsetWidth > 0) {
+        setPositionByIndex();
+      } else {
+        // Viewport pas encore rendu, réessayer
+        requestAnimationFrame(initSliderWhenReady);
+      }
+    }
+
+    // Utiliser IntersectionObserver pour initialiser quand la section est visible
+    const sliderObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && viewport.offsetWidth > 0) {
+          setPositionByIndex();
+          // Ne s'exécute qu'une fois
+          sliderObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sliderObserver.observe(viewport);
+
+    // Aussi initialiser immédiatement au cas où déjà visible
+    initSliderWhenReady();
   }
 
   // 3b. Galerie Plein Écran Unifiée (Lightbox Interactive pour les 16 captures)
@@ -359,23 +500,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const item = unifiedGalleryData[lbIndex];
     if (!item) return;
 
+    const isEn = currentLang === 'en';
+    const displayTitle = (isEn && item.titleEn) ? item.titleEn : item.title;
+
     if (lbImg) {
       lbImg.style.opacity = '0.3';
       setTimeout(() => {
         lbImg.src = item.src;
-        lbImg.alt = item.title;
+        lbImg.alt = displayTitle;
         lbImg.style.opacity = '1';
       }, 120);
     }
 
     if (lbTitle) {
-      lbTitle.textContent = `${item.projName} : ${item.title}`;
+      lbTitle.textContent = `${item.projName} : ${displayTitle}`;
     }
     if (lbCaption) {
-      lbCaption.textContent = item.title;
+      lbCaption.textContent = displayTitle;
     }
     if (lbCounter) {
-      lbCounter.textContent = `${lbIndex + 1} / ${unifiedGalleryData.length}`;
+      const captureLabel = isEn ? 'Slide' : 'Capture';
+      lbCounter.textContent = `${captureLabel} ${lbIndex + 1} / ${unifiedGalleryData.length}`;
     }
 
     // Update thumbnail highlights
@@ -691,4 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   }
 
+
+  // Initialisation finale : activer la langue enregistrée sur tous les composants
+  setLanguage(currentLang);
 });

@@ -1447,14 +1447,15 @@ textarea.form-input {
 
 .portfolio-slider-track {
   display: flex;
+  /* Track stretches to fit all slides (overflow clipped by viewport) */
   width: 100%;
   will-change: transform;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio-slide {
-  flex: 0 0 100%;
-  min-width: 100%;
+  /* Each slide fills the slider viewport — JS sets inline style width */
+  flex: 0 0 auto;
   box-sizing: border-box;
   padding: 24px;
   opacity: 0.4;
@@ -1554,6 +1555,11 @@ textarea.form-input {
   background: #080d1a;
   display: block;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .slide-image-frame:hover .slide-img {
@@ -1743,12 +1749,6 @@ textarea.form-input {
 .slider-dot.dot-filtec.active {
   background: #0284c7;
   box-shadow: 0 0 10px rgba(2, 132, 199, 0.5);
-}
-
-.slider-footer-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
 }
 
 /* Responsiveness */

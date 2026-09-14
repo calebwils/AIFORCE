@@ -112,7 +112,7 @@ const translations = {
     // Nouveaux ajouts : Slider Portfolio Unifié & Écrans Filtec
     portfolio_main_tag: "Portfolio • Réalisations Phares",
     portfolio_main_title: "Notre Portfolio",
-    portfolio_main_desc: "Explorez nos architectures logicielles en production : glissez horizontalement vers la gauche ou la droite pour parcourir l'ensemble de nos réalisations, de SMART JURIS à FILTEC ONE."
+    portfolio_main_desc: "Explorez nos architectures logicielles en production : glissez horizontalement vers la gauche ou la droite pour parcourir l'ensemble de nos réalisations, de SMART JURIS à FILTEC ONE.",
     slider_swipe_hint: "↔ Glissez avec la souris ou au doigt pour naviguer entre les projets",
 
     portfolio_filtec_tab_7: "Annuaire Distributeurs",
@@ -367,7 +367,7 @@ const translations = {
     // New additions: Unified Portfolio Slider & Filtec Screens
     portfolio_main_tag: "Portfolio • Featured Systems",
     portfolio_main_title: "Our Portfolio",
-    portfolio_main_desc: "Explore our software architectures running in production: drag or swipe horizontally to browse through our work, from SMART JURIS to FILTEC ONE."
+    portfolio_main_desc: "Explore our software architectures running in production: drag or swipe horizontally to browse through our work, from SMART JURIS to FILTEC ONE.",
     slider_swipe_hint: "↔ Drag or swipe horizontally to navigate projects",
 
     portfolio_filtec_tab_7: "Dealer Accounts",
