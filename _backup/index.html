@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIFORCE — Ingénierie Logicielle Web & Mobile, Automatisation des Processus</title>
+  
+  <meta name="description" content="Développement d'applications web & mobiles sur mesure et automatisation des tâches chronophages pour faire gagner du temps aux entreprises.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Polices Distinctives : Syne (Titres architecturaux) + DM Sans (Corps éditorial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       En-Tête & Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand-wrapper">
+        <a href="#" aria-label="AIFORCE Accueil">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="brand-logo">
+        </a>
+      </div>
+
+      <nav aria-label="Navigation">
+        <ul class="main-nav">
+          <li class="nav-item"><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li class="nav-item"><a href="#portfolio" data-i18n="nav_portfolio">Réalisations</a></li>
+          <li class="nav-item"><a href="#cases" data-i18n="nav_cases">Cas concrets</a></li>
+          <li class="nav-item"><a href="#approach" data-i18n="nav_approach">Méthode</a></li>
+          <li class="nav-item"><a href="#commitments" data-i18n="nav_commitments">Garanties</a></li>
+          <li class="nav-item"><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <!-- Sélecteur de Langue -->
+        <div class="lang-toggle" aria-label="Choisir la langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <a href="#contact" class="btn btn-solid btn-small" data-i18n="nav_cta">Échanger sur un projet</a>
+
+        <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section class="hero-block">
+    <div class="container">
+      <span class="hero-meta-tag" data-i18n="hero_tag">Studio d'Ingénierie & d'Automatisation</span>
+      
+      <h1 class="hero-heading" data-i18n="hero_title">
+        Développement d'applications web & mobiles. Automatisation de vos tâches répétitives.
+      </h1>
+
+      <p class="hero-paragraph" data-i18n="hero_desc">
+        Nous concevons des logiciels sur-mesure et automatisons vos flux de travail quotidiens pour libérer vos équipes des tâches manuelles chronophages et vous faire gagner un temps précieux.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="https://wa.me/2290162115411" target="_blank" class="btn btn-wa js-wa-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+          </svg>
+          <span data-i18n="hero_cta_wa">Échanger directement sur WhatsApp</span>
+        </a>
+
+        <a href="#contact" class="btn btn-outline" data-i18n="hero_cta_contact">Nous contacter</a>
+
+        <a href="tel:+2290162115411" class="hero-direct-call">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span data-i18n="hero_phone_direct">Ligne directe : +229 0162115411</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 1 : La Valeur Clé : Le Gain de Temps
+       ========================================================================== -->
+  <section class="time-section">
+    <div class="container">
+      <div class="time-header-grid">
+        <div>
+          <span class="section-label" data-i18n="time_tag">Le Temps : Votre Première Ressource</span>
+          <h2 class="section-h2" data-i18n="time_title">
+            Combien d'heures vos équipes perdent-elles chaque semaine en saisies inutiles ?
+          </h2>
+        </div>
+        <div>
+          <p class="time-intro-text" data-i18n="time_intro">
+            Dans la majorité des entreprises, des collaborateurs qualifiés passent des heures à copier des données d'un fichier à un autre, à rédiger des comptes-rendus à la main ou à chercher des informations dispersées. Notre mission est de vous redonner ce temps.
+          </p>
+        </div>
+      </div>
+
+      <div class="time-pillars-grid">
+        <div class="time-card">
+          <div class="time-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="time-card-h3" data-i18n="time_col_1_title">Supprimer les doubles saisies</h3>
+          <p class="time-card-desc" data-i18n="time_col_1_desc">Connecter vos outils (logiciel de facturation, tableurs, messageries, CRM) pour que l'information circule sans intervention humaine.</p>
+        </div>
+
+        <div class="time-card">
+          <div class="time-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="time-card-h3" data-i18n="time_col_2_title">Traiter les documents sans attendre</h3>
+          <p class="time-card-desc" data-i18n="time_col_2_desc">Lire, classer et extraire automatiquement les données de vos factures, devis et bons de commande dès leur réception.</p>
+        </div>
+
+        <div class="time-card">
+          <div class="time-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="time-card-h3" data-i18n="time_col_3_title">Des outils adaptés à votre réalité</h3>
+          <p class="time-card-desc" data-i18n="time_col_3_desc">Développer des applications web et mobiles qui collent exactement à votre manière de travailler, sans fonctionnalités superflues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 2 : Nos Deux Métiers
+       ========================================================================== -->
+  <section id="services" class="disciplines-section">
+    <div class="container">
+      <span class="section-label" data-i18n="services_tag">Nos Deux Piliers d'Intervention</span>
+      <h2 class="section-h2" data-i18n="services_title">Des solutions techniques concrètes, construites pour durer</h2>
+      <p style="font-size: 1.05rem; color: var(--ink-700); margin-top: 10px;" data-i18n="services_subtitle">
+        Nous combinons le développement d'applications sur-mesure et l'automatisation pour simplifier vos opérations.
+      </p>
+
+      <div class="disciplines-grid">
+        <!-- Métier 1 -->
+        <div class="discipline-card">
+          <span class="discipline-num" data-i18n="service_web_num">01</span>
+          <h3 class="discipline-title" data-i18n="service_web_title">Développement d'Applications Web & Mobiles</h3>
+          <p class="discipline-summary" data-i18n="service_web_desc">
+            Nous développons des outils logiciels adaptés à vos besoins réels : des interfaces claires, rapides et faciles à prendre en main par vos équipes ou vos clients.
+          </p>
+
+          <div class="discipline-items">
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_web_item_1_title">Applications de gestion interne & portails clients</h4>
+                <p class="d-item-desc" data-i18n="service_web_item_1_desc">Outils de suivi d'activité, espaces clients sécurisés, tableaux de bord clairs pour piloter vos opérations sans dépendre de fichiers Excel fragiles.</p>
+              </div>
+            </div>
+
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_web_item_2_title">Applications mobiles iOS & Android</h4>
+                <p class="d-item-desc" data-i18n="service_web_item_2_desc">Pour vos équipes sur le terrain ou vos clients : fonctionne même avec une mauvaise connexion, saisie rapide, photos, géolocalisation et signatures numériques.</p>
+              </div>
+            </div>
+
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_web_item_3_title">Modernisation de vos logiciels existants</h4>
+                <p class="d-item-desc" data-i18n="service_web_item_3_desc">Reprendre en main un outil vieillissant, corriger ses lenteurs et le reconnecter à votre environnement de travail actuel.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-outline" style="align-self: flex-start;" data-i18n="nav_cta">Échanger sur un projet</a>
+        </div>
+
+        <!-- Métier 2 -->
+        <div class="discipline-card">
+          <span class="discipline-num" data-i18n="service_ai_num">02</span>
+          <h3 class="discipline-title" data-i18n="service_ai_title">Automatisation de Processus & Intégration IA</h3>
+          <p class="discipline-summary" data-i18n="service_ai_desc">
+            Nous mettons en place des automatisations fiables et intégrons l'intelligence artificielle là où elle apporte une réelle simplification, sans jargon ni gadget.
+          </p>
+
+          <div class="discipline-items">
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_ai_item_1_title">Traitement automatique de factures & devis</h4>
+                <p class="d-item-desc" data-i18n="service_ai_item_1_desc">Extraction automatique des données clés (fournisseur, montants, lignes de commande) et intégration directe dans votre comptabilité.</p>
+              </div>
+            </div>
+
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_ai_item_2_title">Recherche intelligente dans vos documents d'entreprise</h4>
+                <p class="d-item-desc" data-i18n="service_ai_item_2_desc">Un assistant interne sécurisé capable de retrouver instantanément une clause de contrat, une procédure ou un historique technique dans vos archives.</p>
+              </div>
+            </div>
+
+            <div class="d-item">
+              <span class="d-bullet"></span>
+              <div>
+                <h4 class="d-item-title" data-i18n="service_ai_item_3_title">Automatisation de la relation client & messagerie</h4>
+                <p class="d-item-desc" data-i18n="service_ai_item_3_desc">Réponses automatiques intelligentes aux demandes récurrentes (horaires, devis types, état d'une commande) et transmission fluide vers vos équipes.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-outline" style="align-self: flex-start;" data-i18n="nav_cta">Échanger sur un projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section Réalisation Phare : SMART JURIS (Portfolio Réel)
+       ========================================================================== -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="portfolio-header">
+        <span class="section-label" data-i18n="portfolio_tag">Réalisation Phare • Étude de Cas Réelle</span>
+        <h2 class="section-h2" data-i18n="portfolio_title">SMART JURIS : Workspace Juridique OHADA</h2>
+        <p class="portfolio-subtitle" data-i18n="portfolio_subtitle">
+          Plateforme professionnelle sur-mesure développée par AIFORCE pour cabinets d'avocats d'affaires : pilotage du contentieux, moteur IA anti-hallucination sourcé sur le droit OHADA / CCJA, et rédaction automatisée d'actes.
+        </p>
+
+        <div class="portfolio-pills-row">
+          <span class="portfolio-pill" data-i18n="portfolio_pill_1">17 Pays de l'espace OHADA</span>
+          <span class="portfolio-pill" data-i18n="portfolio_pill_2">Vérification Anti-Hallucination active</span>
+          <span class="portfolio-pill" data-i18n="portfolio_pill_3">Génération d'actes en &lt; 3 min</span>
+          <span class="portfolio-pill" data-i18n="portfolio_pill_4">Traçabilité & Secret Professionnel absolu</span>
+        </div>
+      </div>
+
+      <!-- Galerie interactive des 5 écrans -->
+      <div class="portfolio-showcase">
+        <!-- Boutons d'onglets / écrans -->
+        <div class="portfolio-tabs" role="tablist">
+          <button type="button" class="portfolio-tab-btn active" data-screen="1" data-i18n="portfolio_tab_1">Tableau de Bord & Délais</button>
+          <button type="button" class="portfolio-tab-btn" data-screen="2" data-i18n="portfolio_tab_2">Smart Juris Copilot</button>
+          <button type="button" class="portfolio-tab-btn" data-screen="3" data-i18n="portfolio_tab_3">Smart Draft (Actes)</button>
+          <button type="button" class="portfolio-tab-btn" data-screen="4" data-i18n="portfolio_tab_4">Gestion des Contentieux</button>
+          <button type="button" class="portfolio-tab-btn" data-screen="5" data-i18n="portfolio_tab_5">Journal d'Audit & Déontologie</button>
+        </div>
+
+        <!-- Visionneuse d'écrans -->
+        <div class="portfolio-viewer">
+          <!-- Écran 1: Dashboard -->
+          <div class="portfolio-panel active" id="portfolio-panel-1">
+            <div class="panel-image-frame">
+              <img src="assets/portfolio/smart-juris-dashboard.png" alt="SMART JURIS — Tableau de Bord Cabinet" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="panel-caption">
+              <h3 class="panel-title" data-i18n="portfolio_screen_1_title">Tableau de Bord Cabinet & Gestion des Délais Procéduraux</h3>
+              <p class="panel-desc" data-i18n="portfolio_screen_1_desc">Pilotage centralisé pour l'avocat : suivi des dossiers prioritaires, audiences fixées (ex: Tribunal de Commerce de Cotonou, 2ème Chambre) et calcul strict des délais de forclusion sous quinzaine pour éviter toute prescription procédurale.</p>
+            </div>
+          </div>
+
+          <!-- Écran 2: Copilot -->
+          <div class="portfolio-panel" id="portfolio-panel-2">
+            <div class="panel-image-frame">
+              <img src="assets/portfolio/smart-juris-copilot.png" alt="SMART JURIS — Copilot IA Juridique Sourcée" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="panel-caption">
+              <h3 class="panel-title" data-i18n="portfolio_screen_2_title">Smart Juris Copilot — IA Juridique Sourcée & Anti-Hallucination</h3>
+              <p class="panel-desc" data-i18n="portfolio_screen_2_desc">Moteur d'assistance juridique de pointe reposant exclusivement sur le corpus officiel OHADA (AUSCGIE, AUDCG, AUS, AUPRVE, AUA) et les arrêts de principe de la CCJA. L'avocat pose ses questions, et l'IA analyse les faits du litige sans jamais inventer d'article ni de jurisprudence.</p>
+            </div>
+          </div>
+
+          <!-- Écran 3: Smart Draft -->
+          <div class="portfolio-panel" id="portfolio-panel-3">
+            <div class="panel-image-frame">
+              <img src="assets/portfolio/smart-juris-draft.png" alt="SMART JURIS — Rédaction d'actes" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="panel-caption">
+              <h3 class="panel-title" data-i18n="portfolio_screen_3_title">Smart Draft — Rédaction Automatisée d'Actes & Mises en Demeure</h3>
+              <p class="panel-desc" data-i18n="portfolio_screen_3_desc">Génération en quelques secondes de mises en demeure et d'actes de procédure. Le système injecte automatiquement les montants réclamés (ex: 45 000 000 FCFA), les parties au contrat et les bases légales applicables.</p>
+            </div>
+          </div>
+
+          <!-- Écran 4: Dossiers -->
+          <div class="portfolio-panel" id="portfolio-panel-4">
+            <div class="panel-image-frame">
+              <img src="assets/portfolio/smart-juris-dossiers.png" alt="SMART JURIS — Gestion des dossiers" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="panel-caption">
+              <h3 class="panel-title" data-i18n="portfolio_screen_4_title">Gestion des Dossiers & Suivi des Juridictions</h3>
+              <p class="panel-desc" data-i18n="portfolio_screen_4_desc">Centralisation des pièces, des juridictions saisies (tribunaux étatiques et centres d'arbitrage CCJA) et archivage ordonné des litiges commerciaux complexes.</p>
+            </div>
+          </div>
+
+          <!-- Écran 5: Audit -->
+          <div class="portfolio-panel" id="portfolio-panel-5">
+            <div class="panel-image-frame">
+              <img src="assets/portfolio/smart-juris-audit.png" alt="SMART JURIS — Journal d'audit et déontologie" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="panel-caption">
+              <h3 class="panel-title" data-i18n="portfolio_screen_5_title">Journal d'Audit Déontologique & Isolation des Données</h3>
+              <p class="panel-desc" data-i18n="portfolio_screen_5_desc">Conformité stricte aux exigences de la profession d'avocat : horodatage UTC infalsifiable de chaque consultation de dossier, de chaque requête IA et export d'acte. Chiffrement de bout en bout et isolation étanche des données de chaque cabinet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 3 : Cas Concrets de Gain de Temps (Avant / Après)
+       ========================================================================== -->
+  <section id="cases" class="cases-block">
+    <div class="container">
+      <span class="section-label" data-i18n="cases_tag">Cas Concrets</span>
+      <h2 class="section-h2" data-i18n="cases_title">Ce qui change concrètement pour votre quotidien</h2>
+      <p style="font-size: 1.05rem; color: var(--ink-700); margin-top: 10px;" data-i18n="cases_subtitle">
+        Voici comment nous transformons des processus lourds en flux fluides.
+      </p>
+
+      <div class="cases-list">
+        <!-- Cas 1 -->
+        <div class="case-row-card">
+          <div class="case-row-header">
+            <span class="case-sector-pill" data-i18n="case_1_badge">Distribution & Gestion Commerciale</span>
+            <h3 class="case-row-title" data-i18n="case_1_title">Traitement des bons de commande & factures fournisseurs</h3>
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comparison-col col-before">
+              <strong data-i18n="case_1_before_label">Avant :</strong>
+              <p data-i18n="case_1_before">Chaque matin, 2 à 3 heures passées à ouvrir des emails, télécharger des pièces jointes PDF et recopier manuellement les montants dans un logiciel comptable.</p>
+            </div>
+            <div class="comparison-col col-after">
+              <strong data-i18n="case_1_after_label">Avec notre solution :</strong>
+              <p data-i18n="case_1_after">Les pièces jointes sont analysées dès réception. Les montants et références sont extraits automatiquement et présentés sur un écran de validation rapide en 1 clic.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cas 2 -->
+        <div class="case-row-card">
+          <div class="case-row-header">
+            <span class="case-sector-pill" data-i18n="case_2_badge">Interventions & Équipes Terrain</span>
+            <h3 class="case-row-title" data-i18n="case_2_title">Fiches d'intervention et rapports techniques</h3>
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comparison-col col-before">
+              <strong data-i18n="case_2_before_label">Avant :</strong>
+              <p data-i18n="case_2_before">Rapports papier remplis sur place, stockés dans les véhicules puis resaisis au bureau en fin de semaine, entraînant des retards de facturation de plusieurs jours.</p>
+            </div>
+            <div class="comparison-col col-after">
+              <strong data-i18n="case_2_after_label">Avec notre application :</strong>
+              <p data-i18n="case_2_after">Le technicien remplit la fiche en 2 minutes sur son smartphone, prend une photo, fait signer le client et le rapport PDF est envoyé automatiquement au bureau.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cas 3 -->
+        <div class="case-row-card">
+          <div class="case-row-header">
+            <span class="case-sector-pill" data-i18n="case_3_badge">Services & Relations Clients</span>
+            <h3 class="case-row-title" data-i18n="case_3_title">Gestion des demandes entrantes répétitives</h3>
+          </div>
+
+          <div class="comparison-grid">
+            <div class="comparison-col col-before">
+              <strong data-i18n="case_3_before_label">Avant :</strong>
+              <p data-i18n="case_3_before">Des dizaines de messages WhatsApp et emails identiques chaque semaine pour demander des tarifs de base ou des disponibilités, retardant le travail de fond.</p>
+            </div>
+            <div class="comparison-col col-after">
+              <strong data-i18n="case_3_after_label">Avec notre automatisation :</strong>
+              <p data-i18n="case_3_after">Un système automatisé répond immédiatement aux questions fréquentes 24h/24 et ne transfère au dirigeant que les demandes qualifiées avec coordonnées complètes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 4 : Notre Manière de Travailler
+       ========================================================================== -->
+  <section id="approach" class="approach-section">
+    <div class="container">
+      <span class="section-label" data-i18n="approach_tag">Notre Façon de Travailler</span>
+      <h2 class="section-h2" data-i18n="approach_title">Un accompagnement d'artisan, de la première discussion à la mise en main</h2>
+
+      <div class="approach-steps-grid">
+        <div class="step-card">
+          <h3 class="step-heading" data-i18n="step_1_title">1. Écoute & Cadrage</h3>
+          <p class="step-desc" data-i18n="step_1_desc">Nous nous asseyons avec vous pour comprendre comment vous travaillez aujourd'hui, identifier les goulots d'étranglement et définir ce qui vous fera gagner le plus de temps.</p>
+        </div>
+
+        <div class="step-card">
+          <h3 class="step-heading" data-i18n="step_2_title">2. Conception simple & directe</h3>
+          <p class="step-desc" data-i18n="step_2_desc">Nous vous montrons des maquettes claires avant de coder. Pas d'usine à gaz : nous éliminons tout ce qui est superflu pour garder un outil simple d'usage.</p>
+        </div>
+
+        <div class="step-card">
+          <h3 class="step-heading" data-i18n="step_3_title">3. Développement & Tests en conditions réelles</h3>
+          <p class="step-desc" data-i18n="step_3_desc">Nous programmons des logiciels robustes et nous testons chaque étape avec vos données et vos scénarios réels.</p>
+        </div>
+
+        <div class="step-card">
+          <h3 class="step-heading" data-i18n="step_4_title">4. Installation, Formation & Suivi</h3>
+          <p class="step-desc" data-i18n="step_4_desc">Nous formons vos collaborateurs, restons à vos côtés lors du démarrage et assurons le suivi technique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 5 : Garanties & Transparence
+       ========================================================================== -->
+  <section id="commitments" class="commitments-section">
+    <div class="container">
+      <span class="section-label" data-i18n="commit_tag">Garanties & Transparence</span>
+      <h2 class="section-h2" data-i18n="commit_title">Ce sur quoi nous nous engageons clairement</h2>
+
+      <div class="commitments-grid">
+        <div class="commit-card">
+          <h3 class="commit-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span data-i18n="commit_1_title">Vous êtes 100% propriétaire</span>
+          </h3>
+          <p class="commit-desc" data-i18n="commit_1_desc">Le code source et les accès vous appartiennent intégralement. Si demain vous souhaitez changer de prestataire ou internaliser, rien ne vous bloque.</p>
+        </div>
+
+        <div class="commit-card">
+          <h3 class="commit-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span data-i18n="commit_2_title">Vos données restent strictement confidentielles</span>
+          </h3>
+          <p class="commit-desc" data-i18n="commit_2_desc">Nous ne divulguons jamais vos données et nous n'utilisons aucun système d'IA qui réutilise les données de votre entreprise pour son apprentissage public.</p>
+        </div>
+
+        <div class="commit-card">
+          <h3 class="commit-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span data-i18n="commit_3_title">Zéro jargon, un langage direct</span>
+          </h3>
+          <p class="commit-desc" data-i18n="commit_3_desc">Nous vous expliquons les choses simplement, sans mots techniques compliqués, afin que vous gardiez toujours le contrôle de vos décisions.</p>
+        </div>
+
+        <div class="commit-card">
+          <h3 class="commit-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span data-i18n="commit_4_title">Un contact direct et disponible</span>
+          </h3>
+          <p class="commit-desc" data-i18n="commit_4_desc">Vous échangez avec la personne qui conçoit et développe réellement vos outils, pas avec un intermédiaire commercial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 6 : Questions Fréquentes
+       ========================================================================== -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <span class="section-label" data-i18n="faq_tag">Questions Pratiques</span>
+      <h2 class="section-h2" data-i18n="faq_title">Questions fréquentes</h2>
+
+      <div class="faq-wrapper">
+        <div class="faq-entry">
+          <button type="button" class="faq-question-btn">
+            <span data-i18n="faq_q1">Comment savoir si mon entreprise a besoin d'une automatisation ou d'une application ?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq_a1">
+              Si vos équipes répètent la même tâche manuelle plus de 3 fois par jour (saisir des données, renvoyer les mêmes documents, relancer manuellement, compiler des tableurs), il y a un gain de temps immédiat à faire. Un simple échange de 20 minutes suffit pour identifier les priorités.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-entry">
+          <button type="button" class="faq-question-btn">
+            <span data-i18n="faq_q2">Combien de temps faut-il pour avoir un premier outil fonctionnel ?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq_a2">
+              Pour une automatisation ciblée, cela peut être prêt en 2 à 3 semaines. Pour une application web ou mobile complète, nous privilégions la livraison d'une première version utile en 4 à 6 semaines, puis nous l'améliorons avec vos retours.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-entry">
+          <button type="button" class="faq-question-btn">
+            <span data-i18n="faq_q3">Est-ce difficile à prendre en main pour mes équipes ?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq_a3">
+              Non, car nous concevons les outils selon vos habitudes existantes, pas l'inverse. Si vos collaborateurs savent utiliser WhatsApp ou un navigateur web, ils sauront utiliser nos outils en moins de 30 minutes.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-entry">
+          <button type="button" class="faq-question-btn">
+            <span data-i18n="faq_q4">Comment se déroule la collaboration ?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq_a4">
+              Nous commençons par un diagnostic de vos besoins. Nous vous fournissons ensuite un devis clair et détaillé. Une fois validé, nous travaillons par étapes avec des démonstrations régulières.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Section 7 : Contact & Premier Échange
+       ========================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <span class="section-label" data-i18n="contact_tag">Premier Échange</span>
+      <h2 class="section-h2" data-i18n="contact_title">Parlons simplement de vos besoins</h2>
+      <p style="font-size: 1.05rem; color: var(--ink-700); margin-top: 10px;" data-i18n="contact_subtitle">
+        Expliquez-nous ce qui vous fait perdre du temps au quotidien. Nous vous dirons en toute franchise si une solution technique est pertinente et comment la mettre en place.
+      </p>
+
+      <div class="contact-columns">
+        <!-- Moyens directs -->
+        <div class="contact-direct-box">
+          <a href="https://wa.me/2290162115411" target="_blank" class="direct-method-card wa-highlight js-wa-link">
+            <div class="method-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+              </svg>
+            </div>
+            <div class="method-info">
+              <h4>WhatsApp Direct</h4>
+              <p data-i18n="contact_wa_btn">Discuter sur WhatsApp (+229 0162115411)</p>
+            </div>
+          </a>
+
+          <a href="tel:+2290162115411" class="direct-method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="method-info">
+              <h4>Téléphone</h4>
+              <p data-i18n="contact_call_btn">Appeler au +229 0162115411</p>
+            </div>
+          </a>
+
+          <a href="mailto:contact@aiforce.agency" class="direct-method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="method-info">
+              <h4>Courriel Direct</h4>
+              <p data-i18n="contact_mail_label">Par email : contact@aiforce.agency</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Formulaire de contact sobre -->
+        <div class="contact-form-card">
+          <h3 class="contact-form-title" data-i18n="form_title">Décrivez-nous votre projet en quelques mots</h3>
+
+          <form id="contact-form">
+            <div class="form-field">
+              <label for="contact-name" data-i18n="form_name_label">Votre nom & Nom de l'entreprise</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Ex: Jean Dupont — Société ABC" data-i18n-placeholder="form_name_ph" required>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-phone" data-i18n="form_contact_label">Numéro de téléphone ou Email</label>
+              <input type="text" id="contact-phone" class="form-input" placeholder="Ex: +229 01... ou jean@societe.com" data-i18n-placeholder="form_contact_ph" required>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-need" data-i18n="form_need_label">Quel est le problème principal ou la tâche à simplifier ?</label>
+              <textarea id="contact-need" class="form-input" placeholder="Ex: Nous perdons beaucoup de temps sur la saisie des devis..." data-i18n-placeholder="form_need_ph" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-solid" style="width: 100%;" data-i18n="form_submit">
+              Envoyer ma demande par WhatsApp / Email
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-side">
+          <img src="assets/logo.png" alt="AIFORCE" style="height: 38px; width: auto;">
+          <p data-i18n="footer_text">
+            AIFORCE AGENCY — Ingénierie logicielle & automatisation des processus. Nous concevons des outils informatiques simples, fiables et utiles.
+          </p>
+        </div>
+
+        <div class="footer-info-side">
+          <div class="footer-info-col">
+            <h5 data-i18n="nav_services">Ce que nous faisons</h5>
+            <p data-i18n="service_web_title">Applications Web & Mobiles</p>
+            <p data-i18n="service_ai_title">Automatisation & IA</p>
+          </div>
+
+          <div class="footer-info-col">
+            <h5>Contact</h5>
+            <a href="tel:+2290162115411">+229 0162115411</a>
+            <a href="https://wa.me/2290162115411" target="_blank">WhatsApp</a>
+            <a href="mailto:contact@aiforce.agency">contact@aiforce.agency</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 <strong data-i18n="footer_copy">AIFORCE AGENCY. Tous droits réservés.</strong></p>
+        <p data-i18n="footer_location">International & Afrique de l'Ouest</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton d'accès direct WhatsApp Flottant -->
+  <a href="https://wa.me/2290162115411" target="_blank" class="floating-wa-launcher js-wa-link" aria-label="WhatsApp AIFORCE">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+    </svg>
+    <span>WhatsApp Direct</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
