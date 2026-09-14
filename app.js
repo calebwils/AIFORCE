@@ -209,13 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
       btnFiltec.classList.toggle('active', isFiltec);
     }
 
-    // Tabs Track
+    // Tabs Track — Défilement du bandeau d'onglets uniquement (ne bloque JAMAIS le scroll de la page)
+    const tabsTrack = document.getElementById('portfolio-tabs-track');
     tabBtns.forEach((tb) => {
       const tbIdx = parseInt(tb.getAttribute('data-slide-index'), 10);
       const isTabActive = tbIdx === currentSlideIndex;
       tb.classList.toggle('active', isTabActive);
-      if (isTabActive) {
-        tb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      if (isTabActive && tabsTrack) {
+        const tabOffset = tb.offsetLeft - (tabsTrack.offsetWidth / 2) + (tb.offsetWidth / 2);
+        tabsTrack.scrollTo({ left: tabOffset, behavior: 'smooth' });
       }
     });
 
@@ -382,27 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mousemove', onDragMove);
     window.addEventListener('mouseup', onDragEnd);
 
-    // Support Défilement Trackpad horizontal (Mac 2 doigts) & Molette Shift
-    let wheelTimer = null;
-    let accumulatedDelta = 0;
-    viewport.addEventListener('wheel', (e) => {
-      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : (e.shiftKey ? e.deltaY : 0);
-      if (Math.abs(delta) > 6) {
-        if (e.cancelable) e.preventDefault();
-        accumulatedDelta += delta;
-        if (!wheelTimer) {
-          wheelTimer = setTimeout(() => {
-            if (accumulatedDelta > 20 && currentSlideIndex < totalSlides - 1) {
-              goToSlide(currentSlideIndex + 1);
-            } else if (accumulatedDelta < -20 && currentSlideIndex > 0) {
-              goToSlide(currentSlideIndex - 1);
-            }
-            accumulatedDelta = 0;
-            wheelTimer = null;
-          }, 35);
-        }
-      }
-    }, { passive: false });
+
 
     // Clic sur l'image -> Lightbox (seulement si pas en glissement)
     slides.forEach((slide, idx) => {
@@ -525,8 +507,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const thumbs = lbThumbnails.querySelectorAll('.lightbox-thumb');
       thumbs.forEach((t, i) => {
         t.classList.toggle('active', i === lbIndex);
-        if (i === lbIndex) {
-          t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        if (i === lbIndex && lbThumbnails) {
+          const tOffset = t.offsetLeft - (lbThumbnails.offsetWidth / 2) + (t.offsetWidth / 2);
+          lbThumbnails.scrollTo({ left: tOffset, behavior: 'smooth' });
         }
       });
     }
