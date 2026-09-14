@@ -61,7 +61,7 @@ const translations = {
 
 
     // Hero Photo Badge
-    hero_badge_name: "Ingénieur en Chef & Fondateur",
+    hero_badge_name: "Full Stack AI Developer & Automation Engineer",
     hero_badge_sub: "Conception Web, Mobile & Automatisation IA",
     hero_status_available: "Disponible pour nouveaux projets",
 
@@ -316,7 +316,7 @@ const translations = {
 
 
     // Hero Photo Badge
-    hero_badge_name: "Lead Software Engineer & Founder",
+    hero_badge_name: "Full Stack AI Developer & Automation Engineer",
     hero_badge_sub: "Web, Mobile Architecture & Practical AI",
     hero_status_available: "Available for new projects",
 
