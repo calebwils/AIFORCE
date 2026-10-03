@@ -1638,8 +1638,33 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openAIFORCEChat = openChat;
   };
 
-  // Launch Chatbot Module
-  initAIChatbot();
+  // Interactive Project Thumbnails switcher (for multi-screenshot showcase)
+  const initProjectThumbnails = () => {
+    document.querySelectorAll('.proj-thumb-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-target');
+        const newSrc = btn.getAttribute('data-img');
+        const targetImg = document.getElementById(targetId);
+        if (!targetImg || !newSrc) return;
+
+        const parentRow = btn.closest('.project-thumbs-row');
+        if (parentRow) {
+          parentRow.querySelectorAll('.proj-thumb-btn').forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+
+        targetImg.style.opacity = '0.3';
+        targetImg.style.transition = 'opacity 0.18s ease';
+        setTimeout(() => {
+          targetImg.src = newSrc;
+          targetImg.style.opacity = '1';
+        }, 150);
+      });
+    });
+  };
+
+  initProjectThumbnails();
 
   // Initialisation finale : activer la langue enregistrée sur tous les composants
   setLanguage(currentLang);
