@@ -1,4 +1,35 @@
 {
   "version": 2,
-  "cleanUrls": true
+  "builds": [
+    {
+      "src": "api/chat.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/send-lead.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "{index.html,app.js,styles.css,translations.js,assets/**,Smart juris images/**,filtec image/**,banner image/**}",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
+    },
+    {
+      "src": "/api/send-lead",
+      "dest": "/api/send-lead.js"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
