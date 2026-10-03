@@ -1638,13 +1638,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.openAIFORCEChat = openChat;
   };
 
-  // Interactive Project Thumbnails switcher (for multi-screenshot showcase)
+  // Interactive Project Thumbnails switcher with instant hover preloading
   const initProjectThumbnails = () => {
     document.querySelectorAll('.proj-thumb-btn').forEach((btn) => {
+      const newSrc = btn.getAttribute('data-img');
+
+      // Hover Preload: cache image in browser memory before click
+      btn.addEventListener('mouseenter', () => {
+        if (newSrc && !btn._preloaded) {
+          const preImg = new Image();
+          preImg.src = newSrc;
+          btn._preloaded = true;
+        }
+      });
+
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = btn.getAttribute('data-target');
-        const newSrc = btn.getAttribute('data-img');
         const targetImg = document.getElementById(targetId);
         if (!targetImg || !newSrc) return;
 
@@ -1659,7 +1669,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           targetImg.src = newSrc;
           targetImg.style.opacity = '1';
-        }, 150);
+        }, 120);
       });
     });
   };
