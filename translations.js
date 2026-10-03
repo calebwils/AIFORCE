@@ -109,10 +109,10 @@ const translations = {
 
     btn_open_gallery: "Explorer la galerie complète en plein écran",
 
-    // Nouveaux ajouts : Slider Portfolio Unifié & Écrans Filtec
-    portfolio_main_tag: "Portfolio • Réalisations Phares",
-    portfolio_main_title: "Notre Portfolio",
-    portfolio_main_desc: "Explorez nos architectures logicielles en production : glissez horizontalement vers la gauche ou la droite pour parcourir l'ensemble de nos réalisations, de SMART JURIS à FILTEC ONE.",
+    // Nouveaux ajouts : Showcase Portfolio Projet par Projet
+    portfolio_main_tag: "Réalisations & Systèmes Déployés",
+    portfolio_main_title: "Des Architectures Logicielles Réelles en Production",
+    portfolio_main_desc: "Chaque système est présenté séparément avec son interface réelle, son utilité opérationnelle directe, son architecture technique et son lien pour tester l'application.",
     slider_swipe_hint: "↔ Glissez avec la souris ou au doigt pour naviguer entre les projets",
 
     portfolio_filtec_tab_7: "Annuaire Distributeurs",
@@ -252,7 +252,33 @@ const translations = {
     footer_phone: "Téléphone & WhatsApp : +229 0162115411",
     footer_email: "Email : contact@aiforce.agency",
     footer_location: "International & Afrique de l'Ouest",
-    footer_copy: "AIFORCE AGENCY. Tous droits réservés."
+    footer_copy: "AIFORCE AGENCY. Tous droits réservés.",
+
+    // Chatbot IA & Fiche d'Offre
+    nav_ai_assistant: "✨ Assistant IA & Offre",
+    hero_cta_ai: "✨ Cadrer mon projet avec l'IA",
+    ai_launcher_label: "Assistant IA & Offre",
+    ai_launcher_badge: "Qwen IA Active",
+    ai_launcher_tooltip: "💡 Obtenez votre fiche d'offre personnalisée en 3 min !",
+    chat_title: "AIFORCE Copilot",
+    chat_subtitle: "Consultant Tech & Cadrage de Projet",
+    chat_status: "En ligne • Qwen Intelligence",
+    chat_step_1: "1. Contexte",
+    chat_step_2: "2. Solution",
+    chat_step_3: "3. Fonctions MVP",
+    chat_step_4: "4. Délais & Budget",
+    chat_step_5: "5. Fiche d'Offre 📄",
+    chat_placeholder: "Écrivez votre message à l'assistant...",
+    chat_send: "Envoyer",
+    chat_reset: "Nouvel échange",
+    chat_offer_badge: "AIFORCE AGENCY • OFFRE DE CADRAGE PRÉVISIONNELLE",
+    chat_download: "📥 Télécharger la Fiche d'Offre (PDF)",
+    chat_wa_share: "Transmettre sur WhatsApp à Caleb",
+    chat_print: "Imprimer / Sauvegarder en PDF",
+    chat_copied: "Fiche copiée dans le presse-papier !",
+    chat_adjust: "Ajuster un point",
+    chat_welcome_msg: "Bonjour et bienvenue chez AIFORCE ! 👋 Je suis votre assistant de cadrage technique. Pour concevoir votre solution sur-mesure et vous transmettre votre **Fiche d'Offre personnalisée sous quelques minutes** :\n\n**Quel est votre prénom / nom, le nom de votre entreprise, votre adresse email et votre numéro WhatsApp ?**",
+    chat_disclaimer: "Vos informations restent strictement confidentielles et ne sont jamais divulguées."
   },
 
   en: {
@@ -364,10 +390,10 @@ const translations = {
 
     btn_open_gallery: "Explore full-screen gallery",
 
-    // New additions: Unified Portfolio Slider & Filtec Screens
-    portfolio_main_tag: "Portfolio • Featured Systems",
-    portfolio_main_title: "Our Portfolio",
-    portfolio_main_desc: "Explore our software architectures running in production: drag or swipe horizontally to browse through our work, from SMART JURIS to FILTEC ONE.",
+    // New additions: Projects Showcase
+    portfolio_main_tag: "Deployed Systems & Case Studies",
+    portfolio_main_title: "Real-World Software Architectures in Production",
+    portfolio_main_desc: "Each system is showcased separately with its real user interface, direct operational value, technical architecture, and live links to test the app.",
     slider_swipe_hint: "↔ Drag or swipe horizontally to navigate projects",
 
     portfolio_filtec_tab_7: "Dealer Accounts",
@@ -507,6 +533,32 @@ const translations = {
     footer_phone: "Phone & WhatsApp: +229 0162115411",
     footer_email: "Email: contact@aiforce.agency",
     footer_location: "International & West Africa",
-    footer_copy: "AIFORCE AGENCY. All rights reserved."
+    footer_copy: "AIFORCE AGENCY. All rights reserved.",
+
+    // Chatbot AI & Project Offer
+    nav_ai_assistant: "✨ AI Copilot & Scope",
+    hero_cta_ai: "✨ Scope my project with AI",
+    ai_launcher_label: "AI Copilot & Offer",
+    ai_launcher_badge: "Qwen AI Active",
+    ai_launcher_tooltip: "💡 Get your custom project scope in 3 minutes!",
+    chat_title: "AIFORCE Copilot",
+    chat_subtitle: "Tech Consultant & Project Scoping",
+    chat_status: "Online • Qwen Intelligence",
+    chat_step_1: "1. Context",
+    chat_step_2: "2. Solution",
+    chat_step_3: "3. MVP Features",
+    chat_step_4: "4. Timeline & Budget",
+    chat_step_5: "5. Project Offer 📄",
+    chat_placeholder: "Type your message to the assistant...",
+    chat_send: "Send",
+    chat_reset: "New chat",
+    chat_offer_badge: "AIFORCE AGENCY • ESTIMATED PROJECT SCOPE & PROPOSAL",
+    chat_download: "📥 Download Project Offer (PDF)",
+    chat_wa_share: "Send to Caleb via WhatsApp",
+    chat_print: "Print / Save as PDF",
+    chat_copied: "Specification copied to clipboard!",
+    chat_adjust: "Adjust a detail",
+    chat_welcome_msg: "Hello and welcome to AIFORCE! 👋 I am your technical scoping assistant. To design your tailored solution and send you your **Custom Project Offer within minutes**:\n\n**What is your full name, company name, email address, and WhatsApp number?**",
+    chat_disclaimer: "Your information remains strictly confidential and is never shared."
   }
 };

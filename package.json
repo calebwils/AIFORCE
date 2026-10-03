@@ -1,0 +1,21 @@
+{
+  "name": "aiforce-agency",
+  "version": "2.0.0",
+  "description": "AIFORCE AGENCY — Ingénierie Logicielle Web & Mobile, Automatisation des Processus & Chatbot IA Qwen",
+  "main": "server.js",
+  "scripts": {
+    "build": "echo 'Build successful'",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "aiforce",
+    "qwen",
+    "chatbot",
+    "ai",
+    "automation",
+    "consulting"
+  ],
+  "author": "Caleb & AIFORCE Team",
+  "license": "ISC"
+}

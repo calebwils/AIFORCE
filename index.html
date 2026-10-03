@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261002b">
 </head>
 <body>
 
@@ -46,6 +46,11 @@
           <button type="button" class="lang-btn active" data-lang="fr">FR</button>
           <button type="button" class="lang-btn" data-lang="en">EN</button>
         </div>
+
+        <button type="button" class="btn btn-ai-sparkle btn-small js-open-ai-chat" aria-label="Ouvrir l'assistant IA AIFORCE">
+          <span class="ai-sparkle-icon">✨</span>
+          <span data-i18n="nav_ai_assistant">Assistant IA & Offre</span>
+        </button>
 
         <a href="#contact" class="btn btn-solid btn-small" data-i18n="nav_cta">Échanger sur un projet</a>
 
@@ -85,7 +90,10 @@
             <span data-i18n="hero_cta_wa">Échanger directement sur WhatsApp</span>
           </a>
 
-
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat" aria-label="Cadrer mon projet avec l'IA">
+            <span class="ai-sparkle-icon">✨</span>
+            <span data-i18n="hero_cta_ai">Cadrer mon projet avec l'IA</span>
+          </button>
         </div>
       </div>
 
@@ -110,68 +118,7 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Section 1 : La Valeur Clé : Le Gain de Temps
-       ========================================================================== -->
-  <section class="time-section">
-    <div class="container">
-      <div class="time-header-grid">
-        <div>
-          <span class="section-label" data-i18n="time_tag">Le Temps : Votre Première Ressource</span>
-          <h2 class="section-h2" data-i18n="time_title">
-            Combien d'heures vos équipes perdent-elles chaque semaine en saisies inutiles ?
-          </h2>
-        </div>
-        <div>
-          <p class="time-intro-text" data-i18n="time_intro">
-            Dans la majorité des entreprises, des collaborateurs qualifiés passent des heures à copier des données d'un fichier à un autre, à rédiger des comptes-rendus à la main ou à chercher des informations dispersées. Notre mission est de vous redonner ce temps.
-          </p>
-        </div>
-      </div>
 
-      <div class="time-pillars-grid">
-        <div class="time-card">
-          <div class="time-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 3 21 3 21 8"></polyline>
-              <line x1="4" y1="20" x2="21" y2="3"></line>
-              <polyline points="21 16 21 21 16 21"></polyline>
-              <line x1="15" y1="15" x2="21" y2="21"></line>
-              <line x1="4" y1="4" x2="9" y2="9"></line>
-            </svg>
-          </div>
-          <h3 class="time-card-h3" data-i18n="time_col_1_title">Supprimer les doubles saisies</h3>
-          <p class="time-card-desc" data-i18n="time_col_1_desc">Connecter vos outils (logiciel de facturation, tableurs, messageries, CRM) pour que l'information circule sans intervention humaine.</p>
-        </div>
-
-        <div class="time-card">
-          <div class="time-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </div>
-          <h3 class="time-card-h3" data-i18n="time_col_2_title">Traiter les documents sans attendre</h3>
-          <p class="time-card-desc" data-i18n="time_col_2_desc">Lire, classer et extraire automatiquement les données de vos factures, devis et bons de commande dès leur réception.</p>
-        </div>
-
-        <div class="time-card">
-          <div class="time-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </div>
-          <h3 class="time-card-h3" data-i18n="time_col_3_title">Des outils adaptés à votre réalité</h3>
-          <p class="time-card-desc" data-i18n="time_col_3_desc">Développer des applications web et mobiles qui collent exactement à votre manière de travailler, sans fonctionnalités superflues.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================================================
        Section 2 : Nos Deux Métiers
@@ -263,427 +210,238 @@
   </section>
 
   <!-- ==========================================================================
-       Section Réalisations Réelles : Multi-Projets (SMART JURIS & FILTEC ONE)
-       Carousel Glissant Continu (Gauche / Droite)
+       Section Réalisations & Systèmes en Production (Projet par Projet)
        ========================================================================== -->
-  <section id="portfolio" class="portfolio-section">
+  <section id="portfolio" class="portfolio-showcase-section">
     <div class="container">
 
-      <!-- En-tête Principal du Portfolio -->
+      <!-- En-tête Principal -->
       <div class="portfolio-main-header">
-        <span class="section-label" data-i18n="portfolio_main_tag">Portfolio • Réalisations Phares</span>
-        <h2 class="section-h2" data-i18n="portfolio_main_title">Notre Portfolio</h2>
+        <span class="section-label" data-i18n="portfolio_main_tag">Réalisations & Systèmes Déployés</span>
+        <h2 class="section-h2" data-i18n="portfolio_main_title">Des Architectures Logicielles Réelles en Production</h2>
         <p class="portfolio-subtitle" data-i18n="portfolio_main_desc">
-          Explorez nos architectures logicielles en production : glissez horizontalement vers la gauche ou la droite pour parcourir l'ensemble de nos réalisations, de SMART JURIS à FILTEC ONE.
+          Chaque système est présenté séparément avec son interface réelle, son utilité opérationnelle directe, son architecture technique et son lien pour tester l'application.
         </p>
       </div>
 
-      <!-- Grand Sélecteur de Projets Réels (Indicateur actif & Ancre rapide) -->
-      <div class="portfolio-project-selector" role="tablist">
-        <button type="button" class="project-selector-btn active" id="btn-project-smartjuris" data-project="smartjuris">
-          <span class="selector-badge" data-i18n="selector_sj_tag">IA & Juridique</span>
-          <span class="selector-name" data-i18n="selector_sj_title">SMART JURIS</span>
-          <span class="selector-tagline" data-i18n="selector_sj_desc">Workspace Avocats OHADA (5 captures HD)</span>
-        </button>
+      <!-- Liste des Projets Séparés -->
+      <div class="projects-showcase-list">
 
-        <button type="button" class="project-selector-btn" id="btn-project-filtec" data-project="filtec">
-          <span class="selector-badge" data-i18n="selector_filtec_tag">Industrie & ERP</span>
-          <span class="selector-name" data-i18n="selector_filtec_title">FILTEC ONE</span>
-          <span class="selector-tagline" data-i18n="selector_filtec_desc">ERP Industriel & Logistique B2B (11 captures HD)</span>
-        </button>
-      </div>
-
-      <!-- Barre d'Onglets Défilante (Synchronisée avec le slide actif) -->
-      <div class="portfolio-tabs-wrapper">
-        <div class="portfolio-tabs-track" id="portfolio-tabs-track" role="tablist">
-          <button type="button" class="portfolio-tab-btn active" data-slide-index="0" data-i18n="portfolio_tab_1">1. Tableau de Bord & Délais</button>
-          <button type="button" class="portfolio-tab-btn" data-slide-index="1" data-i18n="portfolio_tab_2">2. Copilot IA OHADA</button>
-          <button type="button" class="portfolio-tab-btn" data-slide-index="2" data-i18n="portfolio_tab_3">3. Smart Draft (Actes)</button>
-          <button type="button" class="portfolio-tab-btn" data-slide-index="3" data-i18n="portfolio_tab_4">4. Gestion des Contentieux</button>
-          <button type="button" class="portfolio-tab-btn" data-slide-index="4" data-i18n="portfolio_tab_5">5. Audit & Déontologie</button>
-
-          <span class="portfolio-tab-divider"></span>
-
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="5" data-i18n="portfolio_filtec_tab_1">6. Contrôle ERP</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="6" data-i18n="portfolio_filtec_tab_2">7. Portail Mobile Reps</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="7" data-i18n="portfolio_filtec_tab_3">8. Facture Proforma A4</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="8" data-i18n="portfolio_filtec_tab_4">9. Catalogue Produits</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="9" data-i18n="portfolio_filtec_tab_5">10. Pointage GPS & RH</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="10" data-i18n="portfolio_filtec_tab_6">11. Hub ERP & Passerelle</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="11" data-i18n="portfolio_filtec_tab_7">12. Annuaire Distributeurs</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="12" data-i18n="portfolio_filtec_tab_8">13. Check-in Terrain</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="13" data-i18n="portfolio_filtec_tab_9">14. Gestion des Congés</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="14" data-i18n="portfolio_filtec_tab_10">15. Saisie Commande</button>
-          <button type="button" class="portfolio-tab-btn tab-filtec" data-slide-index="15" data-i18n="portfolio_filtec_tab_11">16. Expédition Usine</button>
-        </div>
-      </div>
-
-      <!-- Slider Glissant Horizontal (Toucher, Souris Drag, Flèches) -->
-      <div class="portfolio-slider-container">
-        <!-- Flèches de navigation flottantes -->
-        <button type="button" class="slider-arrow prev" id="slider-arrow-prev" aria-label="Slide précédente">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <button type="button" class="slider-arrow next" id="slider-arrow-next" aria-label="Slide suivante">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-
-        <!-- Viewport avec masque -->
-        <div class="portfolio-slider-viewport" id="portfolio-slider-viewport">
-          <div class="portfolio-slider-track" id="portfolio-slider-track">
-            <!-- SLIDE 0: SMART JURIS • IA Juridique -->
-            <div class="portfolio-slide active" data-slide-index="0" data-project="smartjuris">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag sj">SMART JURIS • IA Juridique</span>
-                    <span class="slide-screen-pill">Capture 1 / 16 • Écran 1/5</span>
+        <!-- PROJET 1 : IMMO FILTEC (AVEC LIEN DIRECT VERCEL) -->
+        <article class="project-showcase-card featured" id="project-immo-filtec">
+          <div class="project-card-grid">
+            <!-- Colonne Visuelle -->
+            <div class="project-visual-col">
+              <div class="project-img-frame">
+                <div class="project-browser-bar">
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
                   </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
+                  <div class="browser-url-pill">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>immo-filtec2.vercel.app</span>
+                  </div>
+                  <span class="live-pulse-badge">🟢 En Ligne • Démo Active</span>
                 </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/smart-juris/screen-1.png?v=20260914" alt="SMART JURIS — Tableau de Bord Cabinet" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_screen_1_title">Tableau de Bord Cabinet & Gestion des Délais Procéduraux</h3>
-                  <p class="slide-desc" data-i18n="portfolio_screen_1_desc">Pilotage centralisé pour l'avocat : suivi des dossiers prioritaires, audiences fixées et calcul strict des délais de forclusion sous quinzaine pour éviter toute prescription procédurale.</p>
-                </div>
+                <a href="https://immo-filtec2.vercel.app" target="_blank" rel="noopener noreferrer" class="project-img-link" title="Ouvrir immo-filtec2.vercel.app">
+                  <img src="assets/portfolio/immo-filtec-preview.png" alt="IMMO FILTEC — Plateforme Immobilière & RentScore UEMOA" class="project-hd-img" loading="eager">
+                  <div class="project-hover-overlay">
+                    <span class="overlay-btn-preview">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                      Tester l'application en direct
+                    </span>
+                  </div>
+                </a>
               </div>
             </div>
-            <!-- SLIDE 1: SMART JURIS • IA Juridique -->
-            <div class="portfolio-slide" data-slide-index="1" data-project="smartjuris">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag sj">SMART JURIS • IA Juridique</span>
-                    <span class="slide-screen-pill">Capture 2 / 16 • Écran 2/5</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/smart-juris/screen-2.png?v=20260914" alt="SMART JURIS — Copilot IA Juridique Sourcée" class="slide-img" loading="eager">
-                </div>
 
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_screen_2_title">Smart Juris Copilot — IA Juridique Sourcée & Anti-Hallucination</h3>
-                  <p class="slide-desc" data-i18n="portfolio_screen_2_desc">Moteur d'assistance juridique de pointe reposant exclusivement sur le corpus officiel OHADA et les arrêts de principe de la CCJA. L'avocat pose ses questions, et l'IA analyse les faits sans inventer d'article ni de jurisprudence.</p>
+            <!-- Colonne Explications / Métier / Architecture -->
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-badge proptech">PropTech & FinTech Immobilière</span>
+                <span class="proj-zone">Marché UEMOA (Bénin • CI • Sénégal)</span>
+              </div>
+
+              <h3 class="proj-title">IMMO FILTEC — Plateforme Immobilière Intelligente & RentScore™</h3>
+              
+              <p class="proj-pitch">
+                Plateforme web moderne de mise en relation directe acquéreurs, locataires et agences immobilières agréées, avec suppression des commissions cachées et sécurisation des transactions.
+              </p>
+
+              <!-- Ce que fait le système (Concret, sans blabla) -->
+              <div class="proj-features-box">
+                <div class="pf-title">Ce que fait concrètement la plateforme :</div>
+                <ul class="pf-list">
+                  <li><strong>Matching Prédictif & Sélection IA :</strong> Recommandations prédictives selon quartier, sécurité, fibre et autonomie électrique (Haie Vive, Cocody, Almadies).</li>
+                  <li><strong>Score de Solvabilité RentScore™ :</strong> Évaluation algorithmique des locataires (780/850) et garantie PaySafe™ (séquestre sans frais cachés).</li>
+                  <li><strong>Suivi des Demandes Clients en Direct :</strong> File centralisée d'acquéreurs et locataires qualifiés avec budgets certifiés en temps réel.</li>
+                  <li><strong>Canal Direct WhatsApp :</strong> Prise de contact instantanée avec propriétaires et agences en 1 clic sans intermédiaire opaque.</li>
+                </ul>
+              </div>
+
+              <!-- Architecture & Stack Technique -->
+              <div class="proj-tech-box">
+                <div class="pt-label">Architecture & Technologies :</div>
+                <div class="pt-tags">
+                  <span class="tech-tag">React 19</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">Lucide React</span>
+                  <span class="tech-tag">Recharts</span>
+                  <span class="tech-tag">Vercel Edge</span>
+                  <span class="tech-tag">SPA Temps Réel</span>
                 </div>
               </div>
-            </div>
-            <!-- SLIDE 2: SMART JURIS • IA Juridique -->
-            <div class="portfolio-slide" data-slide-index="2" data-project="smartjuris">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag sj">SMART JURIS • IA Juridique</span>
-                    <span class="slide-screen-pill">Capture 3 / 16 • Écran 3/5</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/smart-juris/screen-3.png?v=20260914" alt="SMART JURIS — Rédaction d'actes" class="slide-img" loading="eager">
-                </div>
 
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_screen_3_title">Smart Draft — Rédaction Automatisée d'Actes & Mises en Demeure</h3>
-                  <p class="slide-desc" data-i18n="portfolio_screen_3_desc">Génération en quelques secondes de mises en demeure et d'actes de procédure. Le système injecte automatiquement les montants réclamés, les parties au contrat et les bases légales applicables.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 3: SMART JURIS • IA Juridique -->
-            <div class="portfolio-slide" data-slide-index="3" data-project="smartjuris">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag sj">SMART JURIS • IA Juridique</span>
-                    <span class="slide-screen-pill">Capture 4 / 16 • Écran 4/5</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/smart-juris/screen-4.png?v=20260914" alt="SMART JURIS — Gestion des dossiers" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_screen_4_title">Gestion des Dossiers & Suivi des Juridictions</h3>
-                  <p class="slide-desc" data-i18n="portfolio_screen_4_desc">Centralisation des pièces, des juridictions saisies (tribunaux étatiques et centres d'arbitrage CCJA) et archivage ordonné des litiges commerciaux complexes.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 4: SMART JURIS • IA Juridique -->
-            <div class="portfolio-slide" data-slide-index="4" data-project="smartjuris">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag sj">SMART JURIS • IA Juridique</span>
-                    <span class="slide-screen-pill">Capture 5 / 16 • Écran 5/5</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/smart-juris/screen-5.png?v=20260914" alt="SMART JURIS — Journal d'audit et déontologie" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_screen_5_title">Journal d'Audit Déontologique & Isolation des Données</h3>
-                  <p class="slide-desc" data-i18n="portfolio_screen_5_desc">Conformité stricte aux exigences de la profession d'avocat : horodatage UTC infalsifiable de chaque consultation de dossier, de chaque requête IA et export d'acte. Chiffrement de bout en bout et isolation étanche.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 5: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="5" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 6 / 16 • Écran 1/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-1.png?v=20260914" alt="FILTEC ONE — Centre de Contrôle Opérationnel" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_1_title">Centre de Contrôle Opérationnel & File d'Approbation</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_1_desc">Interface administrative temps réel pour la direction générale : validation financière des commandes agents, blocage des dépassements de crédit et affectation logistique aux usines.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 6: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="6" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 7 / 16 • Écran 2/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-5.png?v=20260914" alt="FILTEC ONE — Portail Mobile Distributeurs" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_2_title">Portail Mobile Distributeurs & Représentants Terrain</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_2_desc">Application responsive ultra-rapide sur mobile pour la force de vente : consultation des stocks, calcul immédiat des remises par palier et soumission instantanée des commandes chez le client.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 7: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="7" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 8 / 16 • Écran 3/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-7.png?v=20260914" alt="FILTEC ONE — Facture Proforma B2B A4" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_3_title">Génération de Facture Proforma B2B & Export WhatsApp</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_3_desc">Création automatique du devis proforma aux normes comptables et fiscales (GST / HT / TTC), ventilation par spécification de tube et expédition en 1 clic au client et à la comptabilité.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 8: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="8" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 9 / 16 • Écran 4/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-6.png?v=20260914" alt="FILTEC ONE — Catalogue Produits" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_4_title">Catalogue Produits & Barèmes Tarifaires Dynamiques</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_4_desc">Gestion de centaines de références industrielles (PVC, uPVC, CPVC, raccords) avec tarification différenciée selon les tiers distributeurs et fiches techniques haute définition.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 9: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="9" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 10 / 16 • Écran 5/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-2.png?v=20260914" alt="FILTEC ONE — Pointage GPS Terrain" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_5_title">Pointage GPS, Géolocalisation & Feuille de Présence RH</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_5_desc">Suivi fiable des techniciens et commerciaux sur le terrain : validation de la prise de poste avec coordonnées GPS infalsifiables et gestion transparente des demandes de congés.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 10: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="10" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 11 / 16 • Écran 6/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-4.png?v=20260914" alt="FILTEC ONE — Hub Intégrations ERP & WhatsApp" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_6_title">Hub d'Intégration ERP, Facturation & Passerelle WhatsApp</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_6_desc">Passerelle bidirectionnelle synchronisant les statuts avec le progiciel de facturation d'entreprise et déclenchant les notifications d'expédition vers les transporteurs.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 11: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="11" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 12 / 16 • Écran 7/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-3.png?v=20260914" alt="FILTEC ONE — Annuaire des Distributeurs" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_7_title">Annuaire des Comptes Distributeurs & En-cours Crédit</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_7_desc">Fiche centrale par distributeur : historique des commandes, encours financier autorisé, délais de paiement et coordonnées des gérants.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 12: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="12" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 13 / 16 • Écran 8/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-8.png?v=20260914" alt="FILTEC ONE — Check-in Mobile Terrain" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_8_title">Check-in Mobile & Validation Déplacement Commercial</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_8_desc">Validation géolocalisée des visites commerciales auprès des quincailleries et distributeurs agréés avec rapport de visite instantané.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 13: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="13" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 14 / 16 • Écran 9/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-9.png?v=20260914" alt="FILTEC ONE — Gestion des Congés" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_9_title">Module Gestion des Congés & Quotas Mensuels</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_9_desc">Gestion dématérialisée des demandes d'absence, décompte automatique des soldes et validation hiérarchique en temps réel.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 14: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="14" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 15 / 16 • Écran 10/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-10.png?v=20260914" alt="FILTEC ONE — Saisie de Commande Rapide" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_10_title">Saisie de Commande Rapide & Calcul Linéaire</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_10_desc">Interface de devis accélérée : conversion automatique des longueurs de tuyaux (mètres, pouces), emballage et remises par palette.</p>
-                </div>
-              </div>
-            </div>
-            <!-- SLIDE 15: FILTEC ONE • Industrie & Logistique B2B -->
-            <div class="portfolio-slide" data-slide-index="15" data-project="filtec">
-              <div class="slide-card">
-                <div class="slide-top-bar">
-                  <div class="slide-meta-left">
-                    <span class="slide-project-tag filtec">FILTEC ONE • Industrie & Logistique B2B</span>
-                    <span class="slide-screen-pill">Capture 16 / 16 • Écran 11/11</span>
-                  </div>
-                  <span class="slide-drag-hint"><span class="hint-arrows">↔</span> Glissez pour faire défiler</span>
-                </div>
-                
-                <div class="slide-image-frame">
-                  <img src="assets/portfolio/filtec/screen-11.png?v=20260914" alt="FILTEC ONE — Expédition Usine" class="slide-img" loading="eager">
-                </div>
-
-                <div class="slide-caption">
-                  <h3 class="slide-title" data-i18n="portfolio_filtec_screen_11_title">Validation et Récapitulatif d'Expédition Usine</h3>
-                  <p class="slide-desc" data-i18n="portfolio_filtec_screen_11_desc">Contrôle avant départ usine : bordereau de chargement camion, vérification de conformité et validation du bon de livraison.</p>
-                </div>
+              <!-- Action Directe -->
+              <div class="proj-actions">
+                <a href="https://immo-filtec2.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-proj-primary">
+                  <span>Tester et naviguer dans le projet en direct</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
           </div>
-        </div>
+        </article>
+
+        <!-- PROJET 2 : SMART JURIS (LEGALTECH OHADA) -->
+        <article class="project-showcase-card" id="project-smart-juris">
+          <div class="project-card-grid">
+            <!-- Colonne Visuelle -->
+            <div class="project-visual-col">
+              <div class="project-img-frame">
+                <div class="project-browser-bar">
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="browser-url-pill">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>smartjuris.aiforce.app (Espace Avocat Privé)</span>
+                  </div>
+                  <span class="live-pulse-badge private">🔒 Privé • En Cabinet</span>
+                </div>
+                <div class="project-img-link">
+                  <img src="assets/portfolio/smart-juris-dashboard.png" alt="SMART JURIS — Workspace Juridique OHADA" class="project-hd-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Colonne Explications / Métier / Architecture -->
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-badge legal">LegalTech & IA Sourcée</span>
+                <span class="proj-zone">Cabinets d'Avocats OHADA (Bénin, Sénégal, CI)</span>
+              </div>
+
+              <h3 class="proj-title">SMART JURIS — Workspace Juridique OHADA & IA Anti-Hallucination</h3>
+              
+              <p class="proj-pitch">
+                Workspace professionnel pour cabinets d'avocats d'affaires : pilotage du contentieux, moteur IA anti-hallucination sourcé et rédaction automatisée d'actes.
+              </p>
+
+              <!-- Ce que fait le système -->
+              <div class="proj-features-box">
+                <div class="pf-title">Ce que fait concrètement la solution :</div>
+                <ul class="pf-list">
+                  <li><strong>Copilot IA OHADA Anti-Hallucination :</strong> Moteur IA entraîné exclusivement sur les Actes Uniformes OHADA et les arrêts CCJA (zéro texte inventé).</li>
+                  <li><strong>Smart Draft (Actes en 10 secondes) :</strong> Génération automatisée de mises en demeure et actes avec intégration des montants et bases légales.</li>
+                  <li><strong>Calcul Strict des Délais de Forclusion :</strong> Alertes automatiques à quinzaine pour éliminer tout risque de prescription procédurale.</li>
+                  <li><strong>Journal d'Audit Déontologique :</strong> Traçabilité UTC infalsifiable et cloisonnement étanche des données de chaque cabinet.</li>
+                </ul>
+              </div>
+
+              <!-- Architecture & Stack Technique -->
+              <div class="proj-tech-box">
+                <div class="pt-label">Architecture & Technologies :</div>
+                <div class="pt-tags">
+                  <span class="tech-tag">Full-Stack Cloud</span>
+                  <span class="tech-tag">RAG IA Vectoriel OHADA</span>
+                  <span class="tech-tag">Chiffrement AES-256</span>
+                  <span class="tech-tag">Audit UTC</span>
+                  <span class="tech-tag">Exports PDF / Docx</span>
+                </div>
+              </div>
+
+              <!-- Action Directe -->
+              <div class="proj-actions">
+                <a href="#contact" class="btn-proj-secondary js-open-ai-chat">
+                  <span>Demander une démo privée en cabinet</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJET 3 : FILTEC ONE (ERP INDUSTRIEL & DISTRIBUTION) -->
+        <article class="project-showcase-card" id="project-filtec-one">
+          <div class="project-card-grid">
+            <!-- Colonne Visuelle -->
+            <div class="project-visual-col">
+              <div class="project-img-frame">
+                <div class="project-browser-bar">
+                  <div class="browser-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="browser-url-pill">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>filtec-one.app (Réseau Industriel)</span>
+                  </div>
+                  <span class="live-pulse-badge prod">🏭 En Production Usine</span>
+                </div>
+                <div class="project-img-link">
+                  <img src="assets/portfolio/filtec/screen-1.png" alt="FILTEC ONE — ERP Industriel et Logistique" class="project-hd-img" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Colonne Explications / Métier / Architecture -->
+            <div class="project-info-col">
+              <div class="project-meta-top">
+                <span class="proj-badge erp">Industrie & ERP Logistique B2B</span>
+                <span class="proj-zone">Fabrication Plastique • Réseau 300+ Distributeurs</span>
+              </div>
+
+              <h3 class="proj-title">FILTEC ONE — Plateforme ERP, Distribution & Pointage Terrain</h3>
+              
+              <p class="proj-pitch">
+                Système d'exploitation complet pour fabricant de tuyaux PVC/uPVC : gouvernance des commandes, facturation proforma A4 et pointage GPS des équipes.
+              </p>
+
+              <!-- Ce que fait le système -->
+              <div class="proj-features-box">
+                <div class="pf-title">Ce que fait concrètement la solution :</div>
+                <ul class="pf-list">
+                  <li><strong>Contrôle Central des Encours & Crédits :</strong> Validation administrative des expéditions selon le plafond financier de chaque distributeur.</li>
+                  <li><strong>Portail Mobile Terrain & Saisie Express :</strong> Prise de commande en direct avec conversion automatique des longueurs et remises palettes.</li>
+                  <li><strong>Proforma A4 & Automatisation WhatsApp :</strong> Génération de factures proforma certifiées et envoi automatique au client sur WhatsApp.</li>
+                  <li><strong>Pointage GPS Géofencé :</strong> Enregistrement certifié des passages commerciaux sur site avec photo et rapport immédiat.</li>
+                </ul>
+              </div>
+
+              <!-- Architecture & Stack Technique -->
+              <div class="proj-tech-box">
+                <div class="pt-label">Architecture & Technologies :</div>
+                <div class="pt-tags">
+                  <span class="tech-tag">PWA Mobile-First</span>
+                  <span class="tech-tag">WhatsApp Business API</span>
+                  <span class="tech-tag">GPS Geofencing</span>
+                  <span class="tech-tag">Calcul Linéaire Temps Réel</span>
+                  <span class="tech-tag">Génération PDF A4</span>
+                </div>
+              </div>
+
+              <!-- Action Directe -->
+              <div class="proj-actions">
+                <a href="https://wa.me/2290162115411?text=Bonjour%20Caleb,%20je%20souhaite%20en%20savoir%20plus%20sur%20l'architecture%20de%20l'ERP%20FILTEC%20ONE." target="_blank" rel="noopener noreferrer" class="btn-proj-secondary">
+                  <span>Échanger sur l'architecture avec Caleb sur WhatsApp</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-
-      <!-- Barre de Contrôle & Points de Progression -->
-      <div class="portfolio-slider-footer">
-        <div class="slider-status-row">
-          <span class="slider-gesture-hint" data-i18n="slider_swipe_hint">↔ Glissez avec la souris ou au doigt pour parcourir les projets</span>
-          <span class="slider-active-indicator sj" id="slider-active-indicator">SMART JURIS • 1 / 5 (Capture 1/16)</span>
-        </div>
-
-        <!-- Points de progression groupés (5 pour Smart Juris, 11 pour Filtec) -->
-        <div class="slider-dots-bar" id="slider-dots-bar"></div>
-
-
-      </div>
-
     </div>
   </section>
 
@@ -1028,13 +786,183 @@
     </div>
   </footer>
 
-  <!-- Bouton d'accès direct WhatsApp Flottant -->
-  <a href="https://wa.me/2290162115411" target="_blank" class="floating-wa-launcher js-wa-link" aria-label="WhatsApp AIFORCE">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
-    </svg>
-    <span>WhatsApp Direct</span>
-  </a>
+  <!-- ==========================================================================
+       Dock d'Actions Flottantes : IA Copilot & WhatsApp
+       ========================================================================== -->
+  <aside class="floating-actions-dock" aria-label="Assistance & Contact Direct">
+    <!-- Teaser Bubble Proactive -->
+    <div class="ai-launcher-bubble" id="ai-launcher-bubble" role="tooltip" aria-hidden="false">
+      <button type="button" class="ai-bubble-close-btn" id="ai-bubble-close-btn" aria-label="Fermer la bulle">&times;</button>
+      <div class="ai-bubble-content js-open-ai-chat">
+        <span class="ai-bubble-icon">✨</span>
+        <span class="ai-bubble-text" data-i18n="ai_launcher_tooltip">💡 Obtenez votre fiche d'offre personnalisée en 3 min !</span>
+      </div>
+    </div>
+
+    <!-- Bouton Assistant IA Copilot -->
+    <button type="button" class="floating-ai-launcher js-open-ai-chat" id="floating-ai-launcher" aria-label="Ouvrir l'Assistant IA AIFORCE">
+      <div class="ai-launcher-icon-box">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
+          <rect x="4" y="8" width="16" height="12" rx="3"></rect>
+          <line x1="9" y1="13" x2="9.01" y2="13" stroke-width="3"></line>
+          <line x1="15" y1="13" x2="15.01" y2="13" stroke-width="3"></line>
+          <path d="M10 17h4"></path>
+        </svg>
+        <span class="live-pulse-dot" title="En ligne"></span>
+      </div>
+      <div class="ai-launcher-text-wrap">
+        <span class="ai-launcher-title" data-i18n="ai_launcher_label">Assistant IA & Offre</span>
+        <span class="ai-launcher-subtitle" data-i18n="ai_launcher_badge">Qwen IA Active</span>
+      </div>
+    </button>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/2290162115411" target="_blank" class="floating-wa-launcher js-wa-link" aria-label="WhatsApp AIFORCE">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+      </svg>
+      <span>WhatsApp Direct</span>
+    </a>
+  </aside>
+
+  <!-- ==========================================================================
+       Fenêtre Modale Interactive du Chatbot IA
+       ========================================================================== -->
+  <div id="aiforce-chat-modal" class="aiforce-chat-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="chat-modal-window" id="chat-modal-window">
+      <!-- Poignée de Redimensionnement Manuel -->
+      <div class="chat-resize-handle" id="chat-resize-handle" title="Glisser pour redimensionner la fenêtre">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </div>
+
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-header-identity">
+          <div class="chat-avatar-frame">
+            <span class="chat-avatar-icon">⚡</span>
+            <span class="chat-avatar-pulse"></span>
+          </div>
+          <div class="chat-title-info">
+            <div class="chat-title-row">
+              <span class="chat-bot-name" data-i18n="chat_title">AIFORCE Copilot</span>
+              <span class="chat-engine-badge">Qwen 2.5 Max</span>
+            </div>
+            <span class="chat-bot-sub" data-i18n="chat_subtitle">Consultant Tech & Cadrage de Projet</span>
+          </div>
+        </div>
+
+        <div class="chat-header-controls">
+          <button type="button" class="chat-btn-control" id="chat-reset-btn" title="Nouvel échange" data-i18n-title="chat_reset">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/>
+            </svg>
+          </button>
+          <button type="button" class="chat-btn-control chat-close-btn" id="chat-close-btn" aria-label="Fermer le chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step Tracker Progress Bar -->
+      <div class="chat-step-tracker" id="chat-step-tracker">
+        <div class="step-item active" data-step="1">
+          <span class="step-dot">1</span>
+          <span class="step-label" data-i18n="chat_step_1">1. Contexte</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="2">
+          <span class="step-dot">2</span>
+          <span class="step-label" data-i18n="chat_step_2">2. Solution</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="3">
+          <span class="step-dot">3</span>
+          <span class="step-label" data-i18n="chat_step_3">3. Fonctions MVP</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="4">
+          <span class="step-dot">4</span>
+          <span class="step-label" data-i18n="chat_step_4">4. Délais & Budget</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item" data-step="5">
+          <span class="step-dot">📄</span>
+          <span class="step-label" data-i18n="chat_step_5">5. Fiche d'Offre</span>
+        </div>
+      </div>
+
+      <!-- Messages Scroll Stage -->
+      <div class="chat-messages-stage" id="chat-messages-stage">
+        <!-- Messages injected dynamically by app.js -->
+      </div>
+
+      <!-- Quick Reply Suggestions / Chips -->
+      <div class="chat-quick-replies-wrap" id="chat-quick-replies-wrap">
+        <div class="chat-quick-replies" id="chat-quick-replies">
+          <!-- Dynamically populated chips -->
+        </div>
+      </div>
+
+      <!-- Chat Input Footer -->
+      <div class="chat-footer">
+        <form id="chat-input-form" class="chat-input-form">
+          <div class="chat-input-container">
+            <textarea 
+              id="chat-input-text" 
+              class="chat-textarea" 
+              rows="1" 
+              placeholder="Écrivez votre message à l'assistant..." 
+              data-i18n-placeholder="chat_placeholder"
+              aria-label="Votre réponse"></textarea>
+            <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Envoyer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="chat-footer-meta">
+          <span class="chat-disclaimer" data-i18n="chat_disclaimer">Vos informations restent strictement confidentielles et ne sont jamais divulguées.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Modal Plein Écran pour Impression & Export PDF de la Fiche d'Offre
+       ========================================================================== -->
+  <div id="fiche-offre-print-modal" class="aiforce-print-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="print-modal-inner">
+      <div class="print-modal-toolbar no-print">
+        <div class="print-toolbar-left">
+          <span class="print-toolbar-title">📄 Aperçu de la Fiche d'Offre AIFORCE</span>
+        </div>
+        <div class="print-toolbar-actions">
+          <button type="button" class="btn btn-solid btn-small" id="btn-trigger-print">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Imprimer / Sauvegarder en PDF</span>
+          </button>
+          <button type="button" class="btn btn-outline btn-small" id="btn-close-print">Fermer</button>
+        </div>
+      </div>
+
+      <div class="print-sheet-content" id="print-sheet-content">
+        <!-- Rendered official offer sheet -->
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="translations.js"></script>
