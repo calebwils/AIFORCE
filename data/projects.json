@@ -1,0 +1,72 @@
+[
+  {
+    "id": "proj-001",
+    "ref": "AF-PRJ-2026-01",
+    "titre": "FILTEC ONE — ERP Industriel & Portails Mobiles",
+    "client": "Groupe Industriel FILTEC B2B",
+    "contact": "+229 01 62 11 54 11",
+    "marcheMontant": 12500000,
+    "encaisse": 8500000,
+    "resteAPayer": 4000000,
+    "devise": "FCFA",
+    "statut": "En cours",
+    "etape": "Déploiement des 300 distributeurs & Pointage GPS",
+    "dateDebut": "2026-08-15",
+    "dateFinPrevue": "2026-11-30",
+    "progression": 80,
+    "livrables": [
+      {
+        "nom": "Portail Distributeur Mobile",
+        "fait": true
+      },
+      {
+        "nom": "Moteur de devis proforma A4",
+        "fait": true
+      },
+      {
+        "nom": "Pointage GPS & RH Terrain",
+        "fait": true
+      },
+      {
+        "nom": "Passerelle ERP Comptabilité",
+        "fait": false
+      }
+    ],
+    "proformaRef": "AF-PRO-2026-000"
+  },
+  {
+    "id": "proj-002",
+    "ref": "AF-PRJ-2026-02",
+    "titre": "SMART JURIS — Workspace Juridique OHADA",
+    "client": "Consortium Cabinets Partenaires",
+    "contact": "+229 97 12 34 56",
+    "marcheMontant": 7800000,
+    "encaisse": 5500000,
+    "resteAPayer": 2300000,
+    "devise": "FCFA",
+    "statut": "En cours",
+    "etape": "Fine-tuning RAG Droit OHADA & Mises en demeure",
+    "dateDebut": "2026-09-01",
+    "dateFinPrevue": "2026-12-15",
+    "progression": 65,
+    "livrables": [
+      {
+        "nom": "Dashboard de calcul des forclusions",
+        "fait": true
+      },
+      {
+        "nom": "Smart Juris Copilot Anti-hallucination",
+        "fait": true
+      },
+      {
+        "nom": "Générateur d'actes Smart Draft",
+        "fait": false
+      },
+      {
+        "nom": "Journal d'audit déontologique",
+        "fait": true
+      }
+    ],
+    "proformaRef": "AF-PRO-2026-001"
+  }
+]

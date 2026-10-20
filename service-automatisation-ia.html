@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatisation de Tâches & Workflows IA — AIFORCE AGENCY</title>
+  
+  <meta name="description" content="Automatisation de tâches chronophages et workflows IA en entreprise. Extraction intelligente de factures par OCR et LLM, connexion d'outils sans double saisie avec n8n et Python.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=20261015geist">
+</head>
+<body>
+
+  <!-- En-Tête & Navigation -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand-wrapper">
+        <a href="index.html" aria-label="AIFORCE Accueil">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="brand-logo" style="height: 28px; width: auto; max-width: 140px;">
+        </a>
+      </div>
+
+      <nav aria-label="Navigation">
+        <ul class="main-nav">
+          <li class="nav-item has-dropdown active">
+            <a href="services.html" class="nav-link-dropdown">
+              <span data-i18n="nav_services">Services</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="services-dropdown-menu" role="menu">
+              <div class="dropdown-menu-header">
+                <span class="dropdown-menu-tag" data-i18n="nav_services_dropdown_tag">Pôles d'expertise AIFORCE</span>
+                <span class="dropdown-menu-subtitle" data-i18n="nav_services_dropdown_sub">Logiciels sur-mesure & IA</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="service-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-web">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_web">Applications Web & SaaS</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_web_desc">Logiciels métier sur mesure, plateformes SaaS, dashboards interactifs</div>
+                  </div>
+                </a>
+                <a href="service-mobile.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-mobile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_mobile">Applications Mobiles</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_mobile_desc">iOS & Android (React Native, Flutter), offline-first et temps réel</div>
+                  </div>
+                </a>
+                <a href="service-site-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-site">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_site">Création de Sites Web</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_site_desc">Sites vitrines haut de gamme, landing pages conversion, vitesse éclair</div>
+                  </div>
+                </a>
+                <a href="service-automatisation-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-auto">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_auto">Automatisation de Tâches & IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_auto_desc">Workflows n8n, extraction documentaire OCR/LLM, zéro saisie manuelle</div>
+                  </div>
+                </a>
+                <a href="service-optimisation-processus.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-process">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_process">Optimisation de Processus</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_process_desc">Audit des flux opérationnels, suppression des goulots, ROI garanti</div>
+                  </div>
+                </a>
+                <a href="service-agents-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-agent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                      <line x1="12" y1="19" x2="12" y2="23"></line>
+                      <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_agents">Chatbots & Agents IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_agents_desc">Conseillers 24/7 (RAG, Sofia), assistants autonomes et tool-calling</div>
+                  </div>
+                </a>
+              </div>
+              <div class="dropdown-menu-footer">
+                <a href="services.html" class="dropdown-all-services-link">
+                  <span data-i18n="nav_services_view_all">Voir tous nos services & comparatif</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a href="index.html#portfolio" data-i18n="nav_portfolio">Réalisations</a></li>
+          <li class="nav-item"><a href="index.html#approach" data-i18n="nav_approach">Méthode</a></li>
+          <li class="nav-item"><a href="index.html#commitments" data-i18n="nav_commitments">Garanties</a></li>
+          <li class="nav-item"><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-toggle" aria-label="Choisir la langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button type="button" class="btn btn-ai-sparkle btn-small js-open-ai-chat" aria-label="Échanger avec Sofia">
+          <img src="assets/sofia.jpg" alt="Sofia" class="nav-sofia-thumb">
+          <span data-i18n="nav_ai_assistant">✨ Conseillère Sofia</span>
+        </button>
+
+        <a href="#contact" class="btn btn-solid btn-small" data-i18n="nav_cta">Échanger sur un projet</a>
+
+        <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="service-hero-section">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="services.html">Services</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Automatisation de Tâches & IA</span>
+      </nav>
+
+      <div class="service-hero-header">
+        <span class="service-meta-pill pill-auto">Pôle Automatisation & Workflows IA</span>
+        <h1 class="service-hero-title">
+          Automatisation de Tâches Répétitives & Workflows IA Métier
+        </h1>
+        <p class="service-hero-lead">
+          Libérez vos collaborateurs qualifiés des saisies manuelles fastidieuses. Nous automatisons l'extraction de vos documents (factures, devis, bons de commande), interconnectons vos outils existants et orchestrons vos flux métier avec l'IA.
+        </p>
+
+        <div class="service-hero-actions">
+          <a href="#contact" class="btn btn-solid">
+            <span>Identifier mes tâches à automatiser</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="https://wa.me/2290162115411?text=Bonjour%20AIFORCE%2C%20je%20souhaite%20automatiser%20des%20t%C3%A2ches%20chronophages%20dans%20mon%20entreprise." target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>WhatsApp direct</span>
+          </a>
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Demander un exemple à Sofia</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="service-metrics-row">
+        <div class="service-metric-card">
+          <div class="metric-big-number">-85%</div>
+          <div class="metric-caption">Temps de traitement moyen des factures, devis et e-mails entrants réduit à quelques secondes.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">0 Erreur</div>
+          <div class="metric-caption">Suppression intégrale des erreurs de frappe et des doublons grâce au contrôle automatisé.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">100+</div>
+          <div class="metric-caption">Outils compatibles (WhatsApp API, Gmail, Google Sheets, ERPs, CRM, banques).</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">1 à 2 sem.</div>
+          <div class="metric-caption">Délai moyen pour mettre en service vos premiers scénarios d'automatisation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problèmes vs Solution -->
+  <section class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Le Constat Opérationnel</span>
+        <h2 class="section-title">Combien d'heures par jour perdez-vous à copier-coller ?</h2>
+        <p class="section-desc">Dans la plupart des entreprises, des talents qualifiés passent la moitié de leur semaine sur des tâches de robot.</p>
+      </div>
+
+      <div class="challenges-solution-grid">
+        <div class="challenge-card">
+          <div class="side-header">
+            <div class="side-icon-box">✕</div>
+            <h3 class="side-title">Les freins du traitement manuel</h3>
+          </div>
+          <ul class="point-list">
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Saisie manuelle des factures :</strong> Ouvrir chaque PDF, taper le montant, le numéro et la date dans un tableur ou un ERP.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Retards de relance :</strong> Devis non relancés, factures impayées oubliées faute de temps pour vérifier manuellement chaque dossier.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Ruptures d'information :</strong> Les commandes reçues par WhatsApp ou e-mail doivent être recopiées manuellement par un employé.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Frustration des équipes :</strong> Travail fastidieux et rébarbatif qui démotive les collaborateurs et génère un turn-over coûteux.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <div class="side-header">
+            <div class="side-icon-box">✓</div>
+            <h3 class="side-title">L'Automatisation Intelligente AIFORCE</h3>
+          </div>
+          <ul class="point-list">
+            <li class="point-item">
+              <span class="point-icon">⚡</span>
+              <span><strong>Extraction automatique instantanée :</strong> Dès réception d'un PDF ou d'une photo, l'IA lit et extrait toutes les lignes en 3 secondes.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚡</span>
+              <span><strong>Relances proactives sans faille :</strong> Alertes WhatsApp automatiques envoyées aux clients à J-3 et J+2 sans intervention humaine.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚡</span>
+              <span><strong>Flux continus connectés :</strong> Une commande sur le site ou par WhatsApp met à jour l'inventaire et prépare la facture en direct.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚡</span>
+              <span><strong>Concentration sur la valeur :</strong> Vos équipes se consacrent à la relation client, à la vente et au développement stratégique.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Livrables Concrets -->
+  <section class="service-body-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Cas d'Usage Typiques</span>
+        <h2 class="section-title">Ce que nous automatisons concrètement pour votre entreprise</h2>
+        <p class="section-desc">Des scénarios réels testés et déployés en production.</p>
+      </div>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #FFFBEB; color: #B45309;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Extraction Automatique de Factures</h3>
+          <p class="deliverable-card-desc">Réception automatique par e-mail ou WhatsApp, analyse OCR par modèle de vision, ventilation comptable et intégration directe dans votre logiciel de gestion.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">OCR Vision</span>
+            <span class="d-tag">LLM Parsing</span>
+            <span class="d-tag">Zéro Saisie</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #EFF6FF; color: #1D4ED8;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Workflows d'Orchestration n8n</h3>
+          <p class="deliverable-card-desc">Installation de votre instance n8n privée et sécurisée. Scénarios fiables avec reprise automatique en cas d'erreur réseau et historique d'exécution.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">n8n Privé</span>
+            <span class="d-tag">Webhooks</span>
+            <span class="d-tag">Retry Logic</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #ECFDF5; color: #047857;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Passerelles WhatsApp Business</h3>
+          <p class="deliverable-card-desc">Notification automatique des clients dès l'expédition d'un colis, envoi de reçus de paiement en PDF et confirmations de réservation directement sur leur WhatsApp.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">WhatsApp API</span>
+            <span class="d-tag">PDF Sender</span>
+            <span class="d-tag">Taux d'ouverture 98%</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #FEF2F2; color: #DC2626;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Alertes & Monitoring Proactif</h3>
+          <p class="deliverable-card-desc">Notification instantanée par Telegram ou Slack des anomalies : rupture de stock imminente, impayé critique ou échec de paiement en ligne.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Telegram Bot</span>
+            <span class="d-tag">Slack</span>
+            <span class="d-tag">Alertes 24/7</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #F5F3FF; color: #7C3AED;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Synchronisation Tableurs & Base Centrale</h3>
+          <p class="deliverable-card-desc">Fini les versions divergentes. Vos Google Sheets et bases PostgreSQL se synchronisent en tâche de fond pour une vue consolidée unique.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Google Sheets API</span>
+            <span class="d-tag">PostgreSQL</span>
+            <span class="d-tag">Bi-directionnel</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #F0FDF4; color: #0D9488;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Sécurité des Données & Souveraineté</h3>
+          <p class="deliverable-card-desc">Tous les flux sont chiffrés de bout en bout. Vos données sensibles d'entreprise ne sont jamais réutilisées pour entraîner des modèles publics d'IA.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Confidentialité</span>
+            <span class="d-tag">Chiffrement</span>
+            <span class="d-tag">Conformité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="contact" class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-cta-card">
+        <h2 class="service-cta-title">Identifions vos 3 premiers scénarios d'automatisation</h2>
+        <p class="service-cta-sub">
+          Lors d'un audit de 30 minutes, nous passons en revue vos tâches quotidiennes et vous montrons concrètement ce qui peut être automatisé dès la semaine prochaine.
+        </p>
+
+        <div class="service-cta-buttons">
+          <a href="https://wa.me/2290162115411?text=Bonjour%20AIFORCE%2C%20je%20souhaite%20un%20audit%20pour%20automatiser%20des%20t%C3%A2ches%20dans%20mon%20entreprise." target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>WhatsApp direct (+229 0162115411)</span>
+          </a>
+
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Parler d'automatisation à Sofia</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-inner">
+        <div class="footer-brand-side">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="footer-logo" style="height: 26px; width: auto; max-width: 130px; display: block; margin-bottom: 12px;">
+          <p>Studio d'ingénierie logicielle & automatisation. Applications web, mobiles, sites vitrines et IA.</p>
+        </div>
+        <div class="footer-info-side">
+          <div class="footer-info-col">
+            <span class="footer-col-title">Nos 6 Services</span>
+            <ul class="footer-services-grid">
+              <li><a href="service-web.html">Applications Web & SaaS</a></li>
+              <li><a href="service-mobile.html">Applications Mobiles</a></li>
+              <li><a href="service-site-web.html">Création de Sites Web</a></li>
+              <li><a href="service-automatisation-ia.html" style="color:var(--accent-blue); font-weight:700;">Automatisation & IA</a></li>
+              <li><a href="service-optimisation-processus.html">Optimisation de Processus</a></li>
+              <li><a href="service-agents-ia.html">Chatbots & Agents IA</a></li>
+            </ul>
+          </div>
+          <div class="footer-info-col">
+            <span class="footer-col-title">Navigation</span>
+            <ul>
+              <li><a href="services.html">Tous les Services</a></li>
+              <li><a href="index.html#portfolio">Réalisations</a></li>
+              <li><a href="index.html#approach">Méthode</a></li>
+              <li><a href="admin.html">Espace Admin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 <strong>AIFORCE AGENCY. Tous droits réservés.</strong></p>
+        <p>International & Afrique de l'Ouest</p>
+        <a href="admin.html" class="footer-admin-btn"><span>Accès Admin</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Sofia IA -->
+  <div id="ai-chat-modal" class="aiforce-chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="chat-modal-window">
+      <div class="chat-header">
+        <div class="chat-header-persona">
+          <div class="chat-avatar-wrapper">
+            <img src="assets/sofia.jpg" alt="Sofia" class="chat-avatar-img">
+            <span class="chat-online-dot"></span>
+          </div>
+          <div class="chat-header-info">
+            <div class="chat-agent-name">Sofia</div>
+            <div class="chat-agent-role">Conseillère Projets • AIFORCE</div>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button type="button" class="chat-header-btn js-reset-ai-chat" title="Réinitialiser">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+          </button>
+          <button type="button" class="chat-header-btn js-close-ai-chat" aria-label="Fermer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="chat-body" id="chat-messages-container"></div>
+      <div class="chat-footer">
+        <form id="chat-input-form" class="chat-input-form">
+          <div class="chat-input-container">
+            <textarea id="chat-user-input" class="chat-textarea" placeholder="Posez votre question sur vos besoins d'automatisation..." rows="1"></textarea>
+            <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Envoyer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

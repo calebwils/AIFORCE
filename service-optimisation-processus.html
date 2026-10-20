@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimisation des Processus Métier & Efficience Opérationnelle — AIFORCE AGENCY</title>
+  
+  <meta name="description" content="Audit et optimisation des processus métier en entreprise. Élimination des goulots d'étranglement, réduction des délais de traitement, cartographie des flux et tableaux de bord KPI.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=20261015geist">
+</head>
+<body>
+
+  <!-- En-Tête & Navigation -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand-wrapper">
+        <a href="index.html" aria-label="AIFORCE Accueil">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="brand-logo" style="height: 28px; width: auto; max-width: 140px;">
+        </a>
+      </div>
+
+      <nav aria-label="Navigation">
+        <ul class="main-nav">
+          <li class="nav-item has-dropdown active">
+            <a href="services.html" class="nav-link-dropdown">
+              <span data-i18n="nav_services">Services</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="services-dropdown-menu" role="menu">
+              <div class="dropdown-menu-header">
+                <span class="dropdown-menu-tag" data-i18n="nav_services_dropdown_tag">Pôles d'expertise AIFORCE</span>
+                <span class="dropdown-menu-subtitle" data-i18n="nav_services_dropdown_sub">Logiciels sur-mesure & IA</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="service-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-web">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_web">Applications Web & SaaS</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_web_desc">Logiciels métier sur mesure, plateformes SaaS, dashboards interactifs</div>
+                  </div>
+                </a>
+                <a href="service-mobile.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-mobile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_mobile">Applications Mobiles</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_mobile_desc">iOS & Android (React Native, Flutter), offline-first et temps réel</div>
+                  </div>
+                </a>
+                <a href="service-site-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-site">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_site">Création de Sites Web</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_site_desc">Sites vitrines haut de gamme, landing pages conversion, vitesse éclair</div>
+                  </div>
+                </a>
+                <a href="service-automatisation-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-auto">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_auto">Automatisation de Tâches & IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_auto_desc">Workflows n8n, extraction documentaire OCR/LLM, zéro saisie manuelle</div>
+                  </div>
+                </a>
+                <a href="service-optimisation-processus.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-process">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_process">Optimisation de Processus</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_process_desc">Audit des flux opérationnels, suppression des goulots, ROI garanti</div>
+                  </div>
+                </a>
+                <a href="service-agents-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-agent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                      <line x1="12" y1="19" x2="12" y2="23"></line>
+                      <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_agents">Chatbots & Agents IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_agents_desc">Conseillers 24/7 (RAG, Sofia), assistants autonomes et tool-calling</div>
+                  </div>
+                </a>
+              </div>
+              <div class="dropdown-menu-footer">
+                <a href="services.html" class="dropdown-all-services-link">
+                  <span data-i18n="nav_services_view_all">Voir tous nos services & comparatif</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a href="index.html#portfolio" data-i18n="nav_portfolio">Réalisations</a></li>
+          <li class="nav-item"><a href="index.html#approach" data-i18n="nav_approach">Méthode</a></li>
+          <li class="nav-item"><a href="index.html#commitments" data-i18n="nav_commitments">Garanties</a></li>
+          <li class="nav-item"><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-toggle" aria-label="Choisir la langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button type="button" class="btn btn-ai-sparkle btn-small js-open-ai-chat" aria-label="Échanger avec Sofia">
+          <img src="assets/sofia.jpg" alt="Sofia" class="nav-sofia-thumb">
+          <span data-i18n="nav_ai_assistant">✨ Conseillère Sofia</span>
+        </button>
+
+        <a href="#contact" class="btn btn-solid btn-small" data-i18n="nav_cta">Échanger sur un projet</a>
+
+        <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="service-hero-section">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="services.html">Services</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Optimisation de Processus</span>
+      </nav>
+
+      <div class="service-hero-header">
+        <span class="service-meta-pill pill-process">Pôle Organisation & Efficience Métier</span>
+        <h1 class="service-hero-title">
+          Optimisation des Processus Métier & Systèmes d'Information
+        </h1>
+        <p class="service-hero-lead">
+          Supprimez les lourdeurs organisationnelles, réduisez les temps de cycle et augmentez la rentabilité de chaque département. Nous auditons vos circuits d'information opérationnels, cartographions les goulots d'étranglement et concevons des processus fluides et mesurables.
+        </p>
+
+        <div class="service-hero-actions">
+          <a href="#contact" class="btn btn-solid">
+            <span>Demander un diagnostic opérationnel</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="https://wa.me/2290162115411?text=Bonjour%20AIFORCE%2C%20je%20souhaite%20optimiser%20les%20processus%20op%C3%A9rationnels%20de%20mon%20entreprise." target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>WhatsApp direct</span>
+          </a>
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Questionner Sofia</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="service-metrics-row">
+        <div class="service-metric-card">
+          <div class="metric-big-number">-60%</div>
+          <div class="metric-caption">Réduction des temps de cycle (devis, validation de bons de commande, clôture mensuelle).</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">100%</div>
+          <div class="metric-caption">Visibilité en temps réel sur les responsabilités et l'avancement de chaque dossier.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">3x à 5x</div>
+          <div class="metric-caption">Retour sur investissement moyen constaté dès les 6 premiers mois d'optimisation.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">5 Jours</div>
+          <div class="metric-caption">Remise d'un rapport d'audit opérationnel complet avec plan d'action hiérarchisé.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problèmes vs Solution -->
+  <section class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Diagnostic Métier</span>
+        <h2 class="section-title">Où s'évapore l'énergie de votre organisation ?</h2>
+        <p class="section-desc">Quand une entreprise grandit, ses processus se complexifient sans que personne ne s'en rende compte.</p>
+      </div>
+
+      <div class="challenges-solution-grid">
+        <div class="challenge-card">
+          <div class="side-header">
+            <div class="side-icon-box">✕</div>
+            <h3 class="side-title">Symptômes d'un processus dégradé</h3>
+          </div>
+          <ul class="point-list">
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Dossiers qui stagnent :</strong> Une demande client met 5 jours à être traitée parce qu'elle attend la signature d'un responsable en déplacement.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Flou dans les rôles :</strong> « Ce n'est pas à moi de le faire », des responsabilités non écrites créant des oublis graves.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Pilotage à l'aveugle :</strong> La direction n'a aucun chiffre fiable sur le coût réel ou la rentabilité exacte d'une prestation.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">⚠️</span>
+              <span><strong>Ruptures de communication :</strong> Conflits réguliers entre l'équipe commerciale, les techniciens et la comptabilité.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="solution-card">
+          <div class="side-header">
+            <div class="side-icon-box">✓</div>
+            <h3 class="side-title">La Méthode d'Optimisation AIFORCE</h3>
+          </div>
+          <ul class="point-list">
+            <li class="point-item">
+              <span class="point-icon">🎯</span>
+              <span><strong>Circuits d'approbation express :</strong> Validation en 1 clic sur smartphone avec notification et délégation automatique.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">🎯</span>
+              <span><strong>Rôles & livrables clarifiés :</strong> Matrice RACI claire, chaque étape a un propriétaire unique et un délai maximal garanti.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">🎯</span>
+              <span><strong>Cockpit décisionnel KPI :</strong> Tableau de bord synthétique en direct pour anticiper les retards avant qu'ils n'impactent les clients.</span>
+            </li>
+            <li class="point-item">
+              <span class="point-icon">🎯</span>
+              <span><strong>Alignement des équipes :</strong> Un langage commun, des outils intégrés et une collaboration fluide et mesurable.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Livrables de l'Optimisation -->
+  <section class="service-body-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Méthodologie Opérationnelle</span>
+        <h2 class="section-title">Ce que comprend notre mission d'optimisation</h2>
+        <p class="section-desc">Un accompagnement pragmatique, orienté résultats concrets sur le terrain.</p>
+      </div>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #FEF2F2; color: #DC2626;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Audit Opérationnel & Cartographie BPMN</h3>
+          <p class="deliverable-card-desc">Entretiens avec vos équipes, modélisation visuelle des flux actuels (« As-Is ») et identification précise des pertes de temps et des doublons.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">BPMN 2.0</span>
+            <span class="d-tag">Audit 360°</span>
+            <span class="d-tag">Chiffrage Pertes</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #ECFDF5; color: #047857;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Schéma Cible Réorganisé (« To-Be »)</h3>
+          <p class="deliverable-card-desc">Conception du nouveau circuit optimal : suppression des étapes superflues, automatisation des transferts et allègement de la charge administrative.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Lean Management</span>
+            <span class="d-tag">Flux Tendu</span>
+            <span class="d-tag">Zéro Papier</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #EFF6FF; color: #1D4ED8;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Cockpit de Pilotage KPI</h3>
+          <p class="deliverable-card-desc">Mise en place d'un tableau de bord de direction avec indicateurs vitaux : durée moyenne de traitement, encours des dossiers, taux de satisfaction client.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Dashboards KPI</span>
+            <span class="d-tag">Temps Réel</span>
+            <span class="d-tag">Alertes Dérive</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #FFFBEB; color: #B45309;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Cadrage des Outils Logiciels</h3>
+          <p class="deliverable-card-desc">Recommandation impartiale sur les logiciels à conserver, à remplacer ou à interconnecter pour soutenir vos nouveaux processus sans surcoût inutile.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Architecture SI</span>
+            <span class="d-tag">Sélection Outils</span>
+            <span class="d-tag">Optimisation Budget</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #F5F3FF; color: #7C3AED;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Accompagnement & Conduite du Changement</h3>
+          <p class="deliverable-card-desc">Ateliers avec les équipes opérationnelles pour lever les résistances, former aux nouvelles méthodes et garantir une adoption enthousiaste dès le jour 1.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Formation</span>
+            <span class="d-tag">Adoption 100%</span>
+            <span class="d-tag">SOP Numériques</span>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon-wrap" style="background: #F0FDF4; color: #0D9488;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="deliverable-card-title">Suivi & Mesure des Résultats à 90 Jours</h3>
+          <p class="deliverable-card-desc">Bilan chiffré trimestriel pour mesurer les heures économisées, le gain financier réel et ajuster les réglages pour pérenniser la rentabilité.</p>
+          <div class="deliverable-tags">
+            <span class="d-tag">Bilan ROI</span>
+            <span class="d-tag">Audit à 90j</span>
+            <span class="d-tag">Pérennité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section id="contact" class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-cta-card">
+        <h2 class="service-cta-title">Planifions un audit de vos processus opérationnels</h2>
+        <p class="service-cta-sub">
+          Sans engagement. Nous identifions avec vous les 3 goulets d'étranglement majeurs qui freinent la croissance de votre entreprise.
+        </p>
+
+        <div class="service-cta-buttons">
+          <a href="https://wa.me/2290162115411?text=Bonjour%20AIFORCE%2C%20je%20souhaite%20planifier%20un%20audit%20de%20processus%20m%C3%A9tier." target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>Échanger sur WhatsApp (+229 0162115411)</span>
+          </a>
+
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Poser une question à Sofia</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-inner">
+        <div class="footer-brand-side">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="footer-logo" style="height: 26px; width: auto; max-width: 130px; display: block; margin-bottom: 12px;">
+          <p>Studio d'ingénierie logicielle & automatisation. Applications web, mobiles, sites vitrines et IA.</p>
+        </div>
+        <div class="footer-info-side">
+          <div class="footer-info-col">
+            <span class="footer-col-title">Nos 6 Services</span>
+            <ul class="footer-services-grid">
+              <li><a href="service-web.html">Applications Web & SaaS</a></li>
+              <li><a href="service-mobile.html">Applications Mobiles</a></li>
+              <li><a href="service-site-web.html">Création de Sites Web</a></li>
+              <li><a href="service-automatisation-ia.html">Automatisation & IA</a></li>
+              <li><a href="service-optimisation-processus.html" style="color:var(--accent-blue); font-weight:700;">Optimisation de Processus</a></li>
+              <li><a href="service-agents-ia.html">Chatbots & Agents IA</a></li>
+            </ul>
+          </div>
+          <div class="footer-info-col">
+            <span class="footer-col-title">Navigation</span>
+            <ul>
+              <li><a href="services.html">Tous les Services</a></li>
+              <li><a href="index.html#portfolio">Réalisations</a></li>
+              <li><a href="index.html#approach">Méthode</a></li>
+              <li><a href="admin.html">Espace Admin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 <strong>AIFORCE AGENCY. Tous droits réservés.</strong></p>
+        <p>International & Afrique de l'Ouest</p>
+        <a href="admin.html" class="footer-admin-btn"><span>Accès Admin</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Sofia IA -->
+  <div id="ai-chat-modal" class="aiforce-chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="chat-modal-window">
+      <div class="chat-header">
+        <div class="chat-header-persona">
+          <div class="chat-avatar-wrapper">
+            <img src="assets/sofia.jpg" alt="Sofia" class="chat-avatar-img">
+            <span class="chat-online-dot"></span>
+          </div>
+          <div class="chat-header-info">
+            <div class="chat-agent-name">Sofia</div>
+            <div class="chat-agent-role">Conseillère Projets • AIFORCE</div>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button type="button" class="chat-header-btn js-reset-ai-chat" title="Réinitialiser">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+          </button>
+          <button type="button" class="chat-header-btn js-close-ai-chat" aria-label="Fermer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="chat-body" id="chat-messages-container"></div>
+      <div class="chat-footer">
+        <form id="chat-input-form" class="chat-input-form">
+          <div class="chat-input-container">
+            <textarea id="chat-user-input" class="chat-textarea" placeholder="Posez votre question sur vos processus d'entreprise..." rows="1"></textarea>
+            <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Envoyer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

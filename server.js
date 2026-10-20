@@ -35,13 +35,20 @@ const server = http.createServer(async (req, res) => {
 
   // 1. API Route: /api/chat
   if (pathname === '/api/chat') {
-    return chatHandler(req, res);
+    delete require.cache[require.resolve('./api/chat')];
+    return require('./api/chat')(req, res);
   }
 
   // 1b. API Route: /api/send-lead
   if (pathname === '/api/send-lead') {
     const leadHandler = require('./api/send-lead');
     return leadHandler(req, res);
+  }
+
+  // 1c. API Admin & Leads Routes
+  if (pathname.startsWith('/api/admin') || pathname === '/api/leads') {
+    const adminHandler = require('./api/admin');
+    return adminHandler(req, res);
   }
 
   // 2. Static File Serving

@@ -40,32 +40,65 @@ module.exports = async function handler(req, res) {
   const fiche = body.ficheOffre || body;
 
   try {
+    // Sauvegarde automatique dans le store Admin CRM
+    try {
+      const store = require('./store');
+      store.saveLead({
+        nom: fiche.client || 'Client Anonyme',
+        entreprise: fiche.secteur ? `${fiche.client} (${fiche.secteur})` : (fiche.client || 'Prospect'),
+        contact: fiche.whatsapp_client || fiche.email_client || '',
+        whatsapp: (fiche.whatsapp_client || '').replace(/[^0-9]/g, ''),
+        email: fiche.email_client || '',
+        secteur: fiche.secteur || '',
+        besoin: fiche.besoin_cle || fiche.titre || '',
+        solution: fiche.solution_proposee || '',
+        budget: fiche.budget_indicatif || '',
+        delai: fiche.delai_estime || '',
+        source: 'Conseillère Sofia (IA)',
+        statut: 'Nouveau'
+      });
+    } catch(errStore) {
+      console.warn('Erreur enregistrement store:', errStore.message);
+    }
+
+    const cleanWa = (fiche.whatsapp_client || '').replace(/[^0-9+]/g, '');
+    const cleanPhoneDigits = cleanWa.replace(/[^0-9]/g, '');
+    const directWaLink = cleanPhoneDigits ? `https://wa.me/${cleanPhoneDigits}` : '';
+
     const payload = {
-      _subject: `⚡ [LEAD AIFORCE] ${fiche.titre || 'Nouvelle Fiche d\'Offre'} — ${fiche.client || 'Client'}`,
-      destinataire: NOTIFY_EMAIL,
-      client: fiche.client || 'Non spécifié',
-      email_client: fiche.email_client || 'Non spécifié',
-      whatsapp_client: fiche.whatsapp_client || 'Non spécifié',
-      secteur: fiche.secteur || 'Non spécifié',
-      projet: fiche.titre || 'Non spécifié',
-      besoin: fiche.besoin_cle || 'Non spécifié',
-      solution: fiche.solution_proposee || 'Non spécifié',
-      mvp_features: Array.isArray(fiche.fonctionnalites_mvp) ? fiche.fonctionnalites_mvp.join('\n• ') : (fiche.fonctionnalites_mvp || ''),
-      delai: fiche.delai_estime || 'Non spécifié',
-      budget: fiche.budget_indicatif || 'Non spécifié',
-      date: new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Porto-Novo' })
+      _subject: `🚀 [NOUVEAU CLIENT AIFORCE] ${fiche.client || 'Prospect'} (via Sofia)`,
+      _template: 'table',
+      _captcha: 'false',
+      _replyto: fiche.email_client || 'calebwils900@gmail.com',
+      "👤 Nom du Client": fiche.client || 'Non renseigné',
+      "🏢 Entreprise / Secteur": fiche.secteur || 'Non renseigné',
+      "📱 Téléphone WhatsApp": cleanWa || fiche.whatsapp_client || 'Non renseigné',
+      "📲 Lien WhatsApp direct": directWaLink || 'Non disponible',
+      "✉️ Adresse Email": fiche.email_client || 'Non renseignée',
+      "🎯 Projet & Besoin": fiche.besoin_cle || fiche.titre || 'En cours de qualification',
+      "🤖 Conseillère": "Sofia (IA AIFORCE)",
+      "📅 Date de réception": new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Porto-Novo' })
     };
 
-    fetch(`https://formsubmit.co/ajax/${NOTIFY_EMAIL}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Origin': 'https://aiforce-seven.vercel.app',
-        'Referer': 'https://aiforce-seven.vercel.app/'
-      },
-      body: JSON.stringify(payload)
-    }).catch(e => console.warn('Background lead notify error:', e.message));
+    // Envoi sécurisé via FormSubmit (Token direct + adresse email)
+    const FORMSUBMIT_TOKEN = 'ce08480659949df527613109a9831a26';
+    const postUrls = [
+      `https://formsubmit.co/ajax/${FORMSUBMIT_TOKEN}`,
+      `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`
+    ];
+
+    postUrls.forEach((endpoint) => {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Origin': 'https://aiforce-seven.vercel.app',
+          'Referer': 'https://aiforce-seven.vercel.app/'
+        },
+        body: JSON.stringify(payload)
+      }).catch(e => console.warn('Background lead notify error:', e.message));
+    });
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');

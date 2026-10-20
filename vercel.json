@@ -10,7 +10,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "{index.html,app.js,styles.css,translations.js,assets/**,Smart juris images/**,filtec image/**,banner image/**}",
+      "src": "api/admin.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "{*.html,app.js,admin.js,styles.css,admin.css,translations.js,assets/**,Smart juris images/**,filtec image/**,banner image/**}",
       "use": "@vercel/static"
     }
   ],
@@ -22,6 +26,50 @@
     {
       "src": "/api/send-lead",
       "dest": "/api/send-lead.js"
+    },
+    {
+      "src": "/api/admin/(.*)",
+      "dest": "/api/admin.js"
+    },
+    {
+      "src": "/api/admin",
+      "dest": "/api/admin.js"
+    },
+    {
+      "src": "/api/leads",
+      "dest": "/api/admin.js"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin.html"
+    },
+    {
+      "src": "/services",
+      "dest": "/services.html"
+    },
+    {
+      "src": "/service-web",
+      "dest": "/service-web.html"
+    },
+    {
+      "src": "/service-mobile",
+      "dest": "/service-mobile.html"
+    },
+    {
+      "src": "/service-site-web",
+      "dest": "/service-site-web.html"
+    },
+    {
+      "src": "/service-automatisation-ia",
+      "dest": "/service-automatisation-ia.html"
+    },
+    {
+      "src": "/service-optimisation-processus",
+      "dest": "/service-optimisation-processus.html"
+    },
+    {
+      "src": "/service-agents-ia",
+      "dest": "/service-agents-ia.html"
     },
     {
       "src": "/",

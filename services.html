@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Solutions d'Ingénierie Logicielle & IA — AIFORCE AGENCY</title>
+  
+  <meta name="description" content="Découvrez les 6 expertises d'AIFORCE : Développement d'applications web & SaaS, applications mobiles, création de sites web performants, automatisation IA, optimisation de processus et agents conversationnels autonomes.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Design System Geist & Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=20261015geist">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       En-Tête & Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand-wrapper">
+        <a href="index.html" aria-label="AIFORCE Accueil">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="brand-logo" style="height: 28px; width: auto; max-width: 140px;">
+        </a>
+      </div>
+
+      <nav aria-label="Navigation">
+        <ul class="main-nav">
+          <li class="nav-item has-dropdown active">
+            <a href="services.html" class="nav-link-dropdown">
+              <span data-i18n="nav_services">Services</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="services-dropdown-menu" role="menu">
+              <div class="dropdown-menu-header">
+                <span class="dropdown-menu-tag" data-i18n="nav_services_dropdown_tag">Pôles d'expertise AIFORCE</span>
+                <span class="dropdown-menu-subtitle" data-i18n="nav_services_dropdown_sub">Logiciels sur-mesure & IA</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="service-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-web">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_web">Applications Web & SaaS</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_web_desc">Logiciels métier sur mesure, plateformes SaaS, dashboards interactifs</div>
+                  </div>
+                </a>
+                <a href="service-mobile.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-mobile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_mobile">Applications Mobiles</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_mobile_desc">iOS & Android (React Native, Flutter), offline-first et temps réel</div>
+                  </div>
+                </a>
+                <a href="service-site-web.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-site">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_site">Création de Sites Web</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_site_desc">Sites vitrines haut de gamme, landing pages conversion, vitesse éclair</div>
+                  </div>
+                </a>
+                <a href="service-automatisation-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-auto">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_auto">Automatisation de Tâches & IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_auto_desc">Workflows n8n, extraction documentaire OCR/LLM, zéro saisie manuelle</div>
+                  </div>
+                </a>
+                <a href="service-optimisation-processus.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-process">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_process">Optimisation de Processus</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_process_desc">Audit des flux opérationnels, suppression des goulots, ROI garanti</div>
+                  </div>
+                </a>
+                <a href="service-agents-ia.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-icon-box icon-agent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                      <line x1="12" y1="19" x2="12" y2="23"></line>
+                      <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <div class="dropdown-item-title" data-i18n="nav_service_agents">Chatbots & Agents IA</div>
+                    <div class="dropdown-item-desc" data-i18n="nav_service_agents_desc">Conseillers 24/7 (RAG, Sofia), assistants autonomes et tool-calling</div>
+                  </div>
+                </a>
+              </div>
+              <div class="dropdown-menu-footer">
+                <a href="services.html" class="dropdown-all-services-link">
+                  <span data-i18n="nav_services_view_all">Voir tous nos services & comparatif</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a href="index.html#portfolio" data-i18n="nav_portfolio">Réalisations</a></li>
+          <li class="nav-item"><a href="index.html#approach" data-i18n="nav_approach">Méthode</a></li>
+          <li class="nav-item"><a href="index.html#commitments" data-i18n="nav_commitments">Garanties</a></li>
+          <li class="nav-item"><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li class="nav-item"><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-toggle" aria-label="Choisir la langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button type="button" class="btn btn-ai-sparkle btn-small js-open-ai-chat" aria-label="Échanger avec Sofia">
+          <img src="assets/sofia.jpg" alt="Sofia" class="nav-sofia-thumb">
+          <span data-i18n="nav_ai_assistant">✨ Conseillère Sofia</span>
+        </button>
+
+        <a href="#contact" class="btn btn-solid btn-small" data-i18n="nav_cta">Échanger sur un projet</a>
+
+        <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section — Services Hub
+       ========================================================================== -->
+  <section class="service-hero-section">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Services & Solutions</span>
+      </nav>
+
+      <div class="service-hero-header">
+        <span class="service-meta-pill pill-hub">Catalogue des Pôles d'Ingénierie AIFORCE</span>
+        <h1 class="service-hero-title">
+          Ingénierie logicielle sur-mesure, intelligence artificielle & automatisation métier.
+        </h1>
+        <p class="service-hero-lead">
+          Nous combinons la puissance des architectures modernes (React, Next.js, Node, Python, cloud résilient) avec l'intelligence artificielle générative et l'automatisation pour concevoir des systèmes qui libèrent vos équipes des corvées manuelles et accélèrent votre croissance.
+        </p>
+
+        <div class="service-hero-actions">
+          <a href="#catalogue" class="btn btn-solid">
+            <span>Explorer nos 6 Services</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+          <a href="https://wa.me/2290162115411" target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>Discuter avec un ingénieur</span>
+          </a>
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat" aria-label="Parler à Sofia">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Tester notre IA Sofia</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Métriques Clés -->
+      <div class="service-metrics-row">
+        <div class="service-metric-card">
+          <div class="metric-big-number">-20h</div>
+          <div class="metric-caption">Économisées en moyenne par semaine et par collaborateur grâce aux automatisations.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">99.9%</div>
+          <div class="metric-caption">Taux de disponibilité garanti sur nos architectures web & cloud sécurisées.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">100%</div>
+          <div class="metric-caption">Propriété totale de votre code source, bases de données et propriété intellectuelle.</div>
+        </div>
+        <div class="service-metric-card">
+          <div class="metric-big-number">2 à 4 sem.</div>
+          <div class="metric-caption">Délai moyen de livraison d'un premier MVP opérationnel prêt à l'emploi.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Catalogue des 6 Services Spécialisés
+       ========================================================================== -->
+  <section id="catalogue" class="service-body-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Pôles d'Expertise AIFORCE</span>
+        <h2 class="section-title">Choisissez le service adapté à vos enjeux</h2>
+        <p class="section-desc">Chaque besoin technique dispose d'une méthodologie éprouvée, d'une stack technologique de pointe et d'une équipe dédiée.</p>
+      </div>
+
+      <div class="services-hub-grid">
+
+        <!-- 1. DÉVELOPPEMENT WEB -->
+        <article class="hub-service-card" id="card-web">
+          <div class="hub-card-icon icon-web">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px;">Plateformes & SaaS</span>
+          <h3 class="hub-card-title">Développement d'Applications Web & SaaS</h3>
+          <p class="hub-card-desc">
+            Conception de plateformes web métier robustes, logiciels SaaS B2B, portails clients sécurisés et tableaux de bord opérationnels en temps réel.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Architectures modulaires React, Next.js & Node</li>
+            <li>✓ Bases de données haute vitesse (PostgreSQL, Redis)</li>
+            <li>✓ Sécurité bancaire, JWT, rôles & permissions fines</li>
+            <li>✓ Exemple en production : Plateforme IMMO FILTEC</li>
+          </ul>
+          <a href="service-web.html" class="hub-card-cta btn-web">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+        <!-- 2. DÉVELOPPEMENT MOBILE -->
+        <article class="hub-service-card" id="card-mobile">
+          <div class="hub-card-icon icon-mobile">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px; color: #7C3AED; background: #F5F3FF; border-color: #DDD6FE;">iOS & Android</span>
+          <h3 class="hub-card-title">Développement d'Applications Mobiles</h3>
+          <p class="hub-card-desc">
+            Applications mobiles performantes et ergonomiques pour le terrain et vos utilisateurs finaux avec React Native et Flutter.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Fonctionnement hors-ligne (Offline-First)</li>
+            <li>✓ Notifications push ciblées & géolocalisation</li>
+            <li>✓ Synchronisation automatique avec vos serveurs</li>
+            <li>✓ Publication assistée App Store & Google Play</li>
+          </ul>
+          <a href="service-mobile.html" class="hub-card-cta btn-mobile">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+        <!-- 3. CRÉATION DE SITES WEB -->
+        <article class="hub-service-card" id="card-site">
+          <div class="hub-card-icon icon-site">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px; color: #059669; background: #ECFDF5; border-color: #A7F3D0;">Vitrine & Conversion</span>
+          <h3 class="hub-card-title">Création de Sites Web & Portails Vitrines</h3>
+          <p class="hub-card-desc">
+            Sites web vitrines haut de gamme, landing pages ultra-rapides et portails d'entreprise conçus pour asseoir votre crédibilité et convertir les visiteurs en clients.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Score Google PageSpeed 95+ garanti</li>
+            <li>✓ SEO technique complet & structure sémantique</li>
+            <li>✓ Connexion directe WhatsApp API & formulaires leads</li>
+            <li>✓ Design sur-mesure sans template préfabriqué</li>
+          </ul>
+          <a href="service-site-web.html" class="hub-card-cta btn-site">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+        <!-- 4. AUTOMATISATION IA -->
+        <article class="hub-service-card" id="card-auto">
+          <div class="hub-card-icon icon-auto">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px; color: #D97706; background: #FFFBEB; border-color: #FDE68A;">Productivité & Flux</span>
+          <h3 class="hub-card-title">Automatisation de Tâches & Workflows IA</h3>
+          <p class="hub-card-desc">
+            Suppression définitive des tâches répétitives et chronophages : lecture automatique de factures (OCR), synchronisation d'outils et pipelines sans code/code.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Workflows n8n & webhooks sécurisés</li>
+            <li>✓ Extraction intelligente de données PDF/Images (LLM)</li>
+            <li>✓ Zéro double saisie entre CRM, ERP et tableurs</li>
+            <li>✓ Alertes automatiques en temps réel</li>
+          </ul>
+          <a href="service-automatisation-ia.html" class="hub-card-cta btn-auto">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+        <!-- 5. OPTIMISATION PROCESSUS -->
+        <article class="hub-service-card" id="card-process">
+          <div class="hub-card-icon icon-process">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px; color: #DC2626; background: #FEF2F2; border-color: #FECACA;">Audit & Performance</span>
+          <h3 class="hub-card-title">Optimisation de Processus Métier</h3>
+          <p class="hub-card-desc">
+            Audit complet de vos flux opérationnels, cartographie des goulots d'étranglement, standardisation des procédures et restructuration des circuits d'information.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Audit organisationnel & cartographie des blocages</li>
+            <li>✓ Réduction drastique des délais de traitement</li>
+            <li>✓ Tableaux de bord de suivi de performance (KPI)</li>
+            <li>✓ Plan d'action opérationnel immédiat</li>
+          </ul>
+          <a href="service-optimisation-processus.html" class="hub-card-cta btn-process">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+        <!-- 6. CHATBOTS & AGENTS IA -->
+        <article class="hub-service-card" id="card-agent">
+          <div class="hub-card-icon icon-agent">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </div>
+          <span class="hub-cta-pill" style="align-self: flex-start; margin-bottom: 8px; color: #0D9488; background: #F0FDF4; border-color: #99F6E4;">IA Générative & RAG</span>
+          <h3 class="hub-card-title">Chatbots Intelligents & Agents IA Autonomes</h3>
+          <p class="hub-card-desc">
+            Assistants conversationnels connectés à vos données d'entreprise (RAG) et agents autonomes capables d'exécuter des actions concrètes 24/7 sur Web et WhatsApp.
+          </p>
+          <ul class="hub-card-features">
+            <li>✓ Réponses fiables basées uniquement sur vos documents</li>
+            <li>✓ Qualification de leads automatique et prise de rendez-vous</li>
+            <li>✓ Intégration WhatsApp Business API & Site Web</li>
+            <li>✓ Exemple concret : Sofia, Conseillère IA AIFORCE</li>
+          </ul>
+          <a href="service-agents-ia.html" class="hub-card-cta btn-agent">
+            <span>Découvrir la page dédiée</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Simulateur / Estimateur de ROI & Gain de Temps
+       ========================================================================== -->
+  <section class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Impact Mesurable</span>
+        <h2 class="section-title">Estimez le gain de temps et financier pour votre entreprise</h2>
+        <p class="section-desc">Ajustez les curseurs ci-dessous en fonction de la taille de votre équipe pour évaluer l'impact direct d'une solution AIFORCE.</p>
+      </div>
+
+      <div class="roi-calc-container">
+        <div class="roi-inputs-side">
+          <div class="roi-slider-group">
+            <div class="roi-slider-header">
+              <span class="roi-label">Nombre de collaborateurs concernés :</span>
+              <span class="roi-val-badge" id="roi-team-display">5 collaborateurs</span>
+            </div>
+            <input type="range" min="1" max="50" value="5" class="roi-range-input" id="roi-team-slider">
+          </div>
+
+          <div class="roi-slider-group">
+            <div class="roi-slider-header">
+              <span class="roi-label">Heures perdues par personne / semaine (saisies, copier-coller) :</span>
+              <span class="roi-val-badge" id="roi-hours-display">6 heures / sem.</span>
+            </div>
+            <input type="range" min="1" max="20" value="6" class="roi-range-input" id="roi-hours-slider">
+          </div>
+
+          <p style="font-size: 0.84rem; color: var(--ink-500); line-height: 1.5; margin-top: 16px;">
+            * Hypothèse prudente basée sur un coût horaire moyen en entreprise de 15 € / 10 000 FCFA par collaborateur.
+          </p>
+        </div>
+
+        <div class="roi-results-box">
+          <div class="roi-result-item">
+            <div class="roi-result-num" id="roi-monthly-hours">120 h</div>
+            <div class="roi-result-label">Temps récupéré chaque mois</div>
+          </div>
+          <div class="roi-result-item" style="margin-bottom: 0;">
+            <div class="roi-result-num" id="roi-annual-savings" style="color: #4ADE80;">1 440 h / an</div>
+            <div class="roi-result-label">Temps réinvesti dans votre cœur de métier</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Notre Processus d'Ingénierie en 4 Étapes
+       ========================================================================== -->
+  <section class="service-body-section">
+    <div class="container">
+      <div class="service-section-header">
+        <span class="section-label">Méthodologie Éprouvée</span>
+        <h2 class="section-title">Comment nous collaborons sur votre projet</h2>
+        <p class="section-desc">Un processus transparent, rigoureux et sans surprise, du premier échange jusqu'au déploiement et au-delà.</p>
+      </div>
+
+      <div class="process-steps-track">
+        <div class="process-step-box">
+          <div class="step-num-badge">01</div>
+          <h3 class="step-title">Diagnostic & Cadrage</h3>
+          <span class="step-duration">Gratuit • 48h</span>
+          <p class="step-text">Échange approfondi pour cartographier vos besoins, identifier les points de friction et définir le périmètre technique idéal.</p>
+        </div>
+
+        <div class="process-step-box">
+          <div class="step-num-badge">02</div>
+          <h3 class="step-title">Architecture & UI/UX</h3>
+          <span class="step-duration">Semaine 1</span>
+          <p class="step-text">Conception de l'architecture logicielle, schéma de base de données et maquettage des écrans pour validation préalable.</p>
+        </div>
+
+        <div class="process-step-box">
+          <div class="step-num-badge">03</div>
+          <h3 class="step-title">Développement Agile</h3>
+          <span class="step-duration">Semaines 2 à 4</span>
+          <p class="step-text">Développement itératif avec démonstrations hebdomadaires. Vous testez l'application en conditions réelles à chaque étape.</p>
+        </div>
+
+        <div class="process-step-box">
+          <div class="step-num-badge">04</div>
+          <h3 class="step-title">Mise en Prod & Garantie</h3>
+          <span class="step-duration">Garantie 6 mois</span>
+          <p class="step-text">Déploiement sur serveurs sécurisés, formation de vos équipes, cession complète du code source et maintenance proactive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Bannière de Contact & CTA Sofia / WhatsApp
+       ========================================================================== -->
+  <section id="contact" class="service-body-section bg-warm">
+    <div class="container">
+      <div class="service-cta-card">
+        <h2 class="service-cta-title">Parlons concrètement de votre projet dès aujourd'hui</h2>
+        <p class="service-cta-sub">
+          Obtenez une analyse technique et un chiffrage précis sous 24 à 48 heures. Sans engagement, avec un ingénieur senior dédié.
+        </p>
+
+        <div class="service-cta-buttons">
+          <a href="https://wa.me/2290162115411?text=Bonjour%20AIFORCE%2C%20je%20souhaite%20%C3%A9changer%20sur%20un%20projet%20logiciel%20ou%20automatisation." target="_blank" class="btn btn-wa js-wa-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12 20.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a7.87 7.87 0 01-1.21-4.22c0-4.34 3.53-7.87 7.88-7.87 2.1 0 4.07.82 5.56 2.31 1.49 1.49 2.31 3.46 2.31 5.56 0 4.34-3.54 7.88-7.88 7.88zm4.31-5.9c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.01-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.42s-.53-1.27-.72-1.74c-.19-.46-.39-.4-.53-.4h-.45c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.45-.28z"/>
+            </svg>
+            <span>Échanger sur WhatsApp (+229 0162115411)</span>
+          </a>
+
+          <button type="button" class="btn btn-hero-ai js-open-ai-chat" aria-label="Parler à Sofia">
+            <img src="assets/sofia.jpg" alt="Sofia" class="hero-sofia-thumb">
+            <span>Parler de mon projet à Sofia</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Pied de Page
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-inner">
+        <div class="footer-brand-side">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="footer-logo" style="height: 26px; width: auto; max-width: 130px; display: block; margin-bottom: 12px;">
+          <p>
+            Studio d'ingénierie logicielle & automatisation des processus métier. Applications web, mobiles, sites haute performance et agents IA.
+          </p>
+        </div>
+
+        <div class="footer-info-side">
+          <div class="footer-info-col">
+            <span class="footer-col-title">Nos 6 Services</span>
+            <ul class="footer-services-grid">
+              <li><a href="service-web.html">Applications Web & SaaS</a></li>
+              <li><a href="service-mobile.html">Applications Mobiles</a></li>
+              <li><a href="service-site-web.html">Création de Sites Web</a></li>
+              <li><a href="service-automatisation-ia.html">Automatisation & IA</a></li>
+              <li><a href="service-optimisation-processus.html">Optimisation de Processus</a></li>
+              <li><a href="service-agents-ia.html">Chatbots & Agents IA</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-info-col">
+            <span class="footer-col-title">Navigation</span>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="index.html#portfolio">Réalisations</a></li>
+              <li><a href="index.html#approach">Méthode</a></li>
+              <li><a href="index.html#commitments">Garanties</a></li>
+              <li><a href="admin.html">Espace Admin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 <strong>AIFORCE AGENCY. Tous droits réservés.</strong></p>
+        <p>International & Afrique de l'Ouest</p>
+        <a href="admin.html" class="footer-admin-btn" title="Espace Administrateur">
+          <span>Accès Espace Admin</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Chatbot Sofia IA Modal (Intégrée)
+       ========================================================================== -->
+  <div id="ai-chat-modal" class="aiforce-chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="chat-modal-window">
+      <div class="chat-header">
+        <div class="chat-header-persona">
+          <div class="chat-avatar-wrapper">
+            <img src="assets/sofia.jpg" alt="Sofia — Conseillère IA AIFORCE" class="chat-avatar-img">
+            <span class="chat-online-dot"></span>
+          </div>
+          <div class="chat-header-info">
+            <div class="chat-agent-name">Sofia</div>
+            <div class="chat-agent-role">Conseillère Projets • AIFORCE</div>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button type="button" class="chat-header-btn js-reset-ai-chat" title="Réinitialiser l'échange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+          </button>
+          <button type="button" class="chat-header-btn js-close-ai-chat" aria-label="Fermer la discussion">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-body" id="chat-messages-container">
+        <!-- Messages chargés par app.js -->
+      </div>
+
+      <div class="chat-footer">
+        <form id="chat-input-form" class="chat-input-form">
+          <div class="chat-input-container">
+            <textarea id="chat-user-input" class="chat-textarea" placeholder="Posez votre question sur nos services..." rows="1"></textarea>
+            <button type="submit" class="chat-send-btn" id="chat-send-btn" aria-label="Envoyer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <div class="chat-footer-meta">
+          <span class="chat-disclaimer">Vos échanges restent strictement confidentiels.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Interactive ROI script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const teamSlider = document.getElementById('roi-team-slider');
+      const hoursSlider = document.getElementById('roi-hours-slider');
+      const teamDisplay = document.getElementById('roi-team-display');
+      const hoursDisplay = document.getElementById('roi-hours-display');
+      const monthlyHours = document.getElementById('roi-monthly-hours');
+      const annualSavings = document.getElementById('roi-annual-savings');
+
+      if (teamSlider && hoursSlider) {
+        function updateRoi() {
+          const team = parseInt(teamSlider.value, 10);
+          const hours = parseInt(hoursSlider.value, 10);
+
+          teamDisplay.textContent = team + (team > 1 ? ' collaborateurs' : ' collaborateur');
+          hoursDisplay.textContent = hours + ' heures / sem.';
+
+          const monthly = Math.round(team * hours * 4.33);
+          const annual = monthly * 12;
+
+          monthlyHours.textContent = monthly.toLocaleString('fr-FR') + ' h';
+          annualSavings.textContent = annual.toLocaleString('fr-FR') + ' h / an';
+        }
+
+        teamSlider.addEventListener('input', updateRoi);
+        hoursSlider.addEventListener('input', updateRoi);
+        updateRoi();
+      }
+    });
+  </script>
+</body>
+</html>

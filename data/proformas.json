@@ -1,0 +1,97 @@
+[
+  {
+    "id": "pro-1791649846974",
+    "ref": "AF-PRO-2026-002",
+    "date": "2026-10-10",
+    "statut": "Envoyée",
+    "validite": "30 jours",
+    "devise": "FCFA",
+    "clientNom": "Me Sossou Augustin",
+    "clientEntreprise": "Cabinet Sossou & Associés (Cotonou)",
+    "clientContact": "+229 97 12 34 56",
+    "clientEmail": "contact@sossou-avocats.bj",
+    "items": [
+      {
+        "description": "Plateforme type Smart Juris avec moteur anti-hallucination et alertes SMS.",
+        "quantite": 1,
+        "prixUnitaire": 3500000,
+        "total": 3500000
+      },
+      {
+        "description": "Conception & Développement d'une Application Web sur-mesure (Dashboard métier, Portail client, Base de données & Authentification)",
+        "quantite": 1,
+        "prixUnitaire": 2500000,
+        "total": 2500000
+      },
+      {
+        "description": "Module d'Intelligence Artificielle Copilot Métier (Moteur RAG anti-hallucination sourcé sur vos données d'entreprise & extraction de pièces)",
+        "quantite": 1,
+        "prixUnitaire": 2000000,
+        "total": 2000000
+      },
+      {
+        "description": "Audit Technique d'Architecture Logicielle, Cadrage des flux & Rédaction du Cahier des Charges MVP",
+        "quantite": 1,
+        "prixUnitaire": 800000,
+        "total": 800000
+      },
+      {
+        "description": "Contrat Annuel de Maintenance Corrective & Évolutive, Monitoring 24/7 et Sauvegardes Cloud",
+        "quantite": 1,
+        "prixUnitaire": 1500000,
+        "total": 1500000
+      }
+    ],
+    "sousTotal": 10300000,
+    "remisePourcent": 5,
+    "remiseMontant": 515000,
+    "tvaPourcent": 18,
+    "tvaMontant": 1761300,
+    "totalTTC": 11546300,
+    "acompteExige": "50% à la commande,  50% au déploiement final",
+    "delaiLivraison": "3 à 4 semaines",
+    "notes": "Code source 100% propriété du client. Garantie corrective de 3 mois incluse."
+  },
+  {
+    "id": "pro-001",
+    "ref": "AF-PRO-2026-001",
+    "leadId": "lead-001",
+    "date": "2026-10-09",
+    "validite": "30 jours",
+    "clientNom": "Me Sossou Augustin",
+    "clientEntreprise": "Cabinet Sossou & Associés",
+    "clientContact": "+229 97 12 34 56",
+    "clientEmail": "contact@sossou-avocats.bj",
+    "devise": "FCFA",
+    "statut": "Envoyée",
+    "items": [
+      {
+        "description": "Conception & Déploiement de la plateforme de gestion des contentieux (Workspace Web)",
+        "quantite": 1,
+        "prixUnitaire": 1800000,
+        "total": 1800000
+      },
+      {
+        "description": "Moteur IA de Rédaction d'Actes & Vérification anti-hallucination OHADA / CCJA",
+        "quantite": 1,
+        "prixUnitaire": 1200000,
+        "total": 1200000
+      },
+      {
+        "description": "Module d'alertes SMS & WhatsApp des audiences et délais procéduraux",
+        "quantite": 1,
+        "prixUnitaire": 500000,
+        "total": 500000
+      }
+    ],
+    "sousTotal": 3500000,
+    "remisePourcent": 0,
+    "remiseMontant": 0,
+    "tvaPourcent": 0,
+    "totalTTC": 3500000,
+    "acompteExige": "50% à la commande (1 750 000 FCFA), 30% à la recette MVP, 20% au déploiement final",
+    "delaiLivraison": "3 à 4 semaines",
+    "conditionsPaiement": "Virement bancaire ou Mobile Money certifié",
+    "notes": "Garantie et maintenance corrective de 6 mois incluses."
+  }
+]

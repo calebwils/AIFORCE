@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIFORCE Studio — Espace Admin, CRM & Factures Proforma</title>
+  
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Design System Geist : Geist Sans + Geist Mono (Interface SaaS B2B Ultra-Moderne & Industrielle) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="admin.css?v=20261011">
+  <script>
+    (function() {
+      var saved = localStorage.getItem('aiforce_admin_theme') || 'light';
+      if (saved === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+      } else {
+        document.documentElement.classList.remove('theme-dark');
+      }
+    })();
+  </script>
+</head>
+<body class="admin-body">
+
+  <!-- ==========================================================================
+       Écran de Verrouillage & Sécurité PIN
+       ========================================================================== -->
+  <div id="auth-lock-screen" class="auth-lock-screen">
+    <div class="auth-modal">
+      <div class="auth-modal-top-bar">
+        <button type="button" class="btn-lock-theme-toggle" id="btn-lock-theme-toggle" title="Basculer Mode Clair / Sombre">
+          <span class="lock-theme-icon">☀️</span>
+          <span class="lock-theme-text">Mode Clair</span>
+        </button>
+      </div>
+      <div class="auth-brand">
+        <img src="assets/logo.png" alt="AIFORCE" class="auth-logo">
+      </div>
+      <h2>Espace Administrateur</h2>
+      <p class="auth-desc">Veuillez saisir votre code d'accès administrateur pour accéder au CRM et aux devis.</p>
+      
+      <form id="auth-pin-form" class="auth-form">
+        <div class="auth-input-wrap">
+          <input type="password" id="auth-pin-input" placeholder="Code secret (défaut : aiforce2026)" autocomplete="current-password" autofocus required>
+          <button type="button" id="toggle-pin-visibility" class="btn-toggle-eye" title="Afficher/Masquer">👁️</button>
+        </div>
+        <p id="auth-error-msg" class="auth-error-msg"></p>
+        <div class="auth-actions">
+          <button type="submit" class="btn-admin-solid">Déverrouiller l'Espace Admin</button>
+          <a href="index.html" class="btn-admin-outline">← Retour au site vitrine</a>
+        </div>
+      </form>
+      <div class="auth-footer-hint">
+        <span>AIFORCE AGENCY • Système Sécurisé Local & Cloud</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Application Principale Admin avec Menu Latéral Gauche
+       ========================================================================== -->
+  <div id="admin-app" class="admin-app hidden">
+    
+    <!-- Voile d'obscurcissement pour mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- ========================================================================
+         Barre Latérale Gauche (Sidebar)
+         ======================================================================== -->
+    <aside class="admin-sidebar" id="admin-sidebar">
+      
+      <!-- En-tête / Marque Sidebar -->
+      <div class="sidebar-brand-box">
+        <a href="index.html" class="sidebar-brand-link" title="Retour au site vitrine">
+          <img src="assets/logo.png" alt="AIFORCE AGENCY" class="sidebar-brand-logo">
+        </a>
+      </div>
+
+      <!-- Menu de Navigation Vertical -->
+      <div class="sidebar-nav-wrap">
+        <div class="sidebar-group-title">MENU PRINCIPAL</div>
+        <nav class="sidebar-menu" id="admin-tabs">
+          <button type="button" class="tab-btn active" data-tab="tab-dashboard">
+            <span class="tab-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </span>
+            <span class="tab-label">Vue d'ensemble</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="tab-leads">
+            <span class="tab-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <span class="tab-label">Demandes Clients</span>
+            <span class="tab-badge" id="leads-count-badge">0</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="tab-proformas">
+            <span class="tab-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </span>
+            <span class="tab-label">Factures Proforma</span>
+            <span class="tab-badge" id="proformas-count-badge">0</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="tab-projects">
+            <span class="tab-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </span>
+            <span class="tab-label">Projets & Marchés</span>
+            <span class="tab-badge" id="projects-count-badge">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Pied de la Sidebar : Connexion, Liens & Déconnexion -->
+      <div class="sidebar-footer-box">
+        <!-- Indicateur de synchronisation -->
+        <div class="sidebar-sync-container">
+          <div class="sync-status-indicator" id="sync-status" title="Synchronisé avec la base de données">
+            <span class="status-dot online"></span>
+            <span class="status-text">Base synchronisée</span>
+          </div>
+        </div>
+
+        <!-- Liens d'action -->
+        <div class="sidebar-nav-actions">
+          <a href="index.html" class="sidebar-btn-action" title="Voir le site public" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>Voir le site</span>
+          </a>
+          <button type="button" id="btn-admin-logout" class="sidebar-btn-action logout" title="Verrouiller l'accès">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Verrouiller</span>
+          </button>
+        </div>
+
+        <div class="sidebar-meta-version">
+          <span>AIFORCE Studio • v2.6 PRO</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ========================================================================
+         Zone Principale de Contenu (Droite de la Sidebar)
+         ======================================================================== -->
+    <div class="admin-main-wrapper">
+      
+      <!-- En-tête Supérieur Moderne -->
+      <header class="admin-top-header">
+        <div class="top-header-left">
+          <button type="button" id="btn-sidebar-toggle" class="btn-sidebar-burger" aria-label="Afficher le menu latéral">
+            <span>☰</span>
+          </button>
+          <div class="top-header-breadcrumbs">
+            <span class="crumb-brand">AIFORCE</span>
+            <span class="crumb-slash">/</span>
+            <span class="crumb-current" id="current-tab-crumb">Vue d'ensemble</span>
+          </div>
+        </div>
+
+        <div class="top-header-right">
+          <a href="index.html" class="btn-header-link" title="Voir le site public" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>Site public</span>
+          </a>
+
+          <!-- Bouton bascule de thème : icône simple et discrète -->
+          <button type="button" class="btn-top-theme-icon-only" id="btn-top-theme-toggle" aria-label="Changer de thème" title="Basculer Mode Clair / Sombre">
+            <span class="top-theme-icon" id="top-theme-icon">☀️</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Container -->
+      <main class="admin-main-container">
+      
+      <!-- ====================================================================
+           1. ONGLET DASHBOARD / VUE D'ENSEMBLE
+           ==================================================================== -->
+      <section id="tab-dashboard" class="tab-pane active">
+        <div class="pane-header">
+          <div>
+            <h2 class="pane-title">Tableau de Bord Exécutif</h2>
+            <p class="pane-subtitle">Vision globale des prospects, devis émis et chantiers de développement en cours.</p>
+          </div>
+          <div class="pane-actions">
+            <button type="button" class="btn-admin-primary" id="btn-quick-create-lead">
+              + Nouvelle Demande
+            </button>
+            <button type="button" class="btn-admin-solid" id="btn-quick-create-proforma">
+              ⚡ Générer une Proforma
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Cards Grid (Raffiné, épuré, icônes monochromes sans fond coloré) -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-label">Demandes Clients</span>
+              <span class="kpi-icon-clean" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+            </div>
+            <h3 class="kpi-value" id="kpi-total-leads">0</h3>
+            <span class="kpi-sub" id="kpi-new-leads">0 nouvelle(s) demande(s)</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-label">Proformas Émises</span>
+              <span class="kpi-icon-clean" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </span>
+            </div>
+            <h3 class="kpi-value" id="kpi-total-proformas">0</h3>
+            <span class="kpi-sub" id="kpi-pipeline-val">0 FCFA en devis</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-label">Marchés Obtenus</span>
+              <span class="kpi-icon-clean" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </span>
+            </div>
+            <h3 class="kpi-value" id="kpi-total-projects">0</h3>
+            <span class="kpi-sub" id="kpi-projects-encaisse">0 FCFA encaissés</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top-row">
+              <span class="kpi-label">Volume d'Affaires</span>
+              <span class="kpi-icon-clean" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </span>
+            </div>
+            <h3 class="kpi-value" id="kpi-total-business">0 FCFA</h3>
+            <span class="kpi-sub">Marchés fermes signés</span>
+          </div>
+        </div>
+
+        <!-- 2 Columns Grid: Recent Leads & Active Projects -->
+        <div class="dashboard-split-grid">
+          <div class="dash-box">
+            <div class="dash-box-header">
+              <h3>Dernières Demandes Clients Entrantes</h3>
+              <button type="button" class="btn-link-action" data-nav-tab="tab-leads">Voir toutes les demandes →</button>
+            </div>
+            <div class="dash-box-content" id="dash-recent-leads">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="dash-box">
+            <div class="dash-box-header">
+              <h3>Avancement des Projets en Exécution</h3>
+              <button type="button" class="btn-link-action" data-nav-tab="tab-projects">Gérer les projets →</button>
+            </div>
+            <div class="dash-box-content" id="dash-active-projects">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           2. ONGLET CRM & DEMANDES CLIENTS
+           ==================================================================== -->
+      <section id="tab-leads" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2 class="pane-title">Gestion des Demandes Clients (CRM)</h2>
+            <p class="pane-subtitle">Centralisation des leads reçus via le site vitrine, le Chatbot Copilot ou ajoutés manuellement.</p>
+          </div>
+          <div class="pane-actions">
+            <button type="button" class="btn-admin-solid" id="btn-open-add-lead-modal">
+              + Ajouter une Demande Manuelle
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="filters-bar">
+          <div class="search-field">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="leads-search-input" placeholder="Rechercher par nom, entreprise, besoin, téléphone...">
+          </div>
+
+          <div class="filter-pills-row">
+            <button type="button" class="filter-pill active" data-lead-filter="ALL">Tous (<span id="count-lead-all">0</span>)</button>
+            <button type="button" class="filter-pill" data-lead-filter="Nouveau">Nouveaux (<span id="count-lead-nouveau">0</span>)</button>
+            <button type="button" class="filter-pill" data-lead-filter="Contacté">Contactés (<span id="count-lead-contacte">0</span>)</button>
+            <button type="button" class="filter-pill" data-lead-filter="Devis envoyé">Devis envoyé (<span id="count-lead-devis">0</span>)</button>
+            <button type="button" class="filter-pill" data-lead-filter="Gagné">Gagnés / Signés (<span id="count-lead-gagne">0</span>)</button>
+            <button type="button" class="filter-pill" data-lead-filter="Archivé">Archivés</button>
+          </div>
+        </div>
+
+        <!-- Leads List View -->
+        <div class="leads-cards-container" id="leads-cards-container">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           3. ONGLET GÉNÉRATEUR & HISTORIQUE DES PROFORMAS
+           ==================================================================== -->
+      <section id="tab-proformas" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2 class="pane-title">Factures Proforma & Devis Officiels</h2>
+            <p class="pane-subtitle">Générez des devis professionnels aux normes AIFORCE avec le logo officiel, calculs automatiques et export PDF A4 / WhatsApp.</p>
+          </div>
+          <div class="pane-actions">
+            <button type="button" class="btn-admin-solid" id="btn-new-proforma">
+              ⚡ Créer une Proforma Vierge
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="filters-bar">
+          <div class="search-field">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="proformas-search-input" placeholder="Rechercher par référence, client, montant...">
+          </div>
+          <div class="filter-pills-row">
+            <button type="button" class="filter-pill active" data-proforma-filter="ALL">Toutes (<span id="count-proforma-all">0</span>)</button>
+            <button type="button" class="filter-pill" data-proforma-filter="Brouillon">Brouillons</button>
+            <button type="button" class="filter-pill" data-proforma-filter="Envoyée">Envoyées</button>
+            <button type="button" class="filter-pill" data-proforma-filter="Acceptée">Acceptées</button>
+          </div>
+        </div>
+
+        <!-- Proformas List Grid -->
+        <div class="proformas-list-grid" id="proformas-list-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           4. ONGLET PROJETS & MARCHÉS OBTENUS
+           ==================================================================== -->
+      <section id="tab-projects" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h2 class="pane-title">Suivi des Projets & Marchés Obtenus</h2>
+            <p class="pane-subtitle">Pilotage des chantiers techniques signés, suivi des jalons de développement et situation financière (encaissements / restes à payer).</p>
+          </div>
+          <div class="pane-actions">
+            <button type="button" class="btn-admin-solid" id="btn-open-add-project-modal">
+              + Ajouter un Marché / Projet
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Cards Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+    </main>
+    </div> <!-- Fin .admin-main-wrapper -->
+  </div> <!-- Fin #admin-app -->
+
+
+  <!-- ==========================================================================
+       MODAL 1 : ÉDITEUR & GÉNÉRATEUR DE PROFORMA (Propre, Professionnel & Live Preview)
+       ========================================================================== -->
+  <div id="modal-proforma-builder" class="admin-modal-overlay hidden">
+    <div class="modal-large-box">
+      <div class="modal-large-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge">AIFORCE PROFORMA ENGINE</span>
+          <h2 id="proforma-modal-title">Création de Facture Proforma</h2>
+        </div>
+        <div class="modal-header-actions">
+          <button type="button" class="btn-print-action" id="btn-print-proforma" title="Imprimer ou enregistrer en PDF">
+            🖨️ Imprimer / PDF A4
+          </button>
+          <button type="button" class="btn-wa-action" id="btn-whatsapp-proforma" title="Partager au client via WhatsApp">
+            📲 Transmettre sur WhatsApp
+          </button>
+          <button type="button" class="btn-close-modal" id="btn-close-proforma-modal">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-split-body">
+        
+        <!-- Colonne Gauche : Formulaire de Saisie Dynamique (Tout est modifiable) -->
+        <div class="proforma-form-side">
+          <h3 class="section-label">Paramètres du Devis</h3>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Référence Devis</label>
+              <input type="text" id="pf-ref" class="admin-input" placeholder="Ex: AF-PRO-2026-004">
+            </div>
+            <div class="form-group">
+              <label>Date d'émission</label>
+              <input type="date" id="pf-date" class="admin-input">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Validité de l'offre</label>
+              <input type="text" id="pf-validite" class="admin-input" value="30 jours">
+            </div>
+            <div class="form-group">
+              <label>Devise</label>
+              <select id="pf-devise" class="admin-input">
+                <option value="FCFA" selected>FCFA (Francs CFA)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="USD">USD ($)</option>
+              </select>
+            </div>
+          </div>
+
+          <h3 class="section-label" style="margin-top: 18px;">Informations Client (Destinataire)</h3>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Nom du Client / Contact</label>
+              <input type="text" id="pf-client-nom" class="admin-input" placeholder="Ex: Jean Dupont" required>
+            </div>
+            <div class="form-group">
+              <label>Entreprise / Organisation</label>
+              <input type="text" id="pf-client-entreprise" class="admin-input" placeholder="Ex: Lumière Immobilier">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Téléphone / WhatsApp</label>
+              <input type="text" id="pf-client-contact" class="admin-input" placeholder="Ex: +229 01 62 11 54 11">
+            </div>
+            <div class="form-group">
+              <label>Email Client</label>
+              <input type="email" id="pf-client-email" class="admin-input" placeholder="Ex: contact@client.com">
+            </div>
+          </div>
+
+          <h3 class="section-label" style="margin-top: 18px;">Objet de la Mission</h3>
+          <div class="form-group">
+            <label>Titre / Objet Principal</label>
+            <input type="text" id="pf-titre" class="admin-input" value="Conception & Développement de Solution Digitale sur-mesure & Automatisation IA" placeholder="Ex: Refonte Plateforme Web & Intégration IA">
+          </div>
+          <div class="form-group">
+            <label>Descriptif synthétique de la mission</label>
+            <textarea id="pf-description" class="admin-input" rows="2" placeholder="Description synthétique de la mission...">Développement d'une application sur-mesure haute performance, centralisation des flux métiers et automatisation des processus avec intégration d'un assistant IA dédié.</textarea>
+          </div>
+
+          <!-- Services Presets Quick Add -->
+          <div class="presets-section">
+            <label class="presets-label">⚡ Ajouter rapidement une prestation type AIFORCE :</label>
+            <div class="presets-chips">
+              <button type="button" class="preset-chip" data-preset="web">🌐 App Web Sur Mesure</button>
+              <button type="button" class="preset-chip" data-preset="mobile">📱 App Mobile iOS & Android</button>
+              <button type="button" class="preset-chip" data-preset="n8n">⚡ Automatisation n8n & API</button>
+              <button type="button" class="preset-chip" data-preset="ai">🤖 Copilot IA Métier & RAG</button>
+              <button type="button" class="preset-chip" data-preset="audit">🛡️ Audit & Architecture</button>
+              <button type="button" class="preset-chip" data-preset="maintenance">🔧 Maintenance & Cloud 1 An</button>
+            </div>
+          </div>
+
+          <!-- Line Items Table -->
+          <h3 class="section-label" style="margin-top: 18px;">Lignes de Prestations (Devis Chiffré)</h3>
+          <div class="items-table-wrapper">
+            <table class="items-edit-table" id="pf-items-table">
+              <thead>
+                <tr>
+                  <th style="width: 52%;">Description de la prestation</th>
+                  <th style="width: 14%; text-align: center;">Qté</th>
+                  <th style="width: 26%; text-align: right;">Prix Unitaire</th>
+                  <th style="width: 8%; text-align: center;"></th>
+                </tr>
+              </thead>
+              <tbody id="pf-items-tbody">
+                <!-- Injected dynamically -->
+              </tbody>
+            </table>
+            <button type="button" class="btn-add-item-row" id="btn-add-item-line">
+              + Ajouter une ligne de prestation
+            </button>
+          </div>
+
+          <!-- Financial Adjustments -->
+          <h3 class="section-label" style="margin-top: 18px;">Ajustements Financiers</h3>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Remise (%)</label>
+              <input type="number" id="pf-remise" class="admin-input" value="0" min="0" max="100">
+            </div>
+            <div class="form-group">
+              <label>TVA / Taxe (%)</label>
+              <input type="number" id="pf-tva" class="admin-input" value="0" min="0" max="30">
+            </div>
+          </div>
+
+          <!-- Modalités de Règlement (Simples et Flexibles) -->
+          <h3 class="section-label" style="margin-top: 18px;">Modalités d'Exécution & de Règlement</h3>
+          <div class="form-row-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label>Avance (%)</label>
+              <input type="number" id="pf-pay-avance-pct" class="admin-input" value="50" min="0" max="100">
+            </div>
+            <div class="form-group">
+              <label>2e Échelon (%) <small style="color:var(--admin-text-dim);">(0 si aucun)</small></label>
+              <input type="number" id="pf-pay-inter-pct" class="admin-input" value="0" min="0" max="100">
+            </div>
+            <div class="form-group">
+              <label>Solde (%)</label>
+              <input type="number" id="pf-pay-solde-pct" class="admin-input" value="50" min="0" max="100">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Libellé Avance</label>
+              <input type="text" id="pf-pay-avance-lbl" class="admin-input" value="À la commande / signature">
+            </div>
+            <div class="form-group">
+              <label>Libellé 2e Échelon</label>
+              <input type="text" id="pf-pay-inter-lbl" class="admin-input" value="À la validation MVP / Prototype">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>Libellé Solde</label>
+              <input type="text" id="pf-pay-solde-lbl" class="admin-input" value="À la livraison finale & recette">
+            </div>
+            <div class="form-group">
+              <label>Délai estimé de réalisation</label>
+              <input type="text" id="pf-delai" class="admin-input" value="3 à 4 semaines">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Moyen de paiement</label>
+            <input type="text" id="pf-pay-moyen" class="admin-input" value="Virement Bancaire (RIB fourni à la signature) ou Mobile Money Bénin">
+          </div>
+
+          <!-- Conditions Particulières -->
+          <h3 class="section-label" style="margin-top: 18px;">Conditions Particulières & Garanties</h3>
+          <div class="form-group">
+            <label>Conditions de démarrage & Propriété (1 ligne par puce)</label>
+            <textarea id="pf-conditions" class="admin-input" rows="3">• Frais récurrents tiers : Les abonnements cloud, hébergement, noms de domaine et clés API restent à la charge du client.
+• Propriété intellectuelle : Le code source intégral et les accès sont transférés à 100% au client à solde du compte.
+• Garantie : Garantie corrective et accompagnement technique inclus pendant 30 jours après mise en ligne.</textarea>
+          </div>
+
+          <div class="form-row-2" style="margin-top: 14px;">
+            <div class="form-group">
+              <label>Représentant AIFORCE (Signature)</label>
+              <input type="text" id="pf-sign-rep" class="admin-input" value="Direction AIFORCE AGENCY">
+            </div>
+            <div class="form-group">
+              <label>Statut de la Proforma</label>
+              <select id="pf-statut" class="admin-input">
+                <option value="Brouillon">Brouillon</option>
+                <option value="Envoyée" selected>Envoyée au client</option>
+                <option value="Acceptée">Acceptée / Signée</option>
+                <option value="Refusée">Refusée</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="proforma-form-footer">
+            <button type="button" class="btn-admin-solid" id="btn-save-proforma">
+              💾 Enregistrer la Proforma
+            </button>
+            <button type="button" class="btn-admin-primary" id="btn-convert-to-project">
+              🚀 Convertir en Projet en Cours
+            </button>
+          </div>
+        </div>
+
+        <!-- Colonne Droite : Prévisualisation A4 en Direct (Document Professionnel Propre) -->
+        <div class="proforma-preview-side">
+          <div class="preview-toolbar">
+            <span class="preview-badge">DOCUMENTS OFFICIELS AIFORCE</span>
+            <span class="preview-zoom-hint">Format Document A4 Commercial (1 Page)</span>
+          </div>
+
+          <div class="a4-document-viewport" id="a4-document-viewport">
+            
+            <div class="a4-sheet a4-page" id="proforma-page-1">
+              
+              <!-- Barre Accent 4 Couleurs AIFORCE -->
+              <div class="a4-top-accent-bar">
+                <span class="accent-green"></span>
+                <span class="accent-gold"></span>
+                <span class="accent-orange"></span>
+                <span class="accent-cyan"></span>
+              </div>
+
+              <!-- En-tête Officiel -->
+              <div class="a4-header">
+                <div class="a4-brand-block">
+                  <img src="assets/logo.png" alt="AIFORCE AGENCY" class="a4-logo">
+                  <div class="a4-agency-coords">
+                    <p class="a4-agency-subtitle">AI Automation &amp; Consulting Services</p>
+                    <p class="a4-agency-subinfo">Cotonou • Présence Internationale</p>
+                    <p class="a4-agency-subinfo">Tél : +229 01 62 11 54 11 • contact@aiforce.agency</p>
+                  </div>
+                </div>
+
+                <div class="a4-header-right-meta">
+                  <div class="a4-doc-type">FACTURE PROFORMA</div>
+                  <div class="a4-meta-row">
+                    <span><strong>N° Devis :</strong> <span id="prev-ref">AF-PRO-2026-001</span></span>
+                  </div>
+                  <div class="a4-meta-row">
+                    <span><strong>Date d'émission :</strong> <span id="prev-date">10 Octobre 2026</span></span>
+                  </div>
+                  <div class="a4-meta-row">
+                    <span><strong>Validité de l'offre :</strong> <span id="prev-validite">30 jours</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Destinataire & Prestataire Côte-à-Côte -->
+              <div class="a4-two-boxes-row">
+                <div class="a4-party-box client-box">
+                  <div class="a4-box-header client-hdr">DESTINATAIRE DU DEVIS :</div>
+                  <div class="a4-box-body">
+                    <h4 class="a4-party-name" id="prev-client-nom">Client Destinataire</h4>
+                    <p class="a4-party-role" id="prev-client-entreprise">Entreprise / Organisation</p>
+                    <p class="a4-party-contact" id="prev-client-contact">📞 +229 01 62 11 54 11</p>
+                    <p class="a4-party-contact" id="prev-client-email">✉️ contact@client.com</p>
+                  </div>
+                </div>
+
+                <div class="a4-party-box provider-box">
+                  <div class="a4-box-header provider-hdr">ÉMETTEUR DU DEVIS :</div>
+                  <div class="a4-box-body">
+                    <h4 class="a4-party-name">AIFORCE AGENCY</h4>
+                    <p class="a4-party-role">Ingénierie Logicielle Web &amp; Mobile • Automatisation IA</p>
+                    <p class="a4-party-contact">Ligne directe : +229 01 62 11 54 11</p>
+                    <p class="a4-party-contact">Cotonou, Bénin • https://aiforce.agency</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Objet de la Mission -->
+              <div class="a4-mission-box">
+                <div class="a4-mission-label">OBJET DE LA MISSION :</div>
+                <h4 class="a4-mission-title" id="prev-titre">Conception &amp; Développement de Solution Digitale sur-mesure &amp; Automatisation IA</h4>
+                <p class="a4-mission-desc" id="prev-description">Développement d'une application sur-mesure haute performance, centralisation des flux métiers et automatisation des processus avec intégration d'un assistant IA dédié.</p>
+              </div>
+
+              <!-- Tableau des Prestations Chiffrées -->
+              <div class="a4-table-section-title">DÉTAIL DES PRESTATIONS &amp; INVESTISSEMENT</div>
+              <table class="a4-proforma-table">
+                <thead>
+                  <tr>
+                    <th style="width: 54%;">Désignation des Prestations</th>
+                    <th style="width: 10%; text-align: center;">Qté</th>
+                    <th style="width: 18%; text-align: right;">Prix Unitaire</th>
+                    <th style="width: 18%; text-align: right;">Total Net</th>
+                  </tr>
+                </thead>
+                <tbody id="prev-items-tbody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+
+              <!-- Total Général Propre & Non Débordant -->
+              <div class="a4-net-total-bar">
+                <div class="net-total-label-wrap">
+                  <span class="net-main-lbl">MONTANT FORFAITAIRE NET DU PROJET</span>
+                  <div class="net-sub-details" id="prev-details-subrow">
+                    <span id="prev-subtotal-txt">Sous-Total : 0 FCFA</span>
+                    <span id="prev-remise-txt" style="display: none; color: #dc2626;">• Remise : -0 FCFA</span>
+                    <span id="prev-tva-txt" style="display: none; color: #2563eb;">• TVA : +0 FCFA</span>
+                  </div>
+                </div>
+                <div class="net-total-val" id="prev-total-ttc">0 FCFA</div>
+              </div>
+
+              <!-- Modalités d'Exécution & de Règlement (Présentation Simple et Sobre) -->
+              <div class="a4-section-title-bar">MODALITÉS D'EXÉCUTION &amp; DE RÈGLEMENT</div>
+              <div class="a4-payment-clean-box" id="prev-payment-box">
+                <!-- Dynamically populated -->
+              </div>
+
+              <!-- Conditions Particulières & Garanties -->
+              <div class="a4-section-title-bar" style="margin-top: 8px;">CONDITIONS PARTICULIÈRES &amp; GARANTIES</div>
+              <div class="a4-conditions-clean-box" id="prev-conditions-box">
+                <!-- Dynamically populated -->
+              </div>
+
+              <!-- Bon Pour Accord & Validation Contractuelle (2 Cadres Côte-à-Côte) -->
+              <div class="a4-section-title-bar" style="margin-top: 8px;">BON POUR ACCORD &amp; VALIDATION CONTRACTUELLE</div>
+              <p class="a4-agreement-sub">Le présent devis proforma tient lieu de bon de commande une fois daté et signé avec la mention manuscrite « Bon pour accord ».</p>
+
+              <div class="a4-signatures-row">
+                <div class="a4-sign-box client-sign">
+                  <div class="sign-box-hdr">POUR LE CLIENT : <span id="prev-sign-client">Client</span></div>
+                  <div class="sign-fields">
+                    <p>Nom &amp; Titre du Signataire : ___________________________</p>
+                    <p>Date : ___ / ___ / 2026</p>
+                    <p class="sign-mention">Mention manuscrite « Bon pour accord » &amp; Signature :</p>
+                    <div class="sign-placeholder-space"></div>
+                  </div>
+                </div>
+
+                <div class="a4-sign-box provider-sign">
+                  <div class="sign-box-hdr">POUR LE PRESTATAIRE : AIFORCE AGENCY</div>
+                  <div class="sign-fields">
+                    <p>Représentant : <strong id="prev-sign-rep">Direction AIFORCE AGENCY</strong></p>
+                    <p>Date : <span id="prev-sign-date">10 Octobre 2026</span></p>
+                    <p class="sign-mention">Signature &amp; Cachet de l'Agence :</p>
+                    <div class="official-stamp-badge">
+                      <span class="stamp-icon">⚡</span>
+                      <span class="stamp-title">BON POUR ACCORD</span>
+                      <span class="stamp-sub">AIFORCE AGENCY • 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Micro Footer -->
+              <div class="a4-page-footer">
+                <span>AIFORCE AGENCY • AI Automation &amp; Consulting • Tél : +229 01 62 11 54 11 • Cotonou, Bénin • Document Confidentiel</span>
+                <span id="prev-page-num">Facture Proforma • Document Officiel AIFORCE</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       MODAL 2 : AJOUT / MODIFICATION D'UNE DEMANDE CLIENT MANUELLE
+       ========================================================================== -->
+  <div id="modal-lead-form" class="admin-modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="lead-modal-title">Nouvelle Demande Client</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-lead-modal">✕</button>
+      </div>
+
+      <form id="lead-edit-form" class="modal-form">
+        <input type="hidden" id="lead-form-id">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Nom du Client / Responsable *</label>
+            <input type="text" id="lead-form-nom" class="admin-input" placeholder="Ex: Jean Houndékon" required>
+          </div>
+          <div class="form-group">
+            <label>Entreprise / Organisation</label>
+            <input type="text" id="lead-form-entreprise" class="admin-input" placeholder="Ex: Transit Maritime SARL">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Téléphone / WhatsApp</label>
+            <input type="text" id="lead-form-contact" class="admin-input" placeholder="Ex: +229 0162115411" required>
+          </div>
+          <div class="form-group">
+            <label>Adresse Email</label>
+            <input type="email" id="lead-form-email" class="admin-input" placeholder="Ex: jean@domaine.com">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Secteur d'activité</label>
+            <input type="text" id="lead-form-secteur" class="admin-input" placeholder="Ex: Logistique, Droit, Santé...">
+          </div>
+          <div class="form-group">
+            <label>Budget indicatif</label>
+            <input type="text" id="lead-form-budget" class="admin-input" placeholder="Ex: 3 000 000 FCFA">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Problème clé / Besoin exprimé *</label>
+          <textarea id="lead-form-besoin" class="admin-input" rows="3" placeholder="Description claire de la tâche à automatiser ou de l'application désirée..." required></textarea>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Statut de la demande</label>
+            <select id="lead-form-statut" class="admin-input">
+              <option value="Nouveau">Nouveau</option>
+              <option value="Contacté">Contacté</option>
+              <option value="Devis envoyé">Devis envoyé</option>
+              <option value="Gagné">Gagné / Signé</option>
+              <option value="Archivé">Archivé</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Source du prospect</label>
+            <select id="lead-form-source" class="admin-input">
+              <option value="Manuel (Rendez-vous / Appel)">Manuel (Rendez-vous / Appel)</option>
+              <option value="Formulaire de contact web">Formulaire de contact web</option>
+              <option value="Chatbot IA Copilot">Chatbot IA Copilot</option>
+              <option value="Recommandation réseau">Recommandation réseau</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Notes internes & Prochaines actions</label>
+          <textarea id="lead-form-notes" class="admin-input" rows="2" placeholder="Notes pour l'équipe technique..."></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-admin-outline" id="btn-cancel-lead-modal">Annuler</button>
+          <button type="submit" class="btn-admin-solid">Enregistrer la demande</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       MODAL 3 : AJOUT / MODIFICATION D'UN MARCHÉ / PROJET
+       ========================================================================== -->
+  <div id="modal-project-form" class="admin-modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="project-modal-title">Nouveau Projet / Marché Obtenu</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-project-modal">✕</button>
+      </div>
+
+      <form id="project-edit-form" class="modal-form">
+        <input type="hidden" id="project-form-id">
+
+        <div class="form-group">
+          <label>Titre du Projet *</label>
+          <input type="text" id="project-form-titre" class="admin-input" placeholder="Ex: Plateforme Logistique & Pointage Mobile" required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Client / Organisation *</label>
+            <input type="text" id="project-form-client" class="admin-input" placeholder="Ex: Groupe Industriel Bénin" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Téléphone / WhatsApp</label>
+            <input type="text" id="project-form-contact" class="admin-input" placeholder="Ex: +229 01 62 11 54 11">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Montant Global du Marché (FCFA) *</label>
+            <input type="number" id="project-form-montant" class="admin-input" placeholder="Ex: 5000000" required>
+          </div>
+          <div class="form-group">
+            <label>Déjà Encaissé (FCFA) *</label>
+            <input type="number" id="project-form-encaisse" class="admin-input" placeholder="Ex: 2500000" required>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Statut d'exécution</label>
+            <select id="project-form-statut" class="admin-input">
+              <option value="En cours">En cours de développement</option>
+              <option value="Recette">Recette & Tests Client</option>
+              <option value="Livré">Livré & Déployé</option>
+              <option value="Maintenance">En maintenance</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Progression Globale (%)</label>
+            <input type="number" id="project-form-progression" class="admin-input" min="0" max="100" value="30">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Étape / Jalon actuel</label>
+          <input type="text" id="project-form-etape" class="admin-input" placeholder="Ex: Finalisation du prototype MVP et validation WhatsApp">
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label>Date de Démarrage</label>
+            <input type="date" id="project-form-date-debut" class="admin-input">
+          </div>
+          <div class="form-group">
+            <label>Livraison Prévisionnelle</label>
+            <input type="date" id="project-form-date-fin" class="admin-input">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-admin-outline" id="btn-cancel-project-modal">Annuler</button>
+          <button type="submit" class="btn-admin-solid">Enregistrer le Projet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="admin-toast" class="admin-toast hidden"></div>
+
+  <!-- Scripts -->
+  <script src="admin.js?v=20261010a"></script>
+</body>
+</html>

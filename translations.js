@@ -4,6 +4,21 @@ const translations = {
     // Navigation & Méta
     meta_title: "AIFORCE — Ingénierie Logicielle Web & Mobile, Automatisation des Processus",
     nav_services: "Services",
+    nav_services_dropdown_tag: "Pôles d'expertise AIFORCE",
+    nav_services_dropdown_sub: "Logiciels sur-mesure & IA",
+    nav_service_web: "Applications Web & SaaS",
+    nav_service_web_desc: "Logiciels métier sur mesure, plateformes SaaS, dashboards interactifs",
+    nav_service_mobile: "Applications Mobiles",
+    nav_service_mobile_desc: "iOS & Android (React Native, Flutter), offline-first et temps réel",
+    nav_service_site: "Création de Sites Web",
+    nav_service_site_desc: "Sites vitrines haut de gamme, landing pages conversion, vitesse éclair",
+    nav_service_auto: "Automatisation de Tâches & IA",
+    nav_service_auto_desc: "Workflows n8n, extraction documentaire OCR/LLM, zéro saisie manuelle",
+    nav_service_process: "Optimisation de Processus",
+    nav_service_process_desc: "Audit des flux opérationnels, suppression des goulots, ROI garanti",
+    nav_service_agents: "Chatbots & Agents IA",
+    nav_service_agents_desc: "Conseillers 24/7 (RAG, Sofia), assistants autonomes et tool-calling",
+    nav_services_view_all: "Voir tous nos services & comparatif",
     nav_portfolio: "Réalisations",
     nav_cases: "Cas concrets",
     nav_approach: "Méthode",
@@ -14,7 +29,11 @@ const translations = {
 
     // Hero Section
     hero_tag: "Studio d'Ingénierie & d'Automatisation",
-    hero_title: "Développement d'applications web & mobiles. Automatisation de vos tâches répétitives.",
+    hero_title: "<span class=\"hero-title-line\">Développement d'applications web & mobiles.</span><span class=\"hero-title-line\">Automatisation de vos tâches répétitives avec l'IA.</span>",
+    hero_titles: [
+      "<span class=\"hero-title-line\">Développement d'applications web & mobiles.</span><span class=\"hero-title-line\">Automatisation de vos tâches répétitives avec l'IA.</span>",
+      "Optimisation des processus de travail en entreprise avec l'IA."
+    ],
     hero_desc: "Nous concevons des logiciels sur-mesure et automatisons vos flux de travail quotidiens pour libérer vos équipes des tâches manuelles chronophages et vous faire gagner un temps précieux.",
     hero_cta_wa: "Échanger directement sur WhatsApp",
     hero_cta_contact: "Nous contacter",
@@ -24,7 +43,7 @@ const translations = {
     time_tag: "Le Temps : Votre Première Ressource",
     time_title: "Combien d'heures vos équipes perdent-elles chaque semaine en saisies inutiles ?",
     time_intro: "Dans la majorité des entreprises, des collaborateurs qualifiés passent des heures à copier des données d'un fichier à un autre, à rédiger des comptes-rendus à la main ou à chercher des informations dispersées. Notre mission est de vous redonner ce temps.",
-    
+
     time_col_1_title: "Supprimer les doubles saisies",
     time_col_1_desc: "Connecter vos outils (logiciel de facturation, tableurs, messageries, CRM) pour que l'information circule sans intervention humaine.",
     time_col_2_title: "Traiter les documents sans attendre",
@@ -32,32 +51,63 @@ const translations = {
     time_col_3_title: "Des outils adaptés à votre réalité",
     time_col_3_desc: "Développer des applications web et mobiles qui collent exactement à votre manière de travailler, sans fonctionnalités superflues.",
 
-    // Section 2 : Nos Deux Métiers
-    services_tag: "Nos Deux Piliers d'Intervention",
-    services_title: "Des solutions techniques concrètes, construites pour durer",
-    services_subtitle: "Nous combinons le développement d'applications sur-mesure et l'automatisation pour simplifier vos opérations.",
+    // Section 2 : Expertises Techniques AIFORCE
+    services_tag: "Expertise Technique",
+    services_title: "Compétences Techniques & Domaines d'Expertise",
+    services_subtitle: "Présentation des compétences techniques d'AIFORCE réparties en deux piliers d'ingénierie logicielle et d'intelligence artificielle.",
 
-    // Métier 1 : Dév Web & Mobile
-    service_web_num: "01",
-    service_web_title: "Développement d'Applications Web & Mobiles",
-    service_web_desc: "Nous développons des outils logiciels adaptés à vos besoins réels : des interfaces claires, rapides et faciles à prendre en main par vos équipes ou vos clients.",
-    service_web_item_1_title: "Applications de gestion interne & portails clients",
-    service_web_item_1_desc: "Outils de suivi d'activité, espaces clients sécurisés, tableaux de bord clairs pour piloter vos opérations sans dépendre de fichiers Excel fragiles.",
-    service_web_item_2_title: "Applications mobiles iOS & Android",
-    service_web_item_2_desc: "Pour vos équipes sur le terrain ou vos clients : fonctionne même avec une mauvaise connexion, saisie rapide, photos, géolocalisation et signatures numériques.",
-    service_web_item_3_title: "Modernisation de vos logiciels existants",
-    service_web_item_3_desc: "Reprendre en main un outil vieillissant, corriger ses lenteurs et le reconnecter à votre environnement de travail actuel.",
+    // Colonnes des tableaux
+    skills_col_domain: "Domaine",
+    skills_col_tech: "Compétences techniques",
 
-    // Métier 2 : Automatisation & IA
-    service_ai_num: "02",
-    service_ai_title: "Automatisation de Processus & Intégration IA",
-    service_ai_desc: "Nous mettons en place des automatisations fiables et intégrons l'intelligence artificielle là où elle apporte une réelle simplification, sans jargon ni gadget.",
-    service_ai_item_1_title: "Traitement automatique de factures & devis",
-    service_ai_item_1_desc: "Extraction automatique des données clés (fournisseur, montants, lignes de commande) et intégration directe dans votre comptabilité.",
-    service_ai_item_2_title: "Recherche intelligente dans vos documents d'entreprise",
-    service_ai_item_2_desc: "Un assistant interne sécurisé capable de retrouver instantanément une clause de contrat, une procédure ou un historique technique dans vos archives.",
-    service_ai_item_3_title: "Automatisation de la relation client & messagerie",
-    service_ai_item_3_desc: "Réponses automatiques intelligentes aux demandes récurrentes (horaires, devis types, état d'une commande) et transmission fluide vers vos équipes.",
+    // Pilier 1 : Full Stack AI Developer
+
+    p1_title: "Développement Full Stack IA",
+    p1_desc: "Conception d'applications intelligentes, intégration de modèles d'IA et développement d'agents capables d'automatiser des tâches métier.",
+    p1_d1: "Programmation",
+    p1_t1: "Python, bases de JavaScript et TypeScript",
+    p1_d2: "IA générative",
+    p1_t2: "LLM, GPT, Gemini, modèles open source",
+    p1_d3: "API IA",
+    p1_t3: "OpenAI API, Gemini API, Anthropic API",
+    p1_d4: "Agents IA",
+    p1_t4: "Tool calling, workflows, agents autonomes",
+    p1_d5: "Automatisation",
+    p1_t5: "n8n, webhooks, API, intégrations",
+    p1_d6: "Machine learning",
+    p1_t6: "Entraînement, fine-tuning, évaluation des modèles",
+    p1_d7: "RAG",
+    p1_t7: "Recherche documentaire, embeddings, bases vectorielles",
+    p1_d8: "Backend",
+    p1_t8: "FastAPI, Node.js, authentification",
+    p1_d9: "Bases de données",
+    p1_t9: "PostgreSQL, Redis, bases vectorielles",
+    p1_d10: "Déploiement",
+    p1_t10: "Docker, cloud, monitoring, sécurité IA",
+
+    // Pilier 2 : Full Stack Web & Mobile Developer
+    p2_title: "Développement Full Stack Web & Mobile",
+    p2_desc: "Conception et réalisation d'applications web, mobiles et de plateformes métier, de l'interface utilisateur jusqu'au backend et au déploiement.",
+    p2_d1: "Frontend web",
+    p2_t1: "HTML, CSS, JavaScript, TypeScript, React, Next.js",
+    p2_d2: "Backend",
+    p2_t2: "Node.js, NestJS, Django ou FastAPI",
+    p2_d3: "Développement mobile",
+    p2_t3: "React Native, Expo ou Flutter",
+    p2_d4: "Bases de données",
+    p2_t4: "PostgreSQL, MySQL, MongoDB, Redis",
+    p2_d5: "API",
+    p2_t5: "REST, webhooks, GraphQL",
+    p2_d6: "Authentification",
+    p2_t6: "Sessions, JWT, OAuth, gestion des rôles",
+    p2_d7: "UI/UX",
+    p2_t7: "Responsive design, accessibilité, expérience utilisateur",
+    p2_d8: "Sécurité",
+    p2_t8: "Validation, permissions, protection des données",
+    p2_d9: "Déploiement",
+    p2_t9: "Vercel, serveurs cloud, Docker, CI/CD",
+    p2_d10: "Tests",
+    p2_t10: "Tests unitaires, intégration et tests end-to-end",
 
 
     // Hero Photo Badge
@@ -141,7 +191,7 @@ const translations = {
     portfolio_title: "SMART JURIS : Workspace Juridique OHADA",
     portfolio_subtitle: "Plateforme professionnelle sur-mesure développée par AIFORCE pour cabinets d'avocats d'affaires : pilotage du contentieux, moteur IA anti-hallucination sourcé sur le droit OHADA / CCJA, et rédaction automatisée d'actes.",
     portfolio_badge: "Ingénierie Full-Stack & IA Sourcée Anti-Hallucination",
-    
+
     portfolio_tab_1: "Tableau de Bord & Délais",
     portfolio_tab_2: "Smart Juris Copilot",
     portfolio_tab_3: "Smart Draft (Actes)",
@@ -150,7 +200,7 @@ const translations = {
 
     portfolio_screen_1_title: "Tableau de Bord Cabinet & Gestion des Délais Procéduraux",
     portfolio_screen_1_desc: "Pilotage centralisé pour l'avocat : suivi des dossiers prioritaires, audiences fixées (ex: Tribunal de Commerce de Cotonou, 2ème Chambre) et calcul strict des délais de forclusion sous quinzaine pour éviter toute prescription procédurale.",
-    
+
     portfolio_screen_2_title: "Smart Juris Copilot — IA Juridique Sourcée & Anti-Hallucination",
     portfolio_screen_2_desc: "Moteur d'assistance juridique de pointe reposant exclusivement sur le corpus officiel OHADA (AUSCGIE, AUDCG, AUS, AUPRVE, AUA) et les arrêts de principe de la CCJA. L'avocat pose ses questions, et l'IA analyse les faits du litige sans jamais inventer d'article ni de jurisprudence.",
 
@@ -168,31 +218,6 @@ const translations = {
     portfolio_pill_3: "Génération d'actes en < 3 min",
     portfolio_pill_4: "Traçabilité & Secret Professionnel absolu",
 
-    // Section 3 : Cas Concrets de Gain de Temps (Avant / Après)
-    cases_tag: "Cas Concrets",
-    cases_title: "Ce qui change concrètement pour votre quotidien",
-    cases_subtitle: "Voici comment nous transformons des processus lourds en flux fluides.",
-
-    case_1_badge: "Distribution & Gestion Commerciale",
-    case_1_title: "Traitement des bons de commande & factures fournisseurs",
-    case_1_before_label: "Avant :",
-    case_1_before: "Chaque matin, 2 à 3 heures passées à ouvrir des emails, télécharger des pièces jointes PDF et recopier manuellement les montants dans un logiciel comptable.",
-    case_1_after_label: "Avec notre solution :",
-    case_1_after: "Les pièces jointes sont analysées dès réception. Les montants et références sont extraits automatiquement et présentés sur un écran de validation rapide en 1 clic.",
-
-    case_2_badge: "Interventions & Équipes Terrain",
-    case_2_title: "Fiches d'intervention et rapports techniques",
-    case_2_before_label: "Avant :",
-    case_2_before: "Rapports papier remplis sur place, stockés dans les véhicules puis resaisis au bureau en fin de semaine, entraînant des retards de facturation de plusieurs jours.",
-    case_2_after_label: "Avec notre application :",
-    case_2_after: "Le technicien remplit la fiche en 2 minutes sur son smartphone, prend une photo, fait signer le client et le rapport PDF est envoyé automatiquement au bureau.",
-
-    case_3_badge: "Services & Relations Clients",
-    case_3_title: "Gestion des demandes entrantes répétitives",
-    case_3_before_label: "Avant :",
-    case_3_before: "Des dizaines de messages WhatsApp et emails identiques chaque semaine pour demander des tarifs de base ou des disponibilités, retardant le travail de fond.",
-    case_3_after_label: "Avec notre automatisation :",
-    case_3_after: "Un système automatisé répond immédiatement aux questions fréquentes 24h/24 et ne transfère au dirigeant que les demandes qualifiées avec coordonnées complètes.",
 
     // Section 4 : Notre Manière de Travailler
     approach_tag: "Notre Façon de Travailler",
@@ -254,30 +279,21 @@ const translations = {
     footer_location: "International & Afrique de l'Ouest",
     footer_copy: "AIFORCE AGENCY. Tous droits réservés.",
 
-    // Chatbot IA & Fiche d'Offre
-    nav_ai_assistant: "✨ Assistant IA & Offre",
-    hero_cta_ai: "✨ Cadrer mon projet avec l'IA",
-    ai_launcher_label: "Assistant IA & Offre",
-    ai_launcher_badge: "Qwen IA Active",
-    ai_launcher_tooltip: "💡 Obtenez votre fiche d'offre personnalisée en 3 min !",
-    chat_title: "AIFORCE Copilot",
-    chat_subtitle: "Consultant Tech & Cadrage de Projet",
-    chat_status: "En ligne • Qwen Intelligence",
-    chat_step_1: "1. Contexte",
-    chat_step_2: "2. Solution",
-    chat_step_3: "3. Fonctions MVP",
-    chat_step_4: "4. Délais & Budget",
-    chat_step_5: "5. Fiche d'Offre 📄",
-    chat_placeholder: "Écrivez votre message à l'assistant...",
+    // Chatbot IA — Conseillère Sofia
+    nav_ai_assistant: "✨ Conseillère Sofia",
+    hero_cta_ai: "✨ Parler de mon projet à Sofia",
+    ai_launcher_label: "Sofia (IA)",
+    ai_launcher_tooltip: "💡 Parlez de votre projet à Sofia !",
+    chat_title: "Sofia",
+    chat_subtitle: "Conseillère IA & Accueil Client",
+    chat_status: "En ligne • Prise en charge rapide",
+    chat_step_1: "1. Coordonnées",
+    chat_step_2: "2. Votre Projet",
+    chat_step_3: "3. Prise en charge",
+    chat_placeholder: "Collez votre résumé ChatGPT ou écrivez ici...",
     chat_send: "Envoyer",
     chat_reset: "Nouvel échange",
-    chat_offer_badge: "AIFORCE AGENCY • OFFRE DE CADRAGE PRÉVISIONNELLE",
-    chat_download: "📥 Télécharger la Fiche d'Offre (PDF)",
-    chat_wa_share: "Transmettre sur WhatsApp à Caleb",
-    chat_print: "Imprimer / Sauvegarder en PDF",
-    chat_copied: "Fiche copiée dans le presse-papier !",
-    chat_adjust: "Ajuster un point",
-    chat_welcome_msg: "Bonjour et bienvenue chez AIFORCE ! 👋 Je suis votre assistant de cadrage technique. Pour concevoir votre solution sur-mesure et vous transmettre votre **Fiche d'Offre personnalisée sous quelques minutes** :\n\n**Quel est votre prénom / nom, le nom de votre entreprise, votre adresse email et votre numéro WhatsApp ?**",
+    chat_welcome_msg: "Bonjour et bienvenue chez AIFORCE ! Je suis **Sofia**, votre conseillère de projet. 👋\n\nPour que **Caleb et notre équipe technique** puissent étudier précisément votre demande et vous recontacter très rapidement, veuillez simplement renseigner vos coordonnées ci-dessous :",
     chat_disclaimer: "Vos informations restent strictement confidentielles et ne sont jamais divulguées."
   },
 
@@ -285,6 +301,21 @@ const translations = {
     // Navigation & Meta
     meta_title: "AIFORCE — Custom Web & Mobile Software, Business Process Automation",
     nav_services: "Services",
+    nav_services_dropdown_tag: "AIFORCE Expertise",
+    nav_services_dropdown_sub: "Custom Software & AI",
+    nav_service_web: "Web & SaaS Applications",
+    nav_service_web_desc: "Bespoke business software, SaaS platforms, interactive dashboards",
+    nav_service_mobile: "Mobile Applications",
+    nav_service_mobile_desc: "iOS & Android (React Native, Flutter), offline-first & real-time",
+    nav_service_site: "Website Development",
+    nav_service_site_desc: "Premium showcase websites, high-converting landing pages, ultra-fast",
+    nav_service_auto: "Task Automation & AI",
+    nav_service_auto_desc: "n8n workflows, OCR/LLM document parsing, zero manual re-entry",
+    nav_service_process: "Process Optimization",
+    nav_service_process_desc: "Operational workflow audit, bottleneck removal, guaranteed ROI",
+    nav_service_agents: "Chatbots & AI Agents",
+    nav_service_agents_desc: "24/7 intelligent advisors (RAG, Sofia), autonomous task agents",
+    nav_services_view_all: "View all services & comparison",
     nav_portfolio: "Portfolio",
     nav_cases: "Use Cases",
     nav_approach: "Method",
@@ -295,7 +326,11 @@ const translations = {
 
     // Hero Section
     hero_tag: "Software Engineering & Automation Studio",
-    hero_title: "Custom web & mobile software development. Automating your repetitive business tasks.",
+    hero_title: "<span class=\"hero-title-line\">Custom web & mobile software development.</span><span class=\"hero-title-line\">Automating your repetitive business tasks with AI.</span>",
+    hero_titles: [
+      "<span class=\"hero-title-line\">Custom web & mobile software development.</span><span class=\"hero-title-line\">Automating your repetitive business tasks with AI.</span>",
+      "Optimizing business workflows and enterprise processes with AI."
+    ],
     hero_desc: "We build tailored applications and automate your daily workflows to free your teams from time-consuming manual chores and save you valuable hours each week.",
     hero_cta_wa: "Chat directly on WhatsApp",
     hero_cta_contact: "Get in Touch",
@@ -313,32 +348,62 @@ const translations = {
     time_col_3_title: "Software built for your real work",
     time_col_3_desc: "Develop web and mobile applications tailored to your actual business operations, without confusing or useless features.",
 
-    // Section 2: Our Two Disciplines
-    services_tag: "Our Two Core Disciplines",
-    services_title: "Pragmatic technical solutions, built to stand the test of time",
-    services_subtitle: "We combine custom software engineering and intelligent automation to simplify your operations.",
+    // Section 2: AIFORCE Technical Expertise
+    services_tag: "Technical Expertise",
+    services_title: "Technical Skills & Domains of Expertise",
+    services_subtitle: "Structured overview of AIFORCE technical competencies across two core domains of software engineering and artificial intelligence.",
 
-    // Service 1: Web & Mobile
-    service_web_num: "01",
-    service_web_title: "Custom Web & Mobile App Development",
-    service_web_desc: "We engineer software tools aligned with your daily business needs: fast, clean interfaces that are effortless for your team and clients to adopt.",
-    service_web_item_1_title: "Internal management tools & customer portals",
-    service_web_item_1_desc: "Operations tracking, secure client dashboards, and operational visibility to replace fragile, shared spreadsheets.",
-    service_web_item_2_title: "iOS & Android mobile apps for field teams",
-    service_web_item_2_desc: "Built for field operators and on-site staff: reliable offline capability, photo capture, GPS tagging, and on-screen digital signatures.",
-    service_web_item_3_title: "Modernizing legacy business software",
-    service_web_item_3_desc: "Revitalizing outdated internal software, fixing performance bottlenecks, and connecting them cleanly with your current tools.",
+    // Table Columns
+    skills_col_domain: "Domain",
+    skills_col_tech: "Technical competencies",
 
-    // Service 2: AI & Automation
-    service_ai_num: "02",
-    service_ai_title: "Process Automation & Practical AI Integration",
-    service_ai_desc: "We build reliable automations and integrate artificial intelligence only where it genuinely simplifies your work, with zero technical jargon.",
-    service_ai_item_1_title: "Automated invoice & order processing",
-    service_ai_item_1_desc: "Automatic parsing of vendor names, line items, and totals directly synced into your bookkeeping without manual copy-pasting.",
-    service_ai_item_2_title: "Smart internal document search",
-    service_ai_item_2_desc: "A secure private assistant that instantly retrieves contract clauses, historical records, or technical procedures from your company archives.",
-    service_ai_item_3_title: "Automated customer inquiries & triage",
-    service_ai_item_3_desc: "Instant automated responses to frequent client questions (pricing sheets, business hours, order statuses), escalating complex requests to your staff.",
+    // Pillar 1: Full Stack AI Developer
+    p1_title: "Full Stack AI Development",
+    p1_desc: "Engineering intelligent applications, integrating AI models, and building autonomous agents capable of automating business workflows.",
+    p1_d1: "Programming",
+    p1_t1: "Python, JavaScript and TypeScript fundamentals",
+    p1_d2: "Generative AI",
+    p1_t2: "LLMs, GPT, Gemini, open-source models",
+    p1_d3: "AI APIs",
+    p1_t3: "OpenAI API, Gemini API, Anthropic API",
+    p1_d4: "AI Agents",
+    p1_t4: "Tool calling, workflows, autonomous agents",
+    p1_d5: "Automation",
+    p1_t5: "n8n, webhooks, APIs, integrations",
+    p1_d6: "Machine learning",
+    p1_t6: "Training, fine-tuning, model evaluation",
+    p1_d7: "RAG",
+    p1_t7: "Document retrieval, embeddings, vector databases",
+    p1_d8: "Backend",
+    p1_t8: "FastAPI, Node.js, authentication",
+    p1_d9: "Databases",
+    p1_t9: "PostgreSQL, Redis, vector stores",
+    p1_d10: "Deployment",
+    p1_t10: "Docker, cloud, monitoring, AI security",
+
+    // Pillar 2: Full Stack Web & Mobile Developer
+    p2_title: "Full Stack Web & Mobile Development",
+    p2_desc: "Architecture and development of web and mobile applications and business platforms, from user interface to backend and deployment.",
+    p2_d1: "Web Frontend",
+    p2_t1: "HTML, CSS, JavaScript, TypeScript, React, Next.js",
+    p2_d2: "Backend",
+    p2_t2: "Node.js, NestJS, Django or FastAPI",
+    p2_d3: "Mobile Development",
+    p2_t3: "React Native, Expo or Flutter",
+    p2_d4: "Databases",
+    p2_t4: "PostgreSQL, MySQL, MongoDB, Redis",
+    p2_d5: "APIs",
+    p2_t5: "REST, webhooks, GraphQL",
+    p2_d6: "Authentication",
+    p2_t6: "Sessions, JWT, OAuth, role management",
+    p2_d7: "UI/UX",
+    p2_t7: "Responsive design, accessibility, user experience",
+    p2_d8: "Security",
+    p2_t8: "Validation, permissions, data protection",
+    p2_d9: "Deployment",
+    p2_t9: "Vercel, cloud servers, Docker, CI/CD",
+    p2_d10: "Testing",
+    p2_t10: "Unit tests, integration and end-to-end testing",
 
 
     // Hero Photo Badge
@@ -449,31 +514,6 @@ const translations = {
     portfolio_pill_3: "Legal Draft Generated in < 3 mins",
     portfolio_pill_4: "Tamper-Evident Ethical Audit Trail",
 
-    // Section 3: Concrete Time-Saving Cases
-    cases_tag: "Concrete Examples",
-    cases_title: "What practically changes in your day-to-day work",
-    cases_subtitle: "Here is how we turn burdensome manual routines into smooth workflows.",
-
-    case_1_badge: "Distribution & Trade",
-    case_1_title: "Supplier invoices and purchase order processing",
-    case_1_before_label: "Before:",
-    case_1_before: "Every morning, spending 2 to 3 hours opening emails, downloading PDFs, and manually typing invoice data into accounting software.",
-    case_1_after_label: "With our solution:",
-    case_1_after: "PDFs are automatically read upon arrival. Amounts and vendor references are extracted and presented on a clean 1-click verification screen.",
-
-    case_2_badge: "Field Operations & Maintenance",
-    case_2_title: "Field job sheets & technical intervention reports",
-    case_2_before_label: "Before:",
-    case_2_before: "Paper work orders filled out on site, left in vehicle clipboards, and manually typed up at the office days later, delaying client invoices.",
-    case_2_after_label: "With our application:",
-    case_2_after: "The technician completes the job card on a phone in 2 minutes, snaps a photo, gets a client signature, and an instant PDF reaches the office.",
-
-    case_3_badge: "Professional Services",
-    case_3_title: "Handling repetitive customer inquiries",
-    case_3_before_label: "Before:",
-    case_3_before: "Inboxes and WhatsApp flooded with repetitive requests for basic pricing, taking hours away from productive client work.",
-    case_3_after_label: "With our automation:",
-    case_3_after: "An automated assistant answers routine questions instantly 24/7 and forwards pre-qualified leads with contact details directly to the manager.",
 
     // Section 4: Our Approach
     approach_tag: "How We Work",
@@ -535,30 +575,21 @@ const translations = {
     footer_location: "International & West Africa",
     footer_copy: "AIFORCE AGENCY. All rights reserved.",
 
-    // Chatbot AI & Project Offer
-    nav_ai_assistant: "✨ AI Copilot & Scope",
-    hero_cta_ai: "✨ Scope my project with AI",
-    ai_launcher_label: "AI Copilot & Offer",
-    ai_launcher_badge: "Qwen AI Active",
-    ai_launcher_tooltip: "💡 Get your custom project scope in 3 minutes!",
-    chat_title: "AIFORCE Copilot",
-    chat_subtitle: "Tech Consultant & Project Scoping",
-    chat_status: "Online • Qwen Intelligence",
-    chat_step_1: "1. Context",
-    chat_step_2: "2. Solution",
-    chat_step_3: "3. MVP Features",
-    chat_step_4: "4. Timeline & Budget",
-    chat_step_5: "5. Project Offer 📄",
-    chat_placeholder: "Type your message to the assistant...",
+    // Chatbot AI — Sofia Project Advisor
+    nav_ai_assistant: "✨ Sofia — AI Advisor",
+    hero_cta_ai: "✨ Discuss my project with Sofia",
+    ai_launcher_label: "Sofia (AI)",
+    ai_launcher_tooltip: "💡 Talk to Sofia about your project!",
+    chat_title: "Sofia",
+    chat_subtitle: "AI Project Advisor & Customer Desk",
+    chat_status: "Online • Fast Response",
+    chat_step_1: "1. Contact Info",
+    chat_step_2: "2. Your Project",
+    chat_step_3: "3. Hand-off",
+    chat_placeholder: "Paste your ChatGPT summary or type here...",
     chat_send: "Send",
     chat_reset: "New chat",
-    chat_offer_badge: "AIFORCE AGENCY • ESTIMATED PROJECT SCOPE & PROPOSAL",
-    chat_download: "📥 Download Project Offer (PDF)",
-    chat_wa_share: "Send to Caleb via WhatsApp",
-    chat_print: "Print / Save as PDF",
-    chat_copied: "Specification copied to clipboard!",
-    chat_adjust: "Adjust a detail",
-    chat_welcome_msg: "Hello and welcome to AIFORCE! 👋 I am your technical scoping assistant. To design your tailored solution and send you your **Custom Project Offer within minutes**:\n\n**What is your full name, company name, email address, and WhatsApp number?**",
+    chat_welcome_msg: "Hello and welcome to AIFORCE! I am **Sofia**, your project advisor. 👋\n\nTo allow **Caleb and our engineering team** to examine your project and reach back to you quickly, please fill in your details below:",
     chat_disclaimer: "Your information remains strictly confidential and is never shared."
   }
 };
